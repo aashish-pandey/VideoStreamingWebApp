@@ -1,0 +1,112 @@
+
+.Landing{
+    /* background-color: black; */
+    min-height: 100vh;
+}
+
+.HeroSection{
+    margin: 15vh 0 0 0;
+}
+
+.HeroMsg{
+    font-size: 3.5rem;
+    font-weight: 800;
+    color: white;
+    font-family:  monospace;
+    padding: 8vh 10vw;
+    color: black;
+    
+    /* border: 2px solid black; */
+}
+
+.SupportMsg{
+    font-size: 1.5rem;
+    font-weight: 200;
+    color: white;
+    font-family: monospace;
+    padding: 5vh, 10vw; 
+    margin: 0 10vw;
+    color: black;
+    /* border: 2px solid black; */
+
+}
+
+.EmailForm{
+    display: flex;
+    justify-content: center;
+    margin: 5vh 0;
+    /* border: 2px solid black; */
+}
+
+.EmailForm .Email{
+    font-size: 1rem;
+    width: 35rem;
+    height: 3rem;
+}
+
+
+.EmailForm .Submit{
+    width: 9rem;
+    background-color: red;
+    color: white;
+    font-size: 1.5rem;
+    padding: 0.5rem;
+    border: 1px solid red;
+}
+
+
+.Landing2{
+    height: 80vh;
+    display: flex;
+    /* flex-direction: column; */
+    justify-content: center;
+    align-self: center;
+    /* border: 2px solid black; */
+
+} 
+
+.LandingItems{
+    /* border: 2px solid black; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50vw;
+}
+
+.UseAnotherEmail{
+    margin-top: 2vh;
+    font-size: 1rem;
+    background-color: transparent;
+    cursor: pointer;
+    border: none;
+}
+
+.UseAnotherEmail:hover{
+    color: rgb(94, 93, 93);
+}
+
+.NextButton{
+    margin-top: 2vh;
+    width: 10vw;
+    height: 40px;
+    background-color: red;
+    color: white;
+    border: none;
+    font-size: 1rem;
+}
+
+.NextButton:hover{
+    background-color: rgb(253, 70, 70);
+    font-size: 1.1rem;
+}
+
+.showEmail{
+    color: red;
+    font-weight: 500;
+}
+
+.FinishMsg{
+    font-size: 2rem;
+    font-weight: 500;
+}

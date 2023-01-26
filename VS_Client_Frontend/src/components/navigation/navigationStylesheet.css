@@ -1,0 +1,31 @@
+
+.Navbar{
+    background-color: rgb(42, 18, 18);
+    position: sticky;
+    color:red;
+    height: 10vh;
+    width: 95vw;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2%;
+    
+    z-index: 2;
+    /* border-bottom: 3px solid rgb(12, 12, 12); */
+}
+
+.Title{
+    font-size: 2rem;
+    font-weight: 500;
+    color: red;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.SignIn{
+    background-color: red;
+    color: white;
+    font-size: 1rem;
+    padding: 0.7rem 1rem;
+    border-color: white;
+    border-radius: 10px;
+}

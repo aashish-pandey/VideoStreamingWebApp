@@ -1,0 +1,32 @@
+.MovieCard{
+    /* display: flex;
+    flex-direction: column;
+    background-color: black;
+    color: white;
+    margin: 50px 5px;
+    width: 200px;
+    height: 100px; */
+  object-fit: contain;
+  width: 200px;
+  margin-right: 10px;
+  transition: transform 500ms;
+}
+
+
+
+
+  .MovieCard:hover {
+    transform: scale(1.08);
+  }
+
+/* .MovieCard:hover{
+    transform: scale(0.9);
+    background-color: rgb(47, 46, 46);
+    z-index: 1;
+    height: 200px;
+    margin: 0 5px;
+}
+
+.MovieCardImage{
+    cursor: pointer;
+} */
