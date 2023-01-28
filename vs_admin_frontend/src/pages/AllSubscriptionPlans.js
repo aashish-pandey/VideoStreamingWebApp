@@ -25,7 +25,7 @@ export default function AllSubscriptionPlans() {
     )
   } else 
   return (
-    <div>Allusers
+    <div>AllSubscription
 
     {plans.map(plan=>{return(
         <>

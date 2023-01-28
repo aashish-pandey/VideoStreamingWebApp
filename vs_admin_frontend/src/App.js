@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import AllAdmins from "./pages/AllAdmins";
 import AllMovies from "./pages/AllMovies";
 import AllSubscriptionPlans from "./pages/AllSubscriptionPlans";
@@ -11,50 +11,75 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import "./App.css"
 import Dashboard from "./pages/Dashboard";
 import VideoUpload from "./pages/UploadMovie";
+import { useContext, useEffect } from "react";
+import { LoginContext } from "./context/LoginContext";
+import getCookies from "./cookieHandler/CookieHandler";
 
 
 //till here
 
 function App() {
+
+  const loginStatus = getCookies("isLogged")
+
+  useEffect(()=>{
+    console.log(loginStatus)
+  }, [])
+
+  const ProtectedRoute = ({children})=>{
+    if(loginStatus != 'true'){
+      return <Navigate to = "/login"/>
+    }else{
+      return children
+    }
+  }
+
+
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
         <Route     //here
-          path="/asd"
-          element={<Dashboard/>}
+          path="/"
+          element={
+            <ProtectedRoute>
+              <Dashboard/>
+            </ProtectedRoute>
+        }
           />
         <Route
-          path="/" //here
+          path="/login" //here
           element={<Login/>}
           />
           <Route
           path= '/reg'  //here
-          element={<Register/>}
+          element={<ProtectedRoute>
+            <Register/>
+          </ProtectedRoute>}
           />
          
           <Route
           path="/allUsers"
-          element={<Allusers/>}
+          element={<ProtectedRoute><Allusers/></ProtectedRoute>}
           />
           <Route
           path="/upload"
-          element={<VideoUpload/>}
+          element={<ProtectedRoute><VideoUpload/></ProtectedRoute>}
           />
 
           <Route
           path="/admins"
-          element={<AllAdmins/>}
+          element={<ProtectedRoute><AllAdmins/></ProtectedRoute>}
           />
 
           <Route
           path="/allMovies"
-          element={<AllMovies/>}
+          element={<ProtectedRoute><AllMovies/></ProtectedRoute>}
           />
 
           <Route
           path="/subs"
-          element={<AllSubscriptionPlans/>}
+          element={<ProtectedRoute><AllSubscriptionPlans/></ProtectedRoute>}
           />
         </Routes>
       </BrowserRouter>

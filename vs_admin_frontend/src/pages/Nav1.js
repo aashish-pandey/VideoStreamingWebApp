@@ -1,11 +1,15 @@
 import React from 'react'
 import Container from 'react-bootstrap/Container';
 import companyLogo from '../../src/logo-1.png';
+import { useCookies } from 'react-cookie';
 
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
+import { useNavigate } from 'react-router-dom';
 
 export default function Nav1() {
+  const [cookies, setCookies] = useCookies(['loginStat'])
+  const navigate = useNavigate()
   return (
     <Navbar bg="light" expand="lg">
       <Container fluid>
@@ -22,10 +26,13 @@ export default function Nav1() {
 
             <Nav.Link id="navLinks" href="/admins">Admins</Nav.Link>
             <Nav.Link id="navLinks" href="/subs">Subscriptions</Nav.Link>
-            <Nav.Link id="navLinks" href="#" > Movies</Nav.Link>
+            <Nav.Link id="navLinks" href="/allMovies" > Movies</Nav.Link>
             <Nav.Link id="navLinks" href="/allUsers" >
               Users
             </Nav.Link>
+
+            <Nav.Link id="navLinks" onClick={()=>{setCookies('isLogged', 'false'); navigate('/login')}} >Logout</Nav.Link>
+
           </Nav>
 
           <img id="logo" src={companyLogo} height="40px" alt="BigCo Inc. logo"/>

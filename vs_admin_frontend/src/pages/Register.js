@@ -1,10 +1,10 @@
 import axios from 'axios';
-import React from 'react'
+import React, { useState } from 'react'
 import Nav1 from './Nav1';
 
 export default function Register() {
 
-
+    const [msg, setmsg] = useState()
     const handleSubmit = async(e)=>{
         e.preventDefault()
 
@@ -16,9 +16,10 @@ export default function Register() {
                 "http://localhost:3560/registerAdmin",
                 formData
             )
-            // res=res.json();
-            // why??? its giving object in console
+            .then(res=>{return res.data})
             console.log(res)
+
+            setmsg(res.msg)
         }catch (ex) {
             console.log(ex);
         }
@@ -27,6 +28,8 @@ export default function Register() {
   return (
     <div>
         <Nav1/>
+
+        <h1>{msg}</h1>
         <div className="Auth-form-container" id="f">
       <form className="Auth-form" onSubmit={handleSubmit} method='POST' id="fm">
         <div className="Auth-form-content">

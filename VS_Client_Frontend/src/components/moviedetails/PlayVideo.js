@@ -1,6 +1,6 @@
 import React from 'react'
 import { useEffect } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 import getCookies from '../../pages/CookieHandler'
 import Navigation from '../navigation/Navigation'
 
@@ -24,14 +24,16 @@ export default function PlayVideo({ route, navigation }) {
       }) 
     }, [])
 
-  return (
-    <div>
-    <Navigation/>    
+    const navigate = useNavigate()
 
-    <video id='video-id' controls width={"1000px"} height={"400px"}>
+  return (
+    
+    <div className="videoplayerQ">
+      <button onClick={() => navigate(-1)} className="gobackbtn">Go Back</button>
+    <video id='video-id' controls>
       <source src={"http://localhost:3560/getVideo/" + id}  type='video/mp4' />
     </video>
-
     </div>
+
   )
 }

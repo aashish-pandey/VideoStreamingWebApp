@@ -1,12 +1,17 @@
 import axios from 'axios';
-import React from 'react';
+import React, { useContext, useState } from 'react';
+import { useCookies } from 'react-cookie';
+import { useNavigate } from 'react-router-dom';
+import { LoginContext } from '../context/LoginContext';
 
 
 
 
 export default function Login() {
-
-
+    const [cookies, setCookies] = useCookies(['loginStat'])
+    const [err, setErr] = useState()
+    const[loginStatus, setLoginStatus] = useContext(LoginContext)
+    const navigate = useNavigate()
     const handleLogin = async(e)=>{
         e.preventDefault()
 
@@ -17,9 +22,18 @@ export default function Login() {
             const res = await axios.post(
               "http://localhost:3560/loginAdmin",
               formData
-            );
+            )
+            .then(dt=>{return dt.data})
             console.log("no error")
             console.log(res);
+
+            if(res.err == false){
+              setLoginStatus('true')
+              setCookies('isLogged', 'true')
+              navigate('/')
+            }else{
+              setErr(res.msg)
+            }
           } catch (ex) {
             console.log(ex);
           }
@@ -27,19 +41,7 @@ export default function Login() {
 
   return (
     <div>
-
-        {/* <form onSubmit={handleLogin} method='POST' id="fm">
-            Enter the admin email:
-            <input type="email" name="email"/>
-
-            Enter the password:
-            <input type="password" name="password"/>
-
-            <input type="submit" value="Login"/>
-        </form> */}
-
-
-
+      <h1>{err}</h1>
     <div className="Auth-form-container">
       <form className="Auth-form" onSubmit={handleLogin} method='POST' id="fm">
         <div className="Auth-form-content">

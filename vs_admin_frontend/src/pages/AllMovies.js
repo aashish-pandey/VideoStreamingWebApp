@@ -25,7 +25,7 @@ export default function AllMovies() {
     )
   } else 
   return (
-    <div>Allusers
+    <div>AllMovies
 
     {movies.map(movie=>{return(
         <>
