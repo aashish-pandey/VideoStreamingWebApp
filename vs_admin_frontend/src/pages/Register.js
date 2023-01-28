@@ -1,5 +1,6 @@
 import axios from 'axios';
 import React from 'react'
+import Nav1 from './Nav1';
 
 export default function Register() {
 
@@ -15,6 +16,8 @@ export default function Register() {
                 "http://localhost:3560/registerAdmin",
                 formData
             )
+            // res=res.json();
+            // why??? its giving object in console
             console.log(res)
         }catch (ex) {
             console.log(ex);
@@ -22,7 +25,44 @@ export default function Register() {
     }
 
   return (
-    <div>Register
+    <div>
+        <Nav1/>
+        <div className="Auth-form-container" id="f">
+      <form className="Auth-form" onSubmit={handleSubmit} method='POST' id="fm">
+        <div className="Auth-form-content">
+          <h3 className="Auth-form-title">Register</h3>
+          <div className="form-group mt-3">
+            <label>Enter the admin name:</label>
+            <input
+              type="text" name='name' className="form-control mt-1"  />
+          </div>
+          <div className="form-group mt-3">
+            <label> Enter the admin email address:</label>
+            <input
+              type="email" name='email' className="form-control mt-1" />
+          </div>
+          <div className="form-group mt-3">
+            <label>Enter the admin password:</label>
+            <input
+              type="password" name='password' className="form-control mt-1"  />
+          </div>
+          <div className="form-group mt-3">
+            <label>Enter the admin department:</label>
+            <input
+              type="text" name='department' className="form-control mt-1" />
+          </div>
+          
+          <div className="d-grid gap-2 mt-3">
+            <button type="submit" value='Register' className="btn btn-primary">
+              Submit
+            </button>
+          </div>
+          
+        </div>
+      </form>
+    </div>
+        
+        {/* Register
 
         <form onSubmit={handleSubmit} id="fm" method='POST'>
             Enter the admin name:
@@ -35,7 +75,7 @@ export default function Register() {
             <input type="text" name='department'/>
 
             <input type="submit" value="Add Admin"  />
-        </form>
+        </form> */}
 
 
     </div>

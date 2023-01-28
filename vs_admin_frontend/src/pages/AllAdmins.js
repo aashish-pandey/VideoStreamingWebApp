@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
-
+import Table from 'react-bootstrap/Table';
+import AdminCard from '../components/AdminCard';
+import Nav1 from './Nav1';
 export default function AllAdmins() {
 
     const [admins, setAdmins] = useState()
@@ -21,19 +23,39 @@ export default function AllAdmins() {
 
   if(!admins){
     return(
-        <>Loading....</>
+        <>
+        {/* loading code */}
+        </>
     )
   } else 
   return (
-    <div>Allusers
+    <><Nav1 /><div>
+      <Table striped bordered hover variant="dark">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Password</th>
+            <th>Department</th>
+          </tr>
+        </thead>
+        <tbody>
 
-    {admins.map(admin=>{return(
-        <>
-        {admin._id}
-        {admin.email}<br/>
-        </>
-    )})}
 
-    </div>
-  )
-}
+          {admins.map(admin => {
+            return (
+              <AdminCard key={admin._id} admin={admin} />
+
+
+
+            );
+          })}
+        </tbody>
+      </Table>
+
+
+    </div></>
+    )
+
+    }

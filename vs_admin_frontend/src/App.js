@@ -6,27 +6,44 @@ import Allusers from "./pages/Allusers";
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 
+//i was here
+import "bootstrap/dist/css/bootstrap.min.css"
+import "./App.css"
+import Dashboard from "./pages/Dashboard";
+import VideoUpload from "./pages/UploadMovie";
+
+
+//till here
 
 function App() {
   return (
     <div className="App">
       <BrowserRouter>
         <Routes>
-          <Route
-          path= '/'
-          element={<Register/>}
+        <Route     //here
+          path="/asd"
+          element={<Dashboard/>}
           />
-          <Route
-          path="/login"
+        <Route
+          path="/" //here
           element={<Login/>}
           />
+          <Route
+          path= '/reg'  //here
+          element={<Register/>}
+          />
+         
           <Route
           path="/allUsers"
           element={<Allusers/>}
           />
+          <Route
+          path="/upload"
+          element={<VideoUpload/>}
+          />
 
           <Route
-          path="/allAdmins"
+          path="/admins"
           element={<AllAdmins/>}
           />
 
@@ -36,7 +53,7 @@ function App() {
           />
 
           <Route
-          path="/allSubscriptionPlans"
+          path="/subs"
           element={<AllSubscriptionPlans/>}
           />
         </Routes>
@@ -46,3 +63,7 @@ function App() {
 }
 
 export default App;
+
+
+
+

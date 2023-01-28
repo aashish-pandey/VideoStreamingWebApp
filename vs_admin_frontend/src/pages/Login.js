@@ -1,5 +1,8 @@
 import axios from 'axios';
-import React from 'react'
+import React from 'react';
+
+
+
 
 export default function Login() {
 
@@ -23,9 +26,9 @@ export default function Login() {
     }
 
   return (
-    <div>Login
+    <div>
 
-        <form onSubmit={handleLogin} method='POST' id="fm">
+        {/* <form onSubmit={handleLogin} method='POST' id="fm">
             Enter the admin email:
             <input type="email" name="email"/>
 
@@ -33,9 +36,46 @@ export default function Login() {
             <input type="password" name="password"/>
 
             <input type="submit" value="Login"/>
-        </form>
+        </form> */}
 
 
+
+    <div className="Auth-form-container">
+      <form className="Auth-form" onSubmit={handleLogin} method='POST' id="fm">
+        <div className="Auth-form-content">
+          <h3 className="Auth-form-title">Log In</h3>
+          <div className="form-group mt-3">
+            <label>Email address</label>
+            <input
+              type="email" name='email' className="form-control mt-1" placeholder="Enter email" />
+          </div>
+          <div className="form-group mt-3">
+            <label>Password</label>
+            <input
+              type="password" name='password'
+              className="form-control mt-1"
+              placeholder="Enter password"
+            />
+          </div>
+          <div className="d-grid gap-2 mt-3">
+            <button type="submit" value='Login' className="btn btn-primary">
+              Submit
+            </button>
+          </div>
+          <p className="forgot-password text-right mt-2">
+            Forgot <a href="#">password?</a>
+          </p>
+        </div>
+      </form>
     </div>
-  )
+
+
+
+
+ </div>
+  );
 }
+
+
+
+

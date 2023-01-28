@@ -1,4 +1,7 @@
 import React, { useEffect, useState } from 'react'
+import UserCard from '../components/UserCard'
+import Nav1 from './Nav1'
+import Table from 'react-bootstrap/Table';
 
 export default function Allusers() {
 
@@ -10,7 +13,7 @@ export default function Allusers() {
             .then(res=>res.json())
               .then(dt=>{
                 setUsers(dt['msg'])
-                console.log("aashish")
+                // console.log("aashish")
                 console.log(dt['msg'])
                 return dt
               })
@@ -22,19 +25,38 @@ export default function Allusers() {
 
   if(!users){
     return(
-        <>Loading....</>
+        <>
+        {/* Loading.... */}
+        
+        </>
     )
   } else 
   return (
-    <div>Allusers
+   <><Nav1 /><div>
 
-    {users.map(user=>{return(
-        <>
-        {user._id}
-        {user.uemail}<br/>
-        </>
-    )})}
+<Table striped bordered hover variant="dark">
+        <thead>
+          <tr>
+            <th>ID</th>
+           
+            <th>Email</th>
+            <th>Password</th>
+            <th>Subcription Plan</th>
+          </tr>
+        </thead>
+        <tbody>
 
-    </div>
+
+      {users.map(user => {
+        return (
+
+<UserCard key={user._id}  user={user}/>
+
+        
+        )
+      })}
+   </tbody>
+      </Table>
+    </div></>
   )
 }
