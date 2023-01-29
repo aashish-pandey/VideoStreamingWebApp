@@ -1,10 +1,14 @@
 import React from 'react'
+<<<<<<< HEAD
 import { useState } from 'react'
+=======
+>>>>>>> 79a94fb5a68128331d0c5d5bde460e6d067f27e7
 import { useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import getCookies from '../../pages/CookieHandler'
 import Navigation from '../navigation/Navigation'
 
+<<<<<<< HEAD
 
 import './PlayVideo.css'
 
@@ -15,6 +19,15 @@ export default function PlayVideo({ route, navigation }) {
 
   
     useEffect(()=>{
+=======
+export default function PlayVideo({ route, navigation }) {
+
+    const {id} = useParams()
+
+
+    useEffect(()=>{
+
+>>>>>>> 79a94fb5a68128331d0c5d5bde460e6d067f27e7
       const saveInfo = {
         movieId: id,
         userEmail: getCookies('uemail')
@@ -30,6 +43,7 @@ export default function PlayVideo({ route, navigation }) {
 
     const navigate = useNavigate()
 
+<<<<<<< HEAD
     function playPausebtn(bn, vid){
       var video = document.getElementById(vid)
       var btn = document.getElementById(bn)
@@ -79,4 +93,16 @@ export default function PlayVideo({ route, navigation }) {
     </div>
     )
 
+=======
+  return (
+    
+    <div className="videoplayerQ">
+      <button onClick={() => navigate(-1)} className="gobackbtn">Go Back</button>
+    <video id='video-id' controls>
+      <source src={"http://localhost:3560/getVideo/" + id}  type='video/mp4' />
+    </video>
+    </div>
+
+  )
+>>>>>>> 79a94fb5a68128331d0c5d5bde460e6d067f27e7
 }

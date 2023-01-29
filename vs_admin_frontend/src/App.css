@@ -141,4 +141,43 @@ till here */
   height: fit-content;
   width: 90vw;
   /* border: 2px solid black; */
+<<<<<<< HEAD
+=======
+}
+
+
+#con
+{
+  margin-top: 50px;
+ 
+/* border: 2px solid black; */
+}
+
+#vdyo2
+{
+  padding-right: 10px;
+  border: 1px solid rgba(45, 42, 42, 0.459);
+  border-radius: 44px;
+  padding: 5px;
+}
+
+#vdyo1
+{
+  padding-left: 10px;
+}
+
+#thm {
+  padding-top: 40px;
+  border: 1px solid #ddd;
+  border-radius: 44px;
+  padding: 5px;
+  /* width: 150px; */
+}
+
+#thm:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+#vdyo2:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+>>>>>>> 79a94fb5a68128331d0c5d5bde460e6d067f27e7
 }

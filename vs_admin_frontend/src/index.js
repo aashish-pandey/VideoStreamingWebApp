@@ -8,9 +8,13 @@ import { LoginContext } from './context/LoginContext';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <>
+<<<<<<< HEAD
   <LoginContext.Provider>
     <App />
   </LoginContext.Provider>
+=======
+    <App />
+>>>>>>> 79a94fb5a68128331d0c5d5bde460e6d067f27e7
   </>
 );
 

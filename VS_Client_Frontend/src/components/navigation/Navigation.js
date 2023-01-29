@@ -70,6 +70,11 @@ if(loginStatus == 'true'){
   )
 }else{
   return (
+<<<<<<< HEAD
+=======
+    
+
+>>>>>>> 79a94fb5a68128331d0c5d5bde460e6d067f27e7
     <div className='Navbar'>
     <span className='Title'>JAALCHITRA</span>
     <button className='SignIn' onClick={redirectLogin}>Sign In</button>
