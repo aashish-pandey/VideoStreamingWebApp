@@ -1,0 +1,9 @@
+#seekSlider{
+    width: 1000px;
+}
+
+#video-controls{
+    background-color: rgb(136, 129, 129);
+    padding: 0.7rem;
+    display: flex;
+}
