@@ -18,30 +18,22 @@
   .MovieCard:hover {
     transform: scale(1.08);
   }
-.videoplayerQ{
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  background-color: black;
-  overflow-y: hidden;
-  overflow-x: hidden;
-}
-  #video-id{
-    color: red;
-    width: 100vw;
-    height: 99.45vh;
-    /* margin-top: -3.5rem; */
-    overflow: hidden;
-  }
 
-  .gobackbtn{
-    background-color: red;
-    z-index: 2;
-    padding: 1rem;
-    margin-left: 2rem;
-    position:absolute;
-    overflow: hidden;
-  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   
 /* .MovieCard:hover{

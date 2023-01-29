@@ -70,8 +70,6 @@ if(loginStatus == 'true'){
   )
 }else{
   return (
-    
-
     <div className='Navbar'>
     <span className='Title'>JAALCHITRA</span>
     <button className='SignIn' onClick={redirectLogin}>Sign In</button>
