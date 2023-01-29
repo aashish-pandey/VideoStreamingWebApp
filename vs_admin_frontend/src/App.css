@@ -1,0 +1,180 @@
+/* .App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+} */
+
+
+/* //i was here */
+.App {
+  background-color: #fbfbfd;
+  
+  font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+.Auth-form-container {
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+}
+
+.Auth-form {
+  width: 420px;
+  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
+  padding-top: 30px;
+  padding-bottom: 20px;
+  border-radius: 8px;
+  background-color: transparent;
+  /* background-color: white; */
+}
+
+.Auth-form-content {
+  padding-left: 12%;
+  padding-right: 12%;
+}
+
+.Auth-form-title {
+  text-align: center;
+  margin-bottom: 1em;
+  font-size: 24px;
+  color: rgb(34, 34, 34);
+  font-weight: 600;
+}
+
+label {
+  font-size: 17px;
+  font-weight: 400;
+  color: rgb(34, 34, 34);
+  font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+.btn
+{
+    color: rgb(34, 34, 34);
+    background: transparent;
+    border: 1px solid #6e6e73;
+    display: inline-block;
+    font-size: 20px;
+    line-height: 1.3333733333;
+    font-weight: 400;
+    letter-spacing: -0.01em;
+    font-family: SF Pro Text,SF Pro Icons,Helvetica Neue,Helvetica,Arial,sans-serif;
+    border-radius: 16px;
+    padding: 5px 10px;
+    margin-bottom: 20px;
+    width: 200px;
+    position: relative;
+    margin-left: 55px;
+    margin-right: 50px;
+    transition-duration: 0.4s;
+
+ 
+}
+
+.btn:hover {
+  background-color: whitesmoke;
+  color: black;
+  box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+}
+
+
+#logo
+{
+  padding-right: 30px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+#nav{
+  padding: 10px 150px;
+}
+
+#navLinks{
+  padding-left: 50px;
+}
+/* 
+till here */
+
+#f
+{
+  /* margin: -50px 0 0 0; */
+  margin: 50px;
+  position: relative;
+
+  padding: 0;
+  height: fit-content;
+  width: 90vw;
+  /* border: 2px solid black; */
+}
+
+
+#con
+{
+  margin-top: 50px;
+ 
+/* border: 2px solid black; */
+}
+
+#vdyo2
+{
+  padding-right: 10px;
+  border: 1px solid rgba(45, 42, 42, 0.459);
+  border-radius: 44px;
+  padding: 5px;
+}
+
+#vdyo1
+{
+  padding-left: 10px;
+}
+
+#thm {
+  padding-top: 40px;
+  border: 1px solid #ddd;
+  border-radius: 44px;
+  padding: 5px;
+  /* width: 150px; */
+}
+
+#thm:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}
+#vdyo2:hover {
+  box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
+}

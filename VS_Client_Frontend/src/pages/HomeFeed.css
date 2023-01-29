@@ -1,0 +1,24 @@
+.HomeFeedMain{
+    background-color: rgb(82, 80, 80);
+    color: white;
+    /* margin: 0 5px; */
+}
+.MovieListDisplayCard{
+
+    display: flex;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    width: 94vw;
+    padding: 25px;
+    margin: 0 0px 0 20px;
+    background-color: black;
+    /* border: 2px solid red; */
+}
+
+.MovieListDisplayCard::-webkit-scrollbar {
+    display: none;
+  }
+
+  .HomeFeedMain h2{
+    margin-left: 20px;
+  }
