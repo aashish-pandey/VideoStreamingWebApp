@@ -12,7 +12,5 @@ export default function AllMoviesCard(props) {
 <td>{props.movie.casts}</td>
 
 </tr>
-// quality
-        
   )
 }

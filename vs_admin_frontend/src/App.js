@@ -11,8 +11,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
 import "./App.css"
 import Dashboard from "./pages/Dashboard";
 import VideoUpload from "./pages/UploadMovie";
-import { useContext, useEffect } from "react";
-import { LoginContext } from "./context/LoginContext";
+import { useEffect } from "react";
 import getCookies from "./cookieHandler/CookieHandler";
 
 
@@ -20,13 +19,14 @@ import getCookies from "./cookieHandler/CookieHandler";
 
 function App() {
 
-  const loginStatus = getCookies("isLogged")
+  var loginStatus = getCookies("isLogged")
 
   useEffect(()=>{
     console.log(loginStatus)
   }, [])
 
   const ProtectedRoute = ({children})=>{
+    loginStatus = getCookies("isLogged")
     if(loginStatus != 'true'){
       return <Navigate to = "/login"/>
     }else{

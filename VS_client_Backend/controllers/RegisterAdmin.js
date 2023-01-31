@@ -13,7 +13,7 @@ const admin = function(req, res){
         if(err){
             console.log(err)
             res.json({err:true,
-            msg: err})
+            msg: "Something went wrong!!Cannot add new admin!!Try another email id"})
         }
         else{
             res.json({err:false, msg: "Admin registered successfully"})

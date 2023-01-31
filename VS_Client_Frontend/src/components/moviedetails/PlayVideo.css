@@ -64,6 +64,7 @@
 #video-controls button{
   background-color: transparent;
   border: none;
+  cursor: pointer;
 }
 
 #video-controls button:hover{

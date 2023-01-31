@@ -10,7 +10,6 @@ import { LoginContext } from '../context/LoginContext';
 export default function Login() {
     const [cookies, setCookies] = useCookies(['loginStat'])
     const [err, setErr] = useState()
-    // const[loginStatus, setLoginStatus] = useContext(LoginContext)
     const navigate = useNavigate()
     const handleLogin = async(e)=>{
         e.preventDefault()
@@ -30,6 +29,7 @@ export default function Login() {
             if(res.err == false){
               // setLoginStatus('true')
               setCookies('isLogged', 'true')
+              console.log('bro')
               navigate('/')
             }else{
               setErr(res.msg)
