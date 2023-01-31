@@ -10,10 +10,7 @@ import { LoginContext } from '../context/LoginContext';
 export default function Login() {
     const [cookies, setCookies] = useCookies(['loginStat'])
     const [err, setErr] = useState()
-<<<<<<< HEAD
-    const[loginStatus, setLoginStatus] = useContext(LoginContext)
-=======
->>>>>>> 79a94fb5a68128331d0c5d5bde460e6d067f27e7
+    // const[loginStatus, setLoginStatus] = useContext(LoginContext)
     const navigate = useNavigate()
     const handleLogin = async(e)=>{
         e.preventDefault()
@@ -31,10 +28,7 @@ export default function Login() {
             console.log(res);
 
             if(res.err == false){
-<<<<<<< HEAD
-              setLoginStatus('true')
-=======
->>>>>>> 79a94fb5a68128331d0c5d5bde460e6d067f27e7
+              // setLoginStatus('true')
               setCookies('isLogged', 'true')
               navigate('/')
             }else{

@@ -1,8 +1,8 @@
 import React from 'react'
 import Container from 'react-bootstrap/Container';
-import companyLogo from '../../src/logo-1.png';
+import companyLogo from '../../src/log.png';
 import { useCookies } from 'react-cookie';
-
+import {NavDropdown} from "react-bootstrap";
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import { useNavigate } from 'react-router-dom';
@@ -13,7 +13,7 @@ export default function Nav1() {
   return (
     <Navbar bg="light" expand="lg">
       <Container fluid>
-        <Navbar.Brand id="nav" href="#">Cool Admin</Navbar.Brand>
+        <Navbar.Brand id="nav" href="#">Hello Admin</Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -26,7 +26,14 @@ export default function Nav1() {
 
             <Nav.Link id="navLinks" href="/admins">Admins</Nav.Link>
             <Nav.Link id="navLinks" href="/subs">Subscriptions</Nav.Link>
-            <Nav.Link id="navLinks" href="/allMovies" > Movies</Nav.Link>
+            {/* <Nav.Link id="navLinks" href="/allMovies" > Movies</Nav.Link> */}
+            <NavDropdown id="navLinks"   title="Movies" >
+
+<NavDropdown.Item eventKey="Upload" href="/upload">Upload</NavDropdown.Item>
+
+<NavDropdown.Item eventKey="Movie List" href="/allMovies">Lists</NavDropdown.Item>
+
+</NavDropdown>
             <Nav.Link id="navLinks" href="/allUsers" >
               Users
             </Nav.Link>

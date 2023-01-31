@@ -1,4 +1,8 @@
 import React, { useEffect, useState } from 'react'
+import Nav1 from './Nav1'
+import Table from 'react-bootstrap/Table';
+// import AllMoviesCard from ''
+import AllMoviesCard from '../components/AllMoviesCard'
 
 export default function AllMovies() {
 
@@ -21,19 +25,38 @@ export default function AllMovies() {
 
   if(!movies){
     return(
-        <>Loading....</>
+        <>
+        {/* Loading.... */}
+        </>
     )
   } else 
   return (
-    <div>AllMovies
+        
+ <><Nav1 /><div>
+      <Table striped bordered hover variant="dark">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Movie Name</th>
+            <th>Genre</th>
+            <th>Quality</th>
+            <th>Release</th>
+            <th>Casts</th>
+          </tr>
+        </thead>
+        <tbody>
 
-    {movies.map(movie=>{return(
-        <>
-        {movie._id}
-        <br/>
-        </>
-    )})}
+        {movies.map(movie=>{return(
+          
+              <AllMoviesCard key= {movie._id} movie={movie} />
 
+
+
+            )
+          })}
+        </tbody>
+      </Table>
     </div>
+</>
   )
 }

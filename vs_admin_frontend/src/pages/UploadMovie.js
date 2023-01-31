@@ -1,11 +1,3 @@
-<<<<<<< HEAD
-// import React, { useState } from 'react'
-import axios from 'axios';
-
-export default function VideoUpload() {
-
-
-=======
 import React, { useState } from 'react'
 import axios from 'axios';
 import Container from 'react-bootstrap/Container';
@@ -15,8 +7,15 @@ import Nav1 from './Nav1';
 import Thumbnail from '../components/Thumbnail';
 import Vdyo from '../components/Vdyo';
 
+import Button from 'react-bootstrap/Button';
+// import Col from 'react-bootstrap/Col';
+import Form from 'react-bootstrap/Form';
+// import Row from 'react-bootstrap/Row';
+
+import DatePicker from "react-datepicker";
+import "react-datepicker/dist/react-datepicker.css";
+
 export default function VideoUpload() {  
->>>>>>> 79a94fb5a68128331d0c5d5bde460e6d067f27e7
     const uploadFile = async (e) => {
       e.preventDefault();
       const frm = document.getElementById('fm');
@@ -35,24 +34,9 @@ export default function VideoUpload() {
 
       };
 
+      const [startDate, setStartDate] = useState(new Date());
+
   return (
-<<<<<<< HEAD
-    <div>
-
-          <form onSubmit={uploadFile} id="fm">
-            <input type="text" name="movieName" placeholder='movie Name'/><br/>
-            <input type="text" name='releaseDate' placeholder='release Date'/><br/>
-            <input type="text" name='genre' placeholder='Movie Genre'/><br/>
-            <input type="text" name='casts' placeholder='Cast name'/><br/>
-            <input type="text" name="description" placeholder="Description"/><br/>
-            <input type="file" name="movieThumbnail" />
-            <input type="file" name="movieFile" />
-            <input type="submit" value="Upload" />
-          </form>
-        
-
-    </div>
-=======
     <><Nav1 />
     <div id='con'>
 
@@ -68,47 +52,56 @@ export default function VideoUpload() {
     </form> */}
 
 
-
-
       <Container>
-        {/* <Row>
-      <Col>1 of 2</Col>
-      <Col>2 of 2</Col>
-    </Row>
-    <Row>
-      <Col>1 of 3</Col>
-      <Col>2 of 3</Col>
-      <Col>3 of 3</Col>
-    </Row> */}
+
         <Row className="justify-content-md-center" >
           <Col xs={6} md="auto"  >
-            {/* <video width="600" height="400" autoPlay muted id="vdyo1">
-              <source src="http://media.w3.org/2010/05/sintel/trailer.mp4" type="video/mp4"></source> */}
+
 <Thumbnail/>
-
-  {/* <img  id="thm" width="600" height="400" src="https://www.bollywoodhungama.com/wp-content/uploads/2022/11/Pathaan-5.jpg" alt="Forest"></img> */}
-  {/* <img  id="thm" width="600" height="400" src={}alt="Forest"></img> */}
-
-
-            {/* </video> */}
           </Col >
           <Col xs={6} >
-
-            {/* <video  width="600" height="400" autoPlay muted id='vdyo2'>
-            <source src="http://media.w3.org/2010/05/sintel/trailer.mp4" type="video/mp4"></source>
-            </video> */}
-{/* <Vdyo/> */}
 <Vdyo/>
           </Col>
 
         </Row>
       </Container>
-      {/* <input type="file" accept=".jpg,.jpeg.,.gif,.png,.mov,.mp4" /> */}
+
+
+
+    <Form id='upform' onSubmit={uploadFile}>
+      <Row className="mb-3">
+        <Form.Group as={Col} controlId="movieName">
+          <Form.Label>Movie Name</Form.Label>
+          <Form.Control name="movieName" type="name" placeholder="Enter Movie Name" />
+        </Form.Group>
+        <Form.Group as={Col} controlId="Movie Genre">
+        <Form.Label >Movie Genre</Form.Label>
+        <Form.Control  name='genre' placeholder="Movie Genre" />
+      </Form.Group>
+
+       
+      </Row>
+
+      
+      <Form.Group className="mb-3" controlId="Cast Name">
+        <Form.Label>Cast Name</Form.Label>
+        <Form.Control   name='casts' placeholder="Cast Name" />
+      </Form.Group>
+
+      <Form.Group  className="mb-3" controlId="date">
+    <Form.Label>Select Release Date</Form.Label>
+<DatePicker  name='releaseDate' selected={startDate} onChange={(date:Date) => setStartDate(date)} />
+</Form.Group>
+  
+<textarea  name="description" rows="4" cols="50" form="usrform">
+Enter text here...</textarea>
+ 
+    </Form>
+
     </div>
-
-
-
+    <Button variant="primary" type="submit" value="Upload" id="mbtn">
+        Submit
+      </Button>
     </>
->>>>>>> 79a94fb5a68128331d0c5d5bde460e6d067f27e7
   )
 }
