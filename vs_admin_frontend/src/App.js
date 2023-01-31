@@ -27,10 +27,6 @@ function App() {
   }, [])
 
   const ProtectedRoute = ({children})=>{
-<<<<<<< HEAD
-=======
-    console.log(loginStatus)
->>>>>>> 79a94fb5a68128331d0c5d5bde460e6d067f27e7
     if(loginStatus != 'true'){
       return <Navigate to = "/login"/>
     }else{

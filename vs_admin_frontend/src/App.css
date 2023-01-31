@@ -140,17 +140,14 @@ till here */
   padding: 0;
   height: fit-content;
   width: 90vw;
-  /* border: 2px solid black; */
-<<<<<<< HEAD
-=======
+ 
 }
 
 
 #con
 {
   margin-top: 50px;
- 
-/* border: 2px solid black; */
+
 }
 
 #vdyo2
@@ -179,5 +176,17 @@ till here */
 }
 #vdyo2:hover {
   box-shadow: 0 0 2px 1px rgba(0, 140, 186, 0.5);
->>>>>>> 79a94fb5a68128331d0c5d5bde460e6d067f27e7
+}
+
+
+#upform
+{
+  padding: 100px 100px;
+}
+
+#mbtn
+{
+  position: relative;
+  margin-left: 670px;
+
 }

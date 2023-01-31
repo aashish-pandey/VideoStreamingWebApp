@@ -1,5 +1,7 @@
 import React, { useEffect, useState } from 'react'
-
+import SubscriptionCard from '../components/SubcriptionCard'
+import Nav1 from './Nav1'
+import Table from 'react-bootstrap/Table';
 export default function AllSubscriptionPlans() {
 
     const [plans, setPlans] = useState()
@@ -21,19 +23,39 @@ export default function AllSubscriptionPlans() {
 
   if(!plans){
     return(
-        <>Loading....</>
+        <>
+        {/* Loading.... */}
+        </>
     )
   } else 
   return (
-    <div>AllSubscription
-
+   
+       
+       <><Nav1 /><div>
+      <Table striped bordered hover variant="dark">
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Movie Name</th>
+            <th>Genre</th>
+            <th>Quality</th>
+            <th>Release Date</th>
+            <th>Casts</th>
+          </tr>
+        </thead>
+        <tbody>
     {plans.map(plan=>{return(
         <>
-        {plan._id}
-        <br/>
+
+<SubscriptionCard key= {plan._id} plan={plan} />
+        {/* {plan._id} */}
+        {/* <br/> */}
         </>
     )})}
-
+   </tbody>
+      </Table>
     </div>
+</>
+  
   )
 }
