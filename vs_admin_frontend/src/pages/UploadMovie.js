@@ -18,12 +18,14 @@ import "react-datepicker/dist/react-datepicker.css";
 export default function VideoUpload() {  
     const uploadFile = async (e) => {
       e.preventDefault();
+      console.log("aas")
       const frm = document.getElementById('fm');
         const formData = new FormData(frm);
         
         try {
+          
             const res = await axios.post(
-              "http://localhost:3560/uploadMovie",
+              "http://" + process.env.REACT_APP_API_CALL_ADDRESS + ":3560/uploadMovie",
               formData
             );
             console.log("no error")
@@ -37,10 +39,11 @@ export default function VideoUpload() {
       const [startDate, setStartDate] = useState(new Date());
 
   return (
-    <><Nav1 />
-    <div id='con'>
+    <>
+    <Nav1 />
+    {/* <div id='con'> */}
 
-      {/* <form onSubmit={uploadFile} id="fm">
+      <form onSubmit={uploadFile} id="fm">
       <input type="text" name="movieName" placeholder='movie Name'/><br/>
       <input type="text" name='releaseDate' placeholder='release Date'/><br/>
       <input type="text" name='genre' placeholder='Movie Genre'/><br/>
@@ -49,10 +52,10 @@ export default function VideoUpload() {
       <input type="file" name="movieThumbnail" />
       <input type="file" name="movieFile" />
       <input type="submit" value="Upload" />
-    </form> */}
+    </form>
 
 
-      <Container>
+      {/* <Container>
 
         <Row className="justify-content-md-center" >
           <Col xs={6} md="auto"  >
@@ -64,10 +67,10 @@ export default function VideoUpload() {
           </Col>
 
         </Row>
-      </Container>
+      </Container> */}
 
 
-
+{/* 
     <Form id='upform' onSubmit={uploadFile}>
       <Row className="mb-3">
         <Form.Group as={Col} controlId="movieName">
@@ -96,12 +99,12 @@ export default function VideoUpload() {
 <textarea  name="description" rows="4" cols="50" form="usrform">
 Enter text here...</textarea>
  
-    </Form>
-
-    </div>
     <Button variant="primary" type="submit" value="Upload" id="mbtn">
         Submit
       </Button>
+    </Form> */}
+
+    {/* </div> */}
     </>
   )
 }

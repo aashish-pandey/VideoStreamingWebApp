@@ -10,7 +10,7 @@ export default function AllMovies() {
 
     useEffect(()=>{
         async function getAllMovies(){
-            const data = await fetch("http://localhost:3560/getAllMovies")
+            const data = await fetch("http://" + process.env.REACT_APP_API_CALL_ADDRESS + ":3560/getAllMovies")
             .then(res=>res.json())
               .then(dt=>{
                 setMovies(dt['msg'])

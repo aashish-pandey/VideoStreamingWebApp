@@ -8,7 +8,7 @@ export default function AllSubscriptionPlans() {
 
     useEffect(()=>{
         async function getAllPlans(){
-            const data = await fetch("http://localhost:3560/getAllSubscriptionPlans")
+            const data = await fetch("http://" + process.env.REACT_APP_API_CALL_ADDRESS + ":3560/getAllSubscriptionPlans")
             .then(res=>res.json())
               .then(dt=>{
                 setPlans(dt['msg'])

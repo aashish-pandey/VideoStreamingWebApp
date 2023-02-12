@@ -29,6 +29,9 @@ const registerAdmin = require('./controllers/RegisterAdmin')
 const loginAdmin = require('./controllers/LoginAdmin')
 const getAllUsers = require('./controllers/GetAllUsers')
 const getAllAdmins = require('./controllers/GetAllAdmins')
+const getAccountLoginHistories = require('./controllers/GetAccountLoginHistories')
+const OnlineStatus = require('./controllers/OnlineStatus')
+const SetInactiveUSersOffline = require('./controllers/SetInactiveUsersOffline')
 
 
 
@@ -70,6 +73,8 @@ app.post('/uploadMovie', uploadMovie)
 app.post('/saveWatchHistory', saveWatchHistory)
 app.post('/getWatchHistory', getWatchHistory)
 
+app.get('/accountLoginHistories/:email', getAccountLoginHistories)
+
 
 //admin requests
 app.post('/registerAdmin', registerAdmin)
@@ -82,7 +87,13 @@ app.get('/getAllSubscriptionPlans', planAvailable)
 
 
 
+//maintaing the active login status
+app.post("/saveOnlineStatus", OnlineStatus)
 
+
+
+//Automatically make inactive users offline
+setInterval(SetInactiveUSersOffline, 10000)
 
 
 

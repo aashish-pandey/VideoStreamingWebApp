@@ -18,7 +18,7 @@ export default function PlayVideo({ route, navigation }) {
         
   const [playbtn, setPlaybtn] = useState(<div className="css-9a5dmo"><svg viewBox="0 0 24 24" width="24" height="24" stroke="#fff" strokeWidth="2" fill="white" strokeLinecap="round" strokeLinejoin="round" className="css-i6dzq1"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg></div>) 
   const [soundbtn, setSoundbtn] = useState(<div className="css-9a5dmo"><svg viewBox="0 0 24 24" width="24" height="24" stroke="#fff" strokeWidth="2" fill="white" strokeLinecap="round" strokeLinejoin="round" className="css-i6dzq1"><polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon><path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path></svg></div>)
-  const [maximizebtn, setMaximizebtn] = useState(<div className="css-9a5dmo"><svg viewBox="0 0 24 24" width="24" height="24" stroke="#fff" strokeWidth="2" fill="white" strokeLinecap="round" strokeLinejoin="round" className="css-i6dzq1"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg></div>)
+  const [maximizebtn, setMaximizebtn] = useState(<div class="css-9a5dmo"><svg viewBox="0 0 24 24" width="30" height="30" stroke="#fff" strokeWidth="1" fill="none" strokeLinecap="round" strokeLinejoin="round" className="css-i6dzq1"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg></div>)
   const [backbtn, setBackbtn] = useState(<div className="css-9a5dmo"><svg viewBox="0 0 24 24" width="24" height="24" stroke="#fff" strokeWidth="2" fill="none" strokeLinecap="round" strokeLinejoin="round" className="css-i6dzq1"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg></div>)
   
     useEffect(()=>{
@@ -28,7 +28,7 @@ export default function PlayVideo({ route, navigation }) {
       }
 
       //request the server to store the video in user history
-      fetch("http://localhost:3560/saveWatchHistory", {
+      fetch("http://" + process.env.REACT_APP_API_CALL_ADDRESS + ":3560/saveWatchHistory", {
         method: "post", 
         headers:{'Content-type': 'application/json'},
         body: JSON.stringify(saveInfo)
@@ -38,10 +38,12 @@ export default function PlayVideo({ route, navigation }) {
       vbox.style.height = window.innerHeight
 
       volumeSeekerChange()
-      
-    }, [])
+    })
 
     const navigate = useNavigate()
+
+
+  
 
     function playPausebtn(bn, vid){
       var video = document.getElementById(vid)
@@ -80,15 +82,39 @@ export default function PlayVideo({ route, navigation }) {
     }
     function seekTimeUpdate(){
       var video = document.getElementById('video-id')
+
+
+      let buffTime = 0;
+
+      const duration = video.duration;
+      if (duration > 0) {
+        for (let i = 0; i < video.buffered.length; i++) {
+          if (
+            video.buffered.start(video.buffered.length - 1 - i) <
+            video.currentTime
+          ) {
+            buffTime = (video.buffered.end(video.buffered.length - 1 - i) * 100) / duration + 2
+            break;
+          }
+        }
+      }
+
+
+
+
       var seekSlider = document.getElementById('seekSlider')
       var remTime = document.getElementById('remaningTime')
       volumeSeekerChange()
+
+      console.log(video.seekable)
+      
       
       var nt = video.currentTime * (100 / video.duration)
-      seekSlider.style.background = `linear-gradient(to right, #f00 0%, #f00 ${nt}%, #fff ${nt}%, white 100%)`
+      console.log("nt: " + nt + " buft: " + buffTime)
+      seekSlider.style.background = `linear-gradient(to right, #f00 0%, #f00 ${nt}%, #777 ${nt}%,  #777 ${buffTime}%, #fff ${buffTime}%, white 100%)`
       setSeekPlayerValue(nt)
 
-      var remT = video.duration - video.currentTime
+      var remT =  video.currentTime
 
       var hr = Math.floor(remT/3600)
       var min = Math.floor((remT-hr*3600)/60)
@@ -194,7 +220,7 @@ function handleKeyDown(event){
   {/* {//tabIndex property is used here so as to make div to be active} */}
     <button id="backbtn" onClick={() => navigate(-1)}>{backbtn}</button>
       <video id='video-id'  autoPlay onTimeUpdate={()=>seekTimeUpdate()} onClick={()=>playPausebtn('playpausebtn', 'video-id')}>
-        <source src={"http://localhost:3560/getVideo/" + id}  type='video/mp4' />
+        <source src={"http://" + process.env.REACT_APP_API_CALL_ADDRESS + ":3560/getVideo/" + id}  type='video/mp4' />
        
         </video>
       <div id='video-controls'>
@@ -203,7 +229,7 @@ function handleKeyDown(event){
           {playbtn}
         </button>
         
-        <input id='seekSlider' onChange={()=>vidSeek()} onInput={()=>vidSeek()} type='range' min='0' max='100' value={seekPlayerValue} step='1' className='progress'/>
+        <input id='seekSlider' onChange={()=>vidSeek()} onInput={()=>vidSeek()} type='range' min='0' max='100' value={seekPlayerValue} step='0.001' className='progress buffered-amount'/>
         <span id='remaningTime'>-00:00:00</span>
         <button id='mutebtn' onClick={()=>vidMute()}>{soundbtn}</button>
         <input id='volumeSlider' onChange={()=>volumeSeek()} onInput={()=>volumeSeek()} type='range' min='0' max='100' value={volumeSliderValue} step='1'/>

@@ -12,6 +12,12 @@ const userSchema = new schema({
         type: String, 
         required:true
     },
+    HomeIpAddress: {
+        type: String
+    },
+    MasterKey:{
+        type: String
+    }
 }, {timestamps: true})
 
 const Register = mongoose.model('Register', userSchema)

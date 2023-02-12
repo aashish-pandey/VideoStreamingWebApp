@@ -22,7 +22,7 @@ const AccountLoginSchema = new Schema({
     },
     active:{
         type: String
-    }
+    }, 
 }, {timestamps: true})
 
 const accountLoginHistory = mongoose.model('accountLoginHistory', AccountLoginSchema)

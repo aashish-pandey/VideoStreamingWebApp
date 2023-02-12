@@ -16,10 +16,10 @@ export default function Login() {
 
         const frm = document.getElementById('fm');
         const formData = new FormData(frm);
-        
+        console.log("aashish")
         try {
             const res = await axios.post(
-              "http://localhost:3560/loginAdmin",
+              "http://" + process.env.REACT_APP_API_CALL_ADDRESS + ":3560/loginAdmin",
               formData
             )
             .then(dt=>{return dt.data})
@@ -42,6 +42,7 @@ export default function Login() {
   return (
     <div>
       <h1>{err}</h1>
+      <h1>hello + {process.env.REACT_APP_API_CALL_ADDRESS}</h1>
     <div className="Auth-form-container">
       <form className="Auth-form" onSubmit={handleLogin} method='POST' id="fm">
         <div className="Auth-form-content">

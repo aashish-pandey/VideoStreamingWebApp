@@ -1,7 +1,7 @@
 const MovieUpload = require('../models/MovieUpload')
 
 const uploadMovie = function(req, res){
-
+    console.log("upload server")
     const movieFile = req.files.movieFile;
     const movieFilename = movieFile.name;
 
@@ -14,7 +14,7 @@ const uploadMovie = function(req, res){
     const cast = req.body.casts;
     const description = req.body.description;
 
-    console.log(movieFilename + "  " + thumbnailFilename + " " + movieName + " " + genre + " " + releaseDate + " " + cast + " " + description)
+    console.log("upload movie "+movieFilename + "  " + thumbnailFilename + " " + movieName + " " + genre + " " + releaseDate + " " + cast + " " + description)
 
 
  

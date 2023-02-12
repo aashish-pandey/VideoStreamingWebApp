@@ -22,7 +22,7 @@ export default function HomeFeed() {
           uemail: getCookies('uemail')
         }
   
-        const data = await fetch("http://localhost:3560/getWatchHistory", {
+        const data = await fetch('http://' + process.env.REACT_APP_API_CALL_ADDRESS + ':3560/getWatchHistory', {
           method: "post", 
           headers:{'Content-type': 'application/json'},
           body: JSON.stringify(userInfo)
@@ -37,7 +37,7 @@ export default function HomeFeed() {
             // console.log(dt[i])
             var id = dt[i]['movieId']
             // console.log(id)
-            var movieinf = await fetch("http://localhost:3560/getMoviesByID/" + id)
+            var movieinf = await fetch("http://" + process.env.REACT_APP_API_CALL_ADDRESS + ":3560/getMoviesByID/" + id)
                                   .then(res=>res.json())
                                   .then(dt=>{
                                     // console.log(dt['msg'][0])
@@ -52,14 +52,16 @@ export default function HomeFeed() {
           return movieInfoData
         })
         console.log(data)
+        
         SetWatchHistory(data)
       }
 
 
       async function getNewMovie(){
-        const data = await fetch("http://localhost:3560/getMovies")
+        const data = await fetch("http://" + process.env.REACT_APP_API_CALL_ADDRESS + ":3560/getMovies")
         .then(res=>res.json())
           .then(dt=>{
+            console.log(dt)
             SetNewMovie(dt['msg'])
             return dt
           })
@@ -89,11 +91,6 @@ else
     <Banner/>
     <h2>Latest Releases</h2>
     <div className='MovieListDisplayCard'>
-      {newMovie.map(movie=>{
-        return(
-          <MovieCard key={movie['_id']} info = {movie}/>
-        )
-      })}
 
 {newMovie.map(movie=>{
         return(
@@ -101,11 +98,6 @@ else
         )
       })}
 
-      <div className="paddles">
-        <button className="leftPaddle"> <FontAwesomeIcon icon="faSolid faChevronLeft" /></button>
-        
-        <button className="rightPaddle"> right </button>
-      </div>
 
     </div>
 
@@ -122,11 +114,7 @@ else
     <h2>From Netflix</h2>
 
     <div className='MovieListDisplayCard'>
-      {newMovie.map(movie=>{
-        return(
-          <MovieCard key={movie['_id']} info = {movie}/>
-        )
-      })}
+      
       {newMovie.map(movie=>{
         return(
           <MovieCard key={movie['_id']} info = {movie}/>

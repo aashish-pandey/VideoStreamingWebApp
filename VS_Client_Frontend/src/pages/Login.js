@@ -15,6 +15,7 @@ export default function Login() {
     }
 
     const handleLogin = async(e)=>{
+        console.log(process.env.REACT_APP_API_CALL_ADDRESS)
 
         e.preventDefault();
 
@@ -28,7 +29,7 @@ export default function Login() {
             upass : upass
         }
 
-        var error_status  = await fetch('http://localhost:3560/login', {
+        var error_status  = await fetch('http://' + process.env.REACT_APP_API_CALL_ADDRESS + ':3560/login', {
             method: "POST",
             headers:{'Content-type': 'application/json'},
             body: JSON.stringify(loginInfo)
@@ -55,22 +56,27 @@ export default function Login() {
 
 
   return (
-    <div>
+    <div >
         <Navigation/>
         <div className='Landing2'>
-            <div className='LandingItems'>
+        <div className='LandingItems'>
         {errMsg}
         
         <h1>Welcome to the login Page</h1>
         <form onSubmit={handleLogin} className='SetPasswordForm'>
             <div className='Input'>
+                <label htmlFor="uemail">
             Enter your email:
+                </label>
             <input type="email" name='uemail'/><br />
             </div>
             <div className='Input'>
+                <label htmlFor="upass">
+
             Enter your password:
+                </label>
             <input type="password" name= "upass" /> <br />
-                </div>    
+            </div>    
 
             <input type="submit" value="login" className='SetPasswordBtn'/>
         </form>

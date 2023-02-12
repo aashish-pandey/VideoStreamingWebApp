@@ -1,11 +1,18 @@
 .banner {
   color: white;
   object-fit: contain;
-  height: 550px;
-  background: cover;
-  background-image: url("https://images.pexels.com/photos/531880/pexels-photo-531880.jpeg?cs=srgb&dl=pexels-pixabay-531880.jpg&fm=jpg");
+  height: 620px;
+  background-image: url("https://assets.gqindia.com/photos/63c8eed51f3e8ace71d9e234/master/pass/Mission-Majnu-cast-fees_04.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
   
        
+}
+
+@media (max-width: 630px){
+  .banner{
+    height: 320px;
+  }
 }
 
 .banner__contents {
@@ -15,6 +22,7 @@
 }
 
 .banner__title {
+  /* color: rgb(126, 27, 27); */
   font-size: 3rem;
   font-weight: 800;
   padding-bottom: 0.3rem;
@@ -51,11 +59,11 @@
 }
 
 .banner__fadeBottom {
-  height: 10rem;
+  height: 15rem;
   background-image: linear-gradient(
     180deg,
     transparent,
-    rgba(37, 37, 37, 0.61),
-    #111
+    rgba(0, 0, 0, 0.662),
+    rgb(0, 0, 0)
   );
 }

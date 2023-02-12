@@ -13,7 +13,7 @@ export default function Register() {
 
         try{
             const res = await axios.post(
-                "http://localhost:3560/registerAdmin",
+              "http://" + process.env.REACT_APP_API_CALL_ADDRESS + ":3560/registerAdmin",
                 formData
             )
             .then(res=>{return res.data})

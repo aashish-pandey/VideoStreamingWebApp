@@ -38,7 +38,7 @@ export default function Home() {
       }
 
 
-      var error_status  = await fetch('http://localhost:3560/accountLoginHistorySave', {
+      var error_status  = await fetch('http://' + process.env.REACT_APP_API_CALL_ADDRESS + ':3560/accountLoginHistorySave', {
           method: "POST",
           headers:{'Content-type': 'application/json'},
           body: JSON.stringify(accountLoginStatus)
@@ -46,6 +46,7 @@ export default function Home() {
       .then(res=>res.json())
       .then(dt=>{
         console.log(dt)
+        setCookies("sessionId", dt._id)
         return dt.err
       })
   
@@ -58,6 +59,8 @@ export default function Home() {
       setCookies('os', osName)
       setCookies('device', deviceType)
       setCookies('browser', browserName)
+
+      
       // navigate('/homefeed')
       // console.log("Account Login status saved")
     }
@@ -71,7 +74,7 @@ export default function Home() {
     }
     async function handlefetch(){
 
-      var error_status  = await fetch('http://localhost:3560/subscriptionStatus', {
+      var error_status  = await fetch('http://' + process.env.REACT_APP_API_CALL_ADDRESS + ':3560/subscriptionStatus', {
           method: "POST",
           headers:{'Content-type': 'application/json'},
           body: JSON.stringify(queryInfo)

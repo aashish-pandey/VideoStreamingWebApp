@@ -9,15 +9,16 @@ const accountLoginHistory = function(req, res){
         browser: req.body.browser,
         os: req.body.os,
         device: req.body.device,
-        active: 'true'
+        active: 'true',
     })
 
-    accountLogin.save(function(err){
+    accountLogin.save(function(err, details){
         if(err){
             console.log(err)
             res.json({err:true, msg: err})
         }else{
-            res.json({err:false, msg: "account Login history saved successfully"})
+            console.log(details._id)
+            res.json({err:false, msg: "account Login history saved successfully", _id: details._id})
         }
     })
 

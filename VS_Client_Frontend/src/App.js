@@ -13,10 +13,12 @@ import Login from './pages/Login';
 import SetPassword from './pages/SetPassword';
 import VideoUpload from './pages/VideoUpload';
 import './App.css'
+import useOnlineStatus from '@rehooks/online-status';
+import SessionTracker from './components/sessionManagement/SessionTracker';
 
 function App() {
 
-  const [email, setEmail] = useState('')
+  const [email, setEmail] = useState(getCookies('uemail'))
 
   const ProtectedRoute = ({children})=>{
 
@@ -28,17 +30,18 @@ function App() {
   }
 
   useEffect(()=>{
-    setEmail(getCookies('uemail'))
   }, [])
 
     return (
       <div className="App">
+
+        <SessionTracker/>
   
         <BrowserRouter>
   
         <Routes>
           <Route
-          path='/'
+          path='/landing'
           element={<Landing/>}
           />
   
@@ -54,6 +57,15 @@ function App() {
   
           <Route
           path='/home'
+          element={
+          <ProtectedRoute>
+            <Home/>
+          </ProtectedRoute>
+            }
+          />
+
+          <Route
+          path='/'
           element={
           <ProtectedRoute>
             <Home/>

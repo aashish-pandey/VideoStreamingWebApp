@@ -1,32 +1,153 @@
-
-.Navbar{
+.Navbar {
     background-color: rgb(42, 18, 18);
     position: sticky;
-    color:red;
     height: 10vh;
-    width: 100vw;
+    width: 97%;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 0 0 2%;
-    
+    padding-right: 5rem;
+    padding-left: 2rem;
+    margin-right: 1rem;
+    padding-bottom: 0;
+    margin-bottom: 0;
+  
     z-index: 2;
     /* border-bottom: 3px solid rgb(12, 12, 12); */
-}
-
-.Title{
+  }
+  
+  .Title {
     font-size: 2rem;
     font-weight: 500;
     color: red;
-    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-}
-
-.SignIn{
+    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+  }
+  
+  .SignIn {
     background-color: red;
     color: white;
     font-size: 1rem;
     padding: 0.7rem 1rem;
-    margin-right: 5rem;
     border-color: white;
     border-radius: 10px;
-}
+    cursor: pointer;
+  }
+  
+  .Navbar .left_Navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+  }
+  
+  .Navbar .left_Navbar .links {
+    display: flex;
+    width: 400px;
+    align-items: center;
+    justify-content: space-evenly;
+    cursor: pointer;
+  }
+  
+  .Navbar .left_Navbar .links botton {
+    display: inline-block;
+    text-decoration: none;
+    padding: 13px 10px 13px 10px;
+  }
+  
+  .Navbar .left_Navbar .links botton:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  
+  .Navbar .right_Navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .Navbar .right_Navbar input {
+    padding: 7px;
+    width: 250px;
+    margin-right: 16px;
+    font-size: 17px;
+    border-radius: 0.7em;
+  }
+  
+  .Navbar2 {
+    background-color: rgb(42, 18, 18);
+    position: sticky;
+    height: 3vh;
+    width: 100%;
+    display: none;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0 2%;
+    margin-top: 0;
+    margin-bottom: 0;
+  
+    z-index: 2;
+  }
+  
+  .Navbar2 .links {
+    display: flex;
+    width: 400px;
+    align-items: center;
+    justify-content: space-evenly;
+    cursor: pointer;
+  }
+  
+  .Navbar2 .links botton {
+    display: inline-block;
+    text-decoration: none;
+    padding: 13px 10px 13px 10px;
+  }
+  
+  .Navbar2 .links botton:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  
+  .Navbar3 {
+    background-color: rgb(42, 18, 18);
+    position: sticky;
+    height: 6vh;
+    width: 100%;
+    display: none;
+    align-items: center;
+    justify-content: space-evenly;
+    padding: 0 2%;
+  
+    z-index: 2;
+  }
+  
+  .Navbar3 input {
+    padding: 7px;
+    width: 100%;
+    margin-right: 16px;
+    font-size: 17px;
+    border-radius: 0.7em;
+  }
+  
+  @media (max-width: 1025px) {
+    .Navbar .left_Navbar .links {
+      display: none;
+    }
+  
+    .Navbar2 {
+      display: flex;
+    }
+  }
+  
+  @media (max-width: 630px) {
+    .Navbar .right_Navbar input {
+      display: none;
+    }
+  
+    .Navbar3 {
+      display: flex;
+    }
+  }
+
+
+
+  #falseNav{
+    background-color: rgb(254, 252, 252);
+    border-bottom: 3px solid rgba(0, 0, 0, 0.462);
+  }

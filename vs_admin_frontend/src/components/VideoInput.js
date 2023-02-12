@@ -41,7 +41,6 @@ export default function VideoInput(props) {
         className="VideoInput_input"
         type="file"
         onChange={handleFileChange}
-        accept=".mov,.mp4"
       />
     </div>
   );

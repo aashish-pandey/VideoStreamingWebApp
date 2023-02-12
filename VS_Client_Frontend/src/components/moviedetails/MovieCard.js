@@ -12,7 +12,7 @@ export default function MovieCard(props) {
   return (
     <div className='MovieCard'>
         <div className='MovieCardImage' onClick={handleClick}>
-            <img src={"http://localhost:3560/getThumbnail/" + props.info._id} alt="image not found" width={"200px"} height={"250px"}/>
+            <img src={"http://" + process.env.REACT_APP_API_CALL_ADDRESS + ":3560/getThumbnail/" + props.info._id} alt="image not found" width={"168px"} height={"250px"}/>
         </div>
 
         <div className='MovieCardDetails'>

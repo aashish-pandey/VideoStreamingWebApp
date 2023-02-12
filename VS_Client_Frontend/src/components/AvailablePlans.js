@@ -10,7 +10,7 @@ export default function AvailablePlans() {
     useEffect(()=>{
         const formInfo= {}
         async function handlefetch(){
-            const dt = await fetch("http://localhost:3560/availablePlan", {
+            const dt = await fetch("http://" + process.env.REACT_APP_API_CALL_ADDRESS + ":3560/availablePlan", {
                 method: 'POST',
                 headers:{'Content-type': 'application/json'},
                 body: JSON.stringify(formInfo)

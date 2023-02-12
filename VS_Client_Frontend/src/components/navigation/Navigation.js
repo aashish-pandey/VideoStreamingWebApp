@@ -9,11 +9,14 @@ export default function Navigation() {
     const navigate = useNavigate();
 
     const [loginStatus, setloginStatus] = useState();
+    const [email, setEmailStatus] = useState('false')
 
     const [cookies, setCookies] = useCookies(['user'])
 
     useEffect(()=>{
       setloginStatus(getCookies('loginStatus'))
+      setEmailStatus(getCookies('uemail'))
+
     }, [])
 
     const handleLogout = async()=>{
@@ -28,7 +31,7 @@ export default function Navigation() {
       }
       console.log(accountLoginStatus)
 
-      var error_status  = await fetch('http://localhost:3560/logout', {
+      var error_status  = await fetch('http://' + process.env.REACT_APP_API_CALL_ADDRESS + ':3560/logout', {
           method: "POST",
           headers:{'Content-type': 'application/json'},
           body: JSON.stringify(accountLoginStatus)
@@ -61,18 +64,48 @@ export default function Navigation() {
     }
 
 
-if(loginStatus == 'true'){
+if(loginStatus == 'true' && email != ''){
   return(
-    <div className='Navbar'>
-      <span className='Title'>JAALCHITRA</span>
-      <button onClick={handleLogout} className='SignIn'>Logout</button>
-    </div>
+    <div>
+        <div className="Navbar">
+          <div className="left_Navbar">
+            <span className="Title">JAALCHITRA</span>
+            <div className="links">
+              <botton className="Trending">Trending</botton>
+              <botton className="Movies">Movies</botton>
+              <botton className="Web_Series">Web Series</botton>
+            </div>
+          </div>
+          <div className="right_Navbar">
+            <input
+              className="Search"
+              type="text"
+              placeholder="Search.."
+            ></input>
+            <div className="Profile">
+              <button onClick={handleLogout} className="SignIn">
+                Logout
+              </button>
+            </div>
+          </div>
+        </div>
+        <div className="Navbar2">
+          <div className="links">
+            <botton className="Trending">Trending</botton>
+            <botton className="Movies">Movies</botton>
+            <botton className="Web_Series">Web Series</botton>
+          </div>
+        </div>
+
+        <div className="Navbar3">
+          <input className="Search2" type="text" placeholder="Search.."></input>
+        </div>
+      </div>
   )
 }else{
   return (
     
-
-    <div className='Navbar'>
+    <div className='Navbar' id='falseNav'>
     <span className='Title'>JAALCHITRA</span>
     <button className='SignIn' onClick={redirectLogin}>Sign In</button>
     </div>

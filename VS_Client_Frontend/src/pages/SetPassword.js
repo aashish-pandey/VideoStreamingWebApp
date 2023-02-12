@@ -33,7 +33,7 @@ export default function SetPassword() {
             upass : pass
         }
 
-        var error_status  = await fetch('http://localhost:3560/register', {
+        var error_status  = await fetch('http://' + process.env.REACT_APP_API_CALL_ADDRESS + ':3560/register', {
             method: "POST",
             headers:{'Content-type': 'application/json'},
             body: JSON.stringify(formInfo)
@@ -46,7 +46,7 @@ export default function SetPassword() {
         setErrMsg()
         if(error_status.toString() == 'false'){
 
-            var error_status  = await fetch('http://localhost:3560/login', {
+            var error_status  = await fetch('http://' + process.env.REACT_APP_API_CALL_ADDRESS + ':3560/login', {
             method: "POST",
             headers:{'Content-type': 'application/json'},
             body: JSON.stringify(formInfo)

@@ -43,12 +43,12 @@
 }
 #video-controls{
     background-color: rgba(0, 0, 0, 0.41);
-    padding: 0.7rem;
+    padding: 0.5rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
     text-align: center;
-    width: 98vw;
+    width: 99vw;
     position:absolute;
     top: 92vh;
     z-index: 2147483647;
@@ -100,9 +100,34 @@
 }
 
 
-/* video::-webkit-media-controls {
+video::-webkit-media-controls {
   display:none !important;
 }
 video::-webkit-media-controls-enclosure {
   display:none !important;
-} */
+}
+
+
+@media (max-width: 630px){
+
+  #videoplayerQ{
+    overflow: hidden !important;
+  }
+
+  
+  #video-controls{
+    top:80vh;
+    visibility: visible;
+    overflow: hidden;
+  }
+
+  video::-webkit-media-controls {
+    display:block !important;
+  }
+  video::-webkit-media-controls-enclosure {
+    display:block !important;
+  }
+}
+
+
+
