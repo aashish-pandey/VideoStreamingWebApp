@@ -4,6 +4,7 @@ import { useEffect } from 'react'
 import { useNavigate, useParams } from 'react-router-dom'
 import getCookies from '../../pages/CookieHandler'
 import Navigation from '../navigation/Navigation'
+import SessionTracker from '../sessionManagement/SessionTracker'
 
 
 import './PlayVideo.css'
@@ -215,6 +216,8 @@ function handleKeyDown(event){
 }
 
   return (
+    <>
+    <SessionTracker/>
     
   <div  id="videoplayerQ" onKeyDown={(event)=>handleKeyDown(event)} tabIndex="0" onDoubleClick={()=>toggleFullScreen()}> 
   {/* {//tabIndex property is used here so as to make div to be active} */}
@@ -239,6 +242,7 @@ function handleKeyDown(event){
       
     
     </div>
+    </>
     )
 
 }

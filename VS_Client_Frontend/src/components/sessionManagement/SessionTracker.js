@@ -2,10 +2,13 @@ import React from 'react'
 import { useEffect } from 'react'
 import { useState } from 'react'
 import getCookies from '../../pages/CookieHandler'
+import useCookies from 'react-cookie/cjs/useCookies';
+
 
 export default function SessionTracker() {
 
     const [status, setStatus] = useState("loggedOut")
+    const [cookies, setCookies] = useCookies(['user'])
     
     const onlineStatusUpdateTime = 5000 //change 1000 to another value to set the status of userlogin in backend
 
@@ -13,8 +16,15 @@ export default function SessionTracker() {
         setTimeout(async ()=>{
 
             var sessionId = getCookies("sessionId")
-            var email = getCookies('uemail')
-            if(email && email != ''){
+            console.log(sessionId)
+            if(sessionId == 'undefined')
+                {
+                    setCookies("sessionId", "")
+                    sessionId = ""
+                }
+            console.log(sessionId)
+
+            if(sessionId && sessionId != ''){
                 console.log("From the session tracker file")
                 const formInfo = {
                     sessionId: sessionId

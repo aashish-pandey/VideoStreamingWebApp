@@ -7,16 +7,24 @@ import MovieCard from '../components/moviedetails/MovieCard'
 import Navigation from '../components/navigation/Navigation'
 import getCookies from './CookieHandler'
 import './HomeFeed.css'
+import SessionTracker from '../components/sessionManagement/SessionTracker'
+import useCookies from 'react-cookie/cjs/useCookies';
+
+
+
 
 export default function HomeFeed() {
 
     const [newMovie, SetNewMovie] = useState()
     const [watchHistory, SetWatchHistory] = useState([])
 
+  const [cookies, setCookies] = useCookies(['user'])
     
 
 
     useEffect(()=>{
+
+      setCookies('permissionDenied', '')
       async function handleWatchHistory(){
         const userInfo = {
           uemail: getCookies('uemail')
@@ -73,6 +81,27 @@ export default function HomeFeed() {
       console.log(newMovie)
     }, [])
 
+    const SetCurrentNetworkAsMyHomeNetwork = async function(){
+      console.log("Set as current ip")
+
+      var currentIp = getCookies('ip')
+      var email = getCookies('uemail')
+
+      const formInfo = {
+        email : email,
+        ip : currentIp
+      }
+
+      await fetch("http://" + process.env.REACT_APP_API_CALL_ADDRESS + ":3560/setHomeAddress", {
+        method: "post", 
+        headers: {"content-type": "application/json"},
+        body: JSON.stringify(formInfo)
+      })
+      .then(res=>res.json())
+      .then(dt=>{
+        console.log(dt)
+      })
+    }
     
  
   if(!newMovie){
@@ -86,6 +115,11 @@ export default function HomeFeed() {
 else
   return (
     <div className='HomeFeedMain'>
+      
+      <SessionTracker/>
+
+    <button onClick={SetCurrentNetworkAsMyHomeNetwork}>Add current network as my home network</button>
+
       <Navigation/>
 
     <Banner/>

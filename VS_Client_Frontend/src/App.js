@@ -14,7 +14,7 @@ import SetPassword from './pages/SetPassword';
 import VideoUpload from './pages/VideoUpload';
 import './App.css'
 import useOnlineStatus from '@rehooks/online-status';
-import SessionTracker from './components/sessionManagement/SessionTracker';
+import PermissionDenied from './pages/PermissionDenied';
 
 function App() {
 
@@ -29,13 +29,21 @@ function App() {
     return children;
   }
 
+  const PermissionRoute = ({children})=>{
+    if(getCookies('permissionDenied') == 'true'){
+
+      return <Navigate to="/permissionDenied"/>;
+    }
+    return children;
+  }
+
   useEffect(()=>{
   }, [])
 
     return (
       <div className="App">
 
-        <SessionTracker/>
+        
   
         <BrowserRouter>
   
@@ -73,11 +81,20 @@ function App() {
             }
           />
 
+        <Route
+          path='/permissionDenied'
+          element={
+            <PermissionDenied/>
+            }
+          />
+
           <Route
           path='/watch/:id'
           element={
           <ProtectedRoute>
+            <PermissionRoute>
             <PlayVideo/>
+            </PermissionRoute>
           </ProtectedRoute>
             }
           />
@@ -86,7 +103,9 @@ function App() {
           path='/homefeed'
           element={
           <ProtectedRoute>
+            <PermissionRoute>
             <HomeFeed/>
+            </PermissionRoute>
           </ProtectedRoute>
         }
           />

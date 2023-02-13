@@ -32,6 +32,7 @@ const getAllAdmins = require('./controllers/GetAllAdmins')
 const getAccountLoginHistories = require('./controllers/GetAccountLoginHistories')
 const OnlineStatus = require('./controllers/OnlineStatus')
 const SetInactiveUSersOffline = require('./controllers/SetInactiveUsersOffline')
+const SetHomeAddress = require('./controllers/SetHomeAddress')
 
 
 
@@ -75,6 +76,9 @@ app.post('/getWatchHistory', getWatchHistory)
 
 app.get('/accountLoginHistories/:email', getAccountLoginHistories)
 
+//set Home Address
+app.post('/setHomeAddress', SetHomeAddress)
+
 
 //admin requests
 app.post('/registerAdmin', registerAdmin)
@@ -94,6 +98,8 @@ app.post("/saveOnlineStatus", OnlineStatus)
 
 //Automatically make inactive users offline
 setInterval(SetInactiveUSersOffline, 10000)
+
+
 
 
 

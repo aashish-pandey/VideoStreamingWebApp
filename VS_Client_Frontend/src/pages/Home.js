@@ -27,14 +27,21 @@ export default function Home() {
       
       await getip()
       console.log(browserName + "  " + osName + "  " + deviceType + " " + ip)
-  
+      
+      var sessionId = getCookies("sessionId")
+      if(sessionId == 'undefined')
+      {
+          setCookies("sessionId", "")
+          sessionId = ""
+      }
   
       const accountLoginStatus = {
         uemail: userEmail,
         ip: ip,
         browser: browserName,
         os: osName,
-        device: deviceType
+        device: deviceType,
+        sessionId: sessionId
       }
 
 
@@ -53,6 +60,9 @@ export default function Home() {
   
     if(error_status.toString() == 'true'){
       setSubscriptionStatus('true')
+      console.log("got false")
+      setCookies('permissionDenied', 'true')
+      navigate('/permissionDenied')
       // console.log("Account login status not saved")   
     }else{
       setCookies('ip', ip)

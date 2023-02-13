@@ -9,7 +9,7 @@ const SetInactiveUSersOffline = function(){
             console.log("Error set inactive users offline data fetch mongodb");
         }else{
             console.log("set inactive users offline")
-            console.log(details)
+           
         }
     })
 }
