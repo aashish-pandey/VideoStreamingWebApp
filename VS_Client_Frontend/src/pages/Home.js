@@ -34,6 +34,7 @@ export default function Home() {
           setCookies("sessionId", "")
           sessionId = ""
       }
+      console.log(sessionId)
   
       const accountLoginStatus = {
         uemail: userEmail,
@@ -76,7 +77,7 @@ export default function Home() {
     }
     }
 
-    handleSaveAccountLoginInfo();
+    
 
 
     const queryInfo = {
@@ -105,6 +106,8 @@ export default function Home() {
     }
 
     handlefetch()
+    if(subscriptionStatus == 'false')
+    handleSaveAccountLoginInfo();
 
   }, [])
 
