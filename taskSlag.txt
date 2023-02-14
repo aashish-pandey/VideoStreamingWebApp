@@ -2,11 +2,11 @@ tasks to complete:
 
 //New systems to be developed that we have no idea
 1. Integrate actual payment system --BIKASH
-2. Complete Login authentication system --AASHISH
+2. Complete Login authentication system --AASHISH			--Done
 3. Implement adaptive video sending by calculating 	network speed --sANDESH
 4. Implement movie recommendation system --AASHISH
 5. Implement new process for uploading series --BIKASH
-6. Implement login status of client and save status  	in database --AASHISH
+6. Implement login status of client and save status  	in database --AASHISH --Done
 7. Suggest something option that plays clips from 	different movies and web series
 
 //Improvements in admin section

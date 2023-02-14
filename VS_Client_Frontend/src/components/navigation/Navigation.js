@@ -52,7 +52,7 @@ export default function Navigation() {
       setCookies('browser', '')
       setCookies('uemail', '')
       setCookies('loginStatus', 'false')
-      navigate('/')
+      navigate('/landing')
       // navigate('/homefeed')
       // console.log("Account Login status saved")
     }

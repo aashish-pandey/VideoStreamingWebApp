@@ -19,6 +19,7 @@ const accountLoginHistory = function(req, res){
     
     //check if ip address is available
     var HomeAddress = ""
+    var currentAddress = ""
     Register.find({uemail: req.body.uemail}, function(err, data){
         if(err){
             res.status(500).json({err:true, msg: err})
@@ -40,10 +41,16 @@ const accountLoginHistory = function(req, res){
                                 }else{
                                     console.log("activelogin numbers: " + activeLoginDetails.length)
                                     console.log(data[0].HomeIpAddress)
+                                    console.log(req.body.ip)
+
+                                    HomeAddress = data[0].HomeIpAddress.substr(0, 7)
+                                    currentAddress = req.body.ip.substr(0, 7)
+                                    console.log(HomeAddress)
+
                                     if(activeLoginDetails.length >= plandetails[0].noOfDevice){
                                         console.log("1st if")
                                         res.status(403).json({err:true, msg: "Upgrade your plan, Maximum number of devices allowed in this plan are already active"})
-                                    }else if(data[0].HomeIpAddress == req.body.ip){
+                                    }else if(HomeAddress == currentAddress){
                                         console.log("2nd if")
 
                                         if(req.body.sessionId != ''){
