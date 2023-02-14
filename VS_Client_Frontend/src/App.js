@@ -15,6 +15,7 @@ import VideoUpload from './pages/VideoUpload';
 import './App.css'
 import useOnlineStatus from '@rehooks/online-status';
 import PermissionDenied from './pages/PermissionDenied';
+import CheckAccountAccessAuthorization from './pages/CheckAccountAccessAuthorization';
 
 function App() {
 
@@ -68,6 +69,15 @@ function App() {
           element={
           <ProtectedRoute>
             <Home/>
+          </ProtectedRoute>
+            }
+          />
+
+          <Route
+          path='/accountAccessAvailabilityCheck'
+          element={
+          <ProtectedRoute>
+            <CheckAccountAccessAuthorization/>
           </ProtectedRoute>
             }
           />

@@ -39,7 +39,13 @@ export default function SetPassword() {
             body: JSON.stringify(formInfo)
         })
         .then(res=>res.json())
-        .then(dt=>{return dt.err
+        .then(dt=>{
+            var sid = ""
+            if(dt.sessionId)sid = dt.sessionId
+            setCookies("sessionId", sid)
+            console.log(sid)
+            console.log(dt)
+            return dt.err
         })
     
 

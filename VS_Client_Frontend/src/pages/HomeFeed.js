@@ -9,6 +9,9 @@ import getCookies from './CookieHandler'
 import './HomeFeed.css'
 import SessionTracker from '../components/sessionManagement/SessionTracker'
 import useCookies from 'react-cookie/cjs/useCookies';
+import { browserName, osName, deviceType} from 'react-device-detect'
+import GetMyIp from '../helperFunctions/GetMyIp'
+
 
 
 
@@ -84,7 +87,8 @@ export default function HomeFeed() {
     const SetCurrentNetworkAsMyHomeNetwork = async function(){
       console.log("Set as current ip")
 
-      var currentIp = getCookies('ip')
+      var currentIp = await GetMyIp()
+      console.log(currentIp)
       var email = getCookies('uemail')
 
       const formInfo = {

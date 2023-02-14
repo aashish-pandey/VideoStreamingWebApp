@@ -28,10 +28,8 @@ const accountLoginHistory = function(req, res){
             
             UserPlan.find({userEmail: req.body.uemail}, function(err, userPlandetails){
                 if(err){
-                    
                     res.status(500).json({err:true, msg:err})
                 }else{
-                    
                     if(userPlandetails.length == 0){
                         console.log("reached here")
                         res.status(500).json({err:"NAN", msg: "No subscription is taken from this account"})
@@ -53,7 +51,8 @@ const accountLoginHistory = function(req, res){
                                         HomeAddress = data[0].HomeIpAddress.substr(0, 7)
                                         currentAddress = req.body.ip.substr(0, 7)
                                         console.log(HomeAddress)
-    
+                                        console.log("SessionId")
+                                        console.log(req.body.sessionId)
                                         if(activeLoginDetails.length >= plandetails[0].noOfDevice){
                                             console.log("1st if")
                                             res.status(403).json({err:true, msg: "Upgrade your plan, Maximum number of devices allowed in this plan are already active"})
@@ -77,16 +76,17 @@ const accountLoginHistory = function(req, res){
                         
                                         }
                                         else if(req.body.sessionId != ''){
-                                            AccountLoginHistory.find({_id: req.body.sessionId}, function(err, dt){
+                                            AccountLoginHistory.find({_id: req.body.sessionId, uemail:req.body.uemail}, function(err, dt){
                                                 if(err){
                                                     res.status(500).json({err:true, msg: "account login history find failed", errMsg: err})
                                                 }else{
-                                                    if(typeof(data[0].HomeIpAddress) == 'undefined'){
+                                                    console.log(dt[0].uemail)
+                                                    // if(typeof(data[0].HomeIpAddress) == 'undefined'){
                                                         var onlyOneDevice = false
-                                
-                                                        if(dt.length == 1)onlyOneDevice = true
+                                                        console.log("Bro")
+                                                        // if(dt.length == 1)onlyOneDevice = true
                                                         if(dt.length > 0){
-                                                            AccountLoginHistory.remove({_id: req.body.sessionId}, function(err){
+                                                            AccountLoginHistory.remove({_id: req.body.sessionId, uemail:req.body.uemail}, function(err){
                                                                 if(err)res.status(500).json({err:true, msg: "error in removing previous account login history of this device", errMsg: err})
                                                             })
                                                             accountLogin.save(function(err, details){
@@ -97,22 +97,22 @@ const accountLoginHistory = function(req, res){
                                                                     console.log(details._id)
                                                                     res.json({err:false, msg: "account Login history saved successfully", _id: details._id, data: data})
                                 
-                                                                    if(onlyOneDevice){
-                                                                        Register.findOneAndUpdate({uemail: req.body.uemail}, {MasterKey: details._id}, function(err){
-                                                                            if(err){
-                                                                                console.log("Cannnot add master device now")
-                                                                            }
-                                                                        })
-                                                                    }
+                                                                    // if(onlyOneDevice){
+                                                                    //     Register.findOneAndUpdate({uemail: req.body.uemail}, {MasterKey: details._id}, function(err){
+                                                                    //         if(err){
+                                                                    //             console.log("Cannnot add master device now")
+                                                                    //         }
+                                                                    //     })
+                                                                    // }
                                 
                                                                 }
                                                             })
                                                         }else{
                                                             res.status(403).json({err: true, msg: "No session Id found and Home Address is also not set, Contact the admin"})
                                                         }
-                                                }else{
-                                                    res.status(500).json({err:true, msg: "Error in authorization of user in account login histories, contact admin"})
-                                                }
+                                                // }else{
+                                                //     res.status(500).json({err:true, msg: "Error in authorization of user in account login histories, contact admin"})
+                                                // }
                                                 }
                                             })
                                         }else{
