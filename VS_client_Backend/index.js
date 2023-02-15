@@ -33,6 +33,9 @@ const getAccountLoginHistories = require('./controllers/GetAccountLoginHistories
 const OnlineStatus = require('./controllers/OnlineStatus')
 const SetInactiveUSersOffline = require('./controllers/SetInactiveUsersOffline')
 const SetHomeAddress = require('./controllers/SetHomeAddress')
+const getMyProfile = require('./controllers/GetMyProfile')
+const getMySubscription = require('./controllers/GetMySubscription')
+const getSubscriptionPlanByName = require('./controllers/GetSubscriptionPlanByName')
 
 
 
@@ -61,6 +64,11 @@ app.get('/getMovies', getMovies)
 app.get('/getVideo/:id', getVideo)
 app.get('/getThumbnail/:id', getThumbnail)
 app.get('/getMoviesByID/:id', getMoviesById)
+app.get('/getMyProfile/:email', getMyProfile)
+app.get('/getMySubscription/:email', getMySubscription)
+app.get('/getSubscriptionPlanByName/:name', getSubscriptionPlanByName)
+
+
 
 app.post('/register', register)
 app.post('/login', login)

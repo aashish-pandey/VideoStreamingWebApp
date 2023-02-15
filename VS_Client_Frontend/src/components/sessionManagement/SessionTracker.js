@@ -16,16 +16,16 @@ export default function SessionTracker() {
         setTimeout(async ()=>{
 
             var sessionId = getCookies("sessionId")
-            console.log(sessionId)
+            // console.log(sessionId)
             if(sessionId == 'undefined')
                 {
                     setCookies("sessionId", "")
                     sessionId = ""
                 }
-            console.log(sessionId)
+            // console.log(sessionId)
 
             if(sessionId && sessionId != ''){
-                console.log("From the session tracker file")
+                // console.log("From the session tracker file")
                 const formInfo = {
                     sessionId: sessionId
                 }
@@ -36,7 +36,7 @@ export default function SessionTracker() {
                     body: JSON.stringify(formInfo)
                 }).then(res=>res.json())
                 .then(dt=>{
-                    console.log(dt)
+                    // console.log(dt)
                     return dt
                 })
     
@@ -48,7 +48,7 @@ export default function SessionTracker() {
 
   return (
     <>
-    {console.log(status)}
+    {/* {console.log(status)} */}
     </>
   )
 }

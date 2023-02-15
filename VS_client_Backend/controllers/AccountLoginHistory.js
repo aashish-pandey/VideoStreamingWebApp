@@ -59,7 +59,7 @@ const accountLoginHistory = function(req, res){
                                         }else if(HomeAddress == currentAddress){
                                             console.log("2nd if")
     
-                                            if(req.body.sessionId != ''){
+                                            if(req.body.sessionId && req.body.sessionId != ''){
                                                 AccountLoginHistory.remove({_id: req.body.sessionId}, function(err){
                                                     if(err)console.log("Error in removing previous login info when login using ip address")
                                                 })
@@ -75,7 +75,7 @@ const accountLoginHistory = function(req, res){
                                             })
                         
                                         }
-                                        else if(req.body.sessionId != ''){
+                                        else if(req.body.sessionId && req.body.sessionId != ''){
                                             AccountLoginHistory.find({_id: req.body.sessionId, uemail:req.body.uemail}, function(err, dt){
                                                 if(err){
                                                     res.status(500).json({err:true, msg: "account login history find failed", errMsg: err})

@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom'
 import getCookies from '../../pages/CookieHandler';
 import useCookies from 'react-cookie/cjs/useCookies';
 import './navigationStylesheet.css' 
+import SessionTracker from '../sessionManagement/SessionTracker';
 
 export default function Navigation() {
 
@@ -67,10 +68,12 @@ export default function Navigation() {
 if(loginStatus == 'true' && email != ''){
   return(
     <div>
+      <SessionTracker/>
         <div className="Navbar">
           <div className="left_Navbar">
             <span className="Title">JAALCHITRA</span>
             <div className="links">
+              <button className="Web_Series" onClick={()=>{navigate('/profile')}}>Profile</button>
               <botton className="Trending">Trending</botton>
               <botton className="Movies">Movies</botton>
               <botton className="Web_Series">Web Series</botton>

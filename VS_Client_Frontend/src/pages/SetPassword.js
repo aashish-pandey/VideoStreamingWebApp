@@ -43,6 +43,7 @@ export default function SetPassword() {
             var sid = ""
             if(dt.sessionId)sid = dt.sessionId
             setCookies("sessionId", sid)
+            localStorage.setItem("sessionId", sid)
             console.log(sid)
             console.log(dt)
             return dt.err

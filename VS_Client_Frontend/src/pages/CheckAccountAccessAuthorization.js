@@ -27,7 +27,8 @@ export default function CheckAccountAccessAuthorization() {
       await getip()
       console.log(browserName + "  " + osName + "  " + deviceType + " " + ip)
       
-      var sessionId = getCookies("sessionId")
+      // var sessionId = getCookies("sessionId")
+      var sessionId= localStorage.getItem("sessionId")
       if(sessionId == 'undefined')
       {
           setCookies("sessionId", "")
@@ -54,6 +55,7 @@ export default function CheckAccountAccessAuthorization() {
       .then(dt=>{
         console.log(dt)
         setCookies("sessionId", dt._id)
+        localStorage.setItem("sessionId", dt._id)
         return dt.err
       })
   

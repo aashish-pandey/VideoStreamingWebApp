@@ -120,7 +120,7 @@ else
   return (
     <div className='HomeFeedMain'>
       
-      <SessionTracker/>
+      
 
     <button onClick={SetCurrentNetworkAsMyHomeNetwork}>Add current network as my home network</button>
 
@@ -179,23 +179,7 @@ else
         )
       })}
     </div>
-
-
-
-
-
-
-
-
-
-      
-      {/* <button onClick={getall}>get movies</button> */}
-
-      {/* <video controls autoPlay width="650px">
-        <source src="http://localhost:3560/getVideo" type="video/mp4"/>
-      </video> */}
-      
-      
+  
       </div>
   )
 }

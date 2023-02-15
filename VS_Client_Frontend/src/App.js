@@ -16,6 +16,7 @@ import './App.css'
 import useOnlineStatus from '@rehooks/online-status';
 import PermissionDenied from './pages/PermissionDenied';
 import CheckAccountAccessAuthorization from './pages/CheckAccountAccessAuthorization';
+import Profile from './pages/Profile';
 
 function App() {
 
@@ -69,6 +70,15 @@ function App() {
           element={
           <ProtectedRoute>
             <Home/>
+          </ProtectedRoute>
+            }
+          />
+
+          <Route
+          path='/profile'
+          element={
+          <ProtectedRoute>
+            <Profile/>
           </ProtectedRoute>
             }
           />
