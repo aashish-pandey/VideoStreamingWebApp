@@ -84,28 +84,6 @@ export default function HomeFeed() {
       console.log(newMovie)
     }, [])
 
-    const SetCurrentNetworkAsMyHomeNetwork = async function(){
-      console.log("Set as current ip")
-
-      var currentIp = await GetMyIp()
-      console.log(currentIp)
-      var email = getCookies('uemail')
-
-      const formInfo = {
-        email : email,
-        ip : currentIp
-      }
-
-      await fetch("http://" + process.env.REACT_APP_API_CALL_ADDRESS + ":3560/setHomeAddress", {
-        method: "post", 
-        headers: {"content-type": "application/json"},
-        body: JSON.stringify(formInfo)
-      })
-      .then(res=>res.json())
-      .then(dt=>{
-        console.log(dt)
-      })
-    }
     
  
   if(!newMovie){
@@ -119,11 +97,6 @@ export default function HomeFeed() {
 else
   return (
     <div className='HomeFeedMain'>
-      
-      
-
-    <button onClick={SetCurrentNetworkAsMyHomeNetwork}>Add current network as my home network</button>
-
       <Navigation/>
 
     <Banner/>

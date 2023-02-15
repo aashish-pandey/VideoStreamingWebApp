@@ -2,6 +2,8 @@ import React, { useState } from 'react'
 import { useEffect } from 'react'
 import Navigation from '../components/navigation/Navigation'
 import getCookies from './CookieHandler'
+import GetMyIp from '../helperFunctions/GetMyIp'
+
 
 export default function Profile() {
 
@@ -71,6 +73,30 @@ export default function Profile() {
 }, [])
 
 
+const SetCurrentNetworkAsMyHomeNetwork = async function(){
+  console.log("Set as current ip")
+
+  var currentIp = await GetMyIp()
+  console.log(currentIp)
+  var email = getCookies('uemail')
+
+  const formInfo = {
+    email : email,
+    ip : currentIp
+  }
+
+  await fetch("http://" + process.env.REACT_APP_API_CALL_ADDRESS + ":3560/setHomeAddress", {
+    method: "post", 
+    headers: {"content-type": "application/json"},
+    body: JSON.stringify(formInfo)
+  })
+  .then(res=>res.json())
+  .then(dt=>{
+    console.log(dt)
+  })
+}
+
+
   return (
     <>
     <Navigation/>
@@ -82,7 +108,9 @@ export default function Profile() {
     <div>
       <strong>Email Address: </strong>{personalDetails.length > 0 && personalDetails[0].uemail}<br></br>
       <strong>Password: </strong>{personalDetails.length > 0 && personalDetails[0].upassword}<br/>
-      <strong>Home Address: </strong>{personalDetails.length > 0 && personalDetails[0].HomeIpAddress}<br/>
+      <strong>Home Address: </strong>{personalDetails.length > 0 && personalDetails[0].HomeIpAddress}
+      <button onClick={SetCurrentNetworkAsMyHomeNetwork}>Add current network as my home network</button>
+      <br/>
       <strong>Created At: </strong>{personalDetails.length > 0 && personalDetails[0].createdAt}
     </div>
     <hr /><hr />
