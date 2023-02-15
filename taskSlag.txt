@@ -28,7 +28,7 @@ tasks to complete:
 5. Add trending page 
 6. Change the way history is shown. Latest watched 	movie showld be shown at first
 7. Add option to change password
-8. Add user profile page which contains user 	activity, user subscription plan, etc 
+8. Add user profile page which contains user 	activity, user subscription plan, etc -DONE
 9. Develop a setting page in which the user can 	control how the account is to be used
 10. (CSS)Implement Different theme modes(dark, 	light) 
 

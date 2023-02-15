@@ -71,7 +71,7 @@ if(loginStatus == 'true' && email != ''){
       <SessionTracker/>
         <div className="Navbar">
           <div className="left_Navbar">
-            <span className="Title">JAALCHITRA</span>
+            <span className="Title" onClick={()=>{navigate('/homefeed')}}>JAALCHITRA</span>
             <div className="links">
               <button className="Web_Series" onClick={()=>{navigate('/profile')}}>Profile</button>
               <botton className="Trending">Trending</botton>
