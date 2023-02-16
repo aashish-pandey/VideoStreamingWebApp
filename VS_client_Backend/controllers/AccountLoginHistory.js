@@ -97,13 +97,7 @@ const accountLoginHistory = function(req, res){
                                                                     console.log(details._id)
                                                                     res.json({err:false, msg: "account Login history saved successfully", _id: details._id, data: data})
                                 
-                                                                    // if(onlyOneDevice){
-                                                                    //     Register.findOneAndUpdate({uemail: req.body.uemail}, {MasterKey: details._id}, function(err){
-                                                                    //         if(err){
-                                                                    //             console.log("Cannnot add master device now")
-                                                                    //         }
-                                                                    //     })
-                                                                    // }
+                                                                    
                                 
                                                                 }
                                                             })
