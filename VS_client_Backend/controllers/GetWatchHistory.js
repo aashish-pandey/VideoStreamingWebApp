@@ -1,16 +1,10 @@
 const WatchHistory = require('../models/WatchHistory')
 
-const watchHistory = function(req, res){
+const watchHistory = async function(req, res){
     const uemail = req.body.uemail
 
-    WatchHistory.find({userEmail: uemail}, function(err, data){
-        if(err)res.status(500).send({code:200, msg: err})
-        else{
-            res.status(200).send(data)
-            console.log(data)
-            
-        }
-    })
+    const data = await WatchHistory.find({userEmail: uemail}).sort({updatedAt: -1})
+    res.status(200).send(data)
 }
 
 module.exports = watchHistory
