@@ -75,7 +75,7 @@ if(loginStatus == 'true' && email != ''){
             <div className="links">
               <button className="Web_Series" onClick={()=>{navigate('/profile')}}>Profile</button>
               <botton className="Trending">Trending</botton>
-              <botton className="Movies">Movies</botton>
+              <botton className="Movies" onClick={()=>{navigate('/moviesPage')}}>Movies</botton>
               <botton className="Web_Series">Web Series</botton>
             </div>
           </div>

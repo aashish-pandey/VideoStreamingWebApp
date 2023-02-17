@@ -17,6 +17,7 @@ import useOnlineStatus from '@rehooks/online-status';
 import PermissionDenied from './pages/PermissionDenied';
 import CheckAccountAccessAuthorization from './pages/CheckAccountAccessAuthorization';
 import Profile from './pages/Profile';
+import Movies from './pages/Movies';
 
 function App() {
 
@@ -123,6 +124,17 @@ function App() {
           <ProtectedRoute>
             <PermissionRoute>
             <HomeFeed/>
+            </PermissionRoute>
+          </ProtectedRoute>
+        }
+          />
+
+          <Route
+          path='/moviesPage'
+          element={
+          <ProtectedRoute>
+            <PermissionRoute>
+            <Movies/>
             </PermissionRoute>
           </ProtectedRoute>
         }
