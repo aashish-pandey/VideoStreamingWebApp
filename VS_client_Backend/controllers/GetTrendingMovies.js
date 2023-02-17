@@ -1,17 +1,35 @@
 const WatchHistory = require('../models/WatchHistory')
 
-const getTrendingMovies = function(req, res){
+const getTrendingMovies = async function(req, res){
+    
+    const movieHistory = await WatchHistory.find({})
 
-    WatchHistory.distinct("movieId",function(err, details){
-        if(err){
-            res.status(500).send({err:true, msg:err})
-        }else{
+    var movieCount = new Map([])
 
-            res.status(200).send({err:false, msg:details})
-
+    movieHistory.map(data=>{
+        cnt = 1
+        if(movieCount.has(data.movieId)){
+            cnt = 1 + movieCount.get(data.movieId)
         }
+
+        movieCount.set(data.movieId, cnt)
     })
+
+    movieCount = new Map([...movieCount.entries()].sort((a, b) => b[1] - a[1]));
+
+    let keys = Array.from( movieCount.keys() )
+    console.log(keys)
+
+
+    res.status(200).send({err:true, msg:keys})
+
+    
+        
 
 }
 
 module.exports = getTrendingMovies
+
+
+
+

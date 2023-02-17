@@ -1,17 +1,42 @@
 import React from 'react'
+import { useState } from 'react'
 import { useEffect } from 'react'
 import Navigation from '../components/navigation/Navigation'
+import MovieCard from '../components/moviedetails/MovieCard'
+
 
 
 export default function Trending() {
 
+    const [trendingMovie, SetTrendingMovie] = useState([])
+
     useEffect(()=>{
         async function getTrendingMovies(){
-            await fetch("http://" + process.env.REACT_APP_API_CALL_ADDRESS + ":3560/getTrendingMovies")
+            const data = await fetch("http://" + process.env.REACT_APP_API_CALL_ADDRESS + ":3560/getTrendingMovies")
                     .then(res=>res.json())
-                    .then(dt=>{
-                        console.log(dt.msg)
+                    .then(async dt=>{
+                        dt = dt.msg
+                        var movieInfoData = []
+                        for(var i = 0; i < dt.length; i++){
+                            var id = dt[i]
+
+                            var movieinf = await fetch("http://" + process.env.REACT_APP_API_CALL_ADDRESS + ":3560/getMoviesByID/" + id)
+                                  .then(res=>res.json())
+                                  .then(dt=>{
+                                    // console.log(dt['msg'][0])
+                                    return dt['msg'][0]
+                                  })
+                                  movieInfoData.push(movieinf)
+
+                        }
+
+                        console.log(movieInfoData)
+
+                        return movieInfoData
                     })
+
+                    SetTrendingMovie(data)
+                    console.log(trendingMovie)
         }
 
         getTrendingMovies()
@@ -22,7 +47,9 @@ export default function Trending() {
     <div>
         <Navigation/>
         <div className='MoviePageMovieCard'>
-
+            {trendingMovie.map(movie=>{
+                return(<MovieCard key={movie['_id']} info = {movie}/>)
+            })}
         </div>
     </div>
   )
