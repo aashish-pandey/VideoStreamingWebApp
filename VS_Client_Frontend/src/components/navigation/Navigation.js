@@ -74,7 +74,7 @@ if(loginStatus == 'true' && email != ''){
             <span className="Title" onClick={()=>{navigate('/homefeed')}}>JAALCHITRA</span>
             <div className="links">
               <button className="Web_Series" onClick={()=>{navigate('/profile')}}>Profile</button>
-              <botton className="Trending">Trending</botton>
+              <botton className="Trending" onClick={()=>{navigate('/trendingPage')}}>Trending</botton>
               <botton className="Movies" onClick={()=>{navigate('/moviesPage')}}>Movies</botton>
               <botton className="Web_Series">Web Series</botton>
             </div>

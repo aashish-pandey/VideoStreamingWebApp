@@ -18,6 +18,7 @@ import PermissionDenied from './pages/PermissionDenied';
 import CheckAccountAccessAuthorization from './pages/CheckAccountAccessAuthorization';
 import Profile from './pages/Profile';
 import Movies from './pages/Movies';
+import Trending from './pages/Trending';
 
 function App() {
 
@@ -135,6 +136,17 @@ function App() {
           <ProtectedRoute>
             <PermissionRoute>
             <Movies/>
+            </PermissionRoute>
+          </ProtectedRoute>
+        }
+          />
+
+          <Route
+          path='/trendingPage'
+          element={
+          <ProtectedRoute>
+            <PermissionRoute>
+            <Trending/>
             </PermissionRoute>
           </ProtectedRoute>
         }

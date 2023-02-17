@@ -36,6 +36,7 @@ const SetHomeAddress = require('./controllers/SetHomeAddress')
 const getMyProfile = require('./controllers/GetMyProfile')
 const getMySubscription = require('./controllers/GetMySubscription')
 const getSubscriptionPlanByName = require('./controllers/GetSubscriptionPlanByName')
+const getTrendingMovies = require('./controllers/GetTrendingMovies')
 
 
 
@@ -67,6 +68,7 @@ app.get('/getMoviesByID/:id', getMoviesById)
 app.get('/getMyProfile/:email', getMyProfile)
 app.get('/getMySubscription/:email', getMySubscription)
 app.get('/getSubscriptionPlanByName/:name', getSubscriptionPlanByName)
+app.get('/getTrendingMovies', getTrendingMovies)
 
 
 
@@ -81,6 +83,7 @@ app.post('/uploadvideo', uploadVideo)
 app.post('/uploadMovie', uploadMovie)
 app.post('/saveWatchHistory', saveWatchHistory)
 app.post('/getWatchHistory', getWatchHistory)
+
 
 app.get('/accountLoginHistories/:email', getAccountLoginHistories)
 
