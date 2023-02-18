@@ -128,4 +128,6 @@ const accountLoginHistory = function(req, res){
 
 }
 
+//this is used to set the login histpry and also to check whether the account is give previleged to access the account or not
+
 module.exports = accountLoginHistory
