@@ -19,6 +19,7 @@ import CheckAccountAccessAuthorization from './pages/CheckAccountAccessAuthoriza
 import Profile from './pages/Profile';
 import Movies from './pages/Movies';
 import Trending from './pages/Trending';
+import GroupChat from './pages/chat/GroupChat';
 
 function App() {
 
@@ -147,6 +148,17 @@ function App() {
           <ProtectedRoute>
             <PermissionRoute>
             <Trending/>
+            </PermissionRoute>
+          </ProtectedRoute>
+        }
+          />
+
+          <Route
+          path='/chatPage'
+          element={
+          <ProtectedRoute>
+            <PermissionRoute>
+            <GroupChat/>
             </PermissionRoute>
           </ProtectedRoute>
         }

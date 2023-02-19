@@ -37,6 +37,8 @@ const getMyProfile = require('./controllers/GetMyProfile')
 const getMySubscription = require('./controllers/GetMySubscription')
 const getSubscriptionPlanByName = require('./controllers/GetSubscriptionPlanByName')
 const getTrendingMovies = require('./controllers/GetTrendingMovies')
+const saveGlobalChat = require('./controllers/SaveGlobalChat')
+const getGlobalChat = require('./controllers/GetGlobalChat')
 
 
 
@@ -69,6 +71,7 @@ app.get('/getMyProfile/:email', getMyProfile)
 app.get('/getMySubscription/:email', getMySubscription)
 app.get('/getSubscriptionPlanByName/:name', getSubscriptionPlanByName)
 app.get('/getTrendingMovies', getTrendingMovies)
+app.get('/getGlobalChat', getGlobalChat)
 
 
 
@@ -83,6 +86,7 @@ app.post('/uploadvideo', uploadVideo)
 app.post('/uploadMovie', uploadMovie)
 app.post('/saveWatchHistory', saveWatchHistory)
 app.post('/getWatchHistory', getWatchHistory)
+app.post('/saveGlobalChat', saveGlobalChat)
 
 
 app.get('/accountLoginHistories/:email', getAccountLoginHistories)

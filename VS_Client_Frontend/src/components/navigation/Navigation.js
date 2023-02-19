@@ -77,6 +77,7 @@ if(loginStatus == 'true' && email != ''){
               <botton className="Trending" onClick={()=>{navigate('/trendingPage')}}>Trending</botton>
               <botton className="Movies" onClick={()=>{navigate('/moviesPage')}}>Movies</botton>
               <botton className="Web_Series">Web Series</botton>
+              <botton className="Movies" onClick={()=>{navigate('/chatPage')}}>GroupTalk</botton>
             </div>
           </div>
           <div className="right_Navbar">
