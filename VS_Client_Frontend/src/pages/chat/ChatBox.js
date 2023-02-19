@@ -8,6 +8,15 @@ export default function ChatBox() {
 
     const [globalMsg, setGlobalMsg] = useState([])
 
+    function updateScroll(){
+        
+        const element1 = document.getElementById('anchor');
+        if (element1) {
+        // Will scroll smoothly to the top of the next section
+        element1.scrollIntoView({ behavior: 'smooth' });
+        }
+}
+
     const getGlobalMsg = async function(){
         await fetch('http://' + process.env.REACT_APP_API_CALL_ADDRESS + ':3560/getGlobalChat')
             .then(res=>res.json())
@@ -18,7 +27,14 @@ export default function ChatBox() {
     }
 
     useEffect(()=>{
-        getGlobalMsg()
+
+        async function handle(){
+            await getGlobalMsg()
+            setTimeout(()=>{
+                updateScroll()
+            }, 10)
+        }
+        handle()
     }, [])
 
     const handleChatMsgSend = async function(e){
@@ -44,20 +60,28 @@ export default function ChatBox() {
         getGlobalMsg()
     }
 
+    
+
+    updateScroll()
+
+    
+
   return (
     <div className='chatBox'>
         <div className="chatHeading">
             Chat with others
         </div>
 
-        <div className='chatMsgBox'>
+        <div className='chatMsgBox' id='chatMsgBox'>
 
             {globalMsg.map(chat=>{
+                
                 return(
                     <ShowChatMsg key={chat._id} msg={chat.msg} email={chat.email}/>
+                    
                 )
             })}
-
+            
             <div id='anchor'></div>
 
         </div>

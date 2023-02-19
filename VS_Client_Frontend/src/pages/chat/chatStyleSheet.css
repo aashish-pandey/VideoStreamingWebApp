@@ -76,14 +76,14 @@
 .showChatMsgMine{
     /* border: 2px solid blue; */
     display: flex;
-    justify-content: end;
+    justify-content: start;
     margin: 1rem;
 }
 
 .showChatMsgOthers{
     /* border: 2px solid blue; */
     display: flex;
-    justify-content: start;
+    justify-content: end;
     margin: 1rem;
 }
 
