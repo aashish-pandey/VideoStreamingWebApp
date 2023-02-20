@@ -41,9 +41,9 @@ export default function VideoUpload() {
   return (
     <>
     <Nav1 />
-    {/* <div id='con'> */}
+    <div id='con'>
 
-      <form onSubmit={uploadFile} id="fm">
+      {/* <form onSubmit={uploadFile} id="fm">
       <input type="text" name="movieName" placeholder='movie Name'/><br/>
       <input type="text" name='releaseDate' placeholder='release Date'/><br/>
       <input type="text" name='genre' placeholder='Movie Genre'/><br/>
@@ -52,10 +52,10 @@ export default function VideoUpload() {
       <input type="file" name="movieThumbnail" />
       <input type="file" name="movieFile" />
       <input type="submit" value="Upload" />
-    </form>
+    </form> */}
 
 
-      {/* <Container>
+      <Container>
 
         <Row className="justify-content-md-center" >
           <Col xs={6} md="auto"  >
@@ -67,10 +67,10 @@ export default function VideoUpload() {
           </Col>
 
         </Row>
-      </Container> */}
+      </Container> 
 
 
-{/* 
+
     <Form id='upform' onSubmit={uploadFile}>
       <Row className="mb-3">
         <Form.Group as={Col} controlId="movieName">
@@ -102,9 +102,9 @@ Enter text here...</textarea>
     <Button variant="primary" type="submit" value="Upload" id="mbtn">
         Submit
       </Button>
-    </Form> */}
+    </Form> 
 
-    {/* </div> */}
+    </div>
     </>
   )
 }

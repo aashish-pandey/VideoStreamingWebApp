@@ -86,6 +86,8 @@ if(loginStatus == 'true' && email != ''){
               type="text"
               placeholder="Search.."
             ></input>
+           
+
             <div className="Profile">
               <button onClick={handleLogout} className="SignIn">
                 Logout

@@ -4,6 +4,7 @@ import AvailablePlans from '../components/AvailablePlans'
 import Navigation from '../components/navigation/Navigation'
 import getCookies from './CookieHandler'
 import useCookies from 'react-cookie/cjs/useCookies';
+import './styleSheet/AccountAccessLoaderStyleSheet.css'
 
 
 import { browserName, osName, deviceType} from 'react-device-detect'
@@ -83,6 +84,13 @@ export default function CheckAccountAccessAuthorization() {
     }, [])
 
   return (
-    <div>CheckAccountAccessAuthorization</div>
+    <div className="AccountAccessCheck">
+    <div className="loader1">
+      <span></span>
+    </div>
+    <div className='AccountAccessText'>Wait Till We Check Your Authenticity..</div>
+    <div>Hope You Won't Mind</div>
+    </div>
+    
   )
 }

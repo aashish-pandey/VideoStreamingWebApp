@@ -11,6 +11,7 @@ import SessionTracker from '../components/sessionManagement/SessionTracker'
 import useCookies from 'react-cookie/cjs/useCookies';
 import { browserName, osName, deviceType} from 'react-device-detect'
 import GetMyIp from '../helperFunctions/GetMyIp'
+import Loader from './Loader'
 
 
 
@@ -18,7 +19,7 @@ import GetMyIp from '../helperFunctions/GetMyIp'
 
 export default function HomeFeed() {
 
-    const [newMovie, SetNewMovie] = useState()
+    const [newMovie, SetNewMovie] = useState([])
     const [watchHistory, SetWatchHistory] = useState([])
 
   const [cookies, setCookies] = useCookies(['user'])
@@ -88,10 +89,7 @@ export default function HomeFeed() {
  
   if(!newMovie){
     return (
-      <div>
-        Loading ...
-
-      </div>
+      <Loader/>
     )
   }
 else

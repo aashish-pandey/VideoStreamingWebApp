@@ -23,6 +23,9 @@ export default function ChatBox() {
             .then(dt=>{
                 console.log(dt.msg)
                 setGlobalMsg(dt.msg)
+                setTimeout(()=>{
+                    updateScroll()
+                }, 10)
             })
     }
 
