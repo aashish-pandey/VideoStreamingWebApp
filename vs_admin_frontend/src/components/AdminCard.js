@@ -1,7 +1,8 @@
 import React from 'react'
-import { Button } from 'react-bootstrap';
+// import { Button } from 'react-bootstrap';
 import { BiEditAlt } from 'react-icons/bi';
 
+import { IconContext } from "react-icons";
 export default function AdminCard(props) {
   return (
    
@@ -23,7 +24,13 @@ export default function AdminCard(props) {
     {/* import { FaThumbsUp } from 'react-icons/fa'; */}
 
 
+
+<IconContext.Provider value={{ color: "green"  }} >
 <BiEditAlt></BiEditAlt>
+
+            </IconContext.Provider>
+           
+ 
 
 
     </td>
