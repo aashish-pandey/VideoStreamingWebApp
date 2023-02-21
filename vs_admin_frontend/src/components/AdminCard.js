@@ -16,12 +16,13 @@ export default function AdminCard(props) {
     {/* import { FaThumbsUp } from 'react-icons/fa'; */}
 
 
+        <span onClick={()=>{console.log("Button clicked aashish")}}>
 
-<IconContext.Provider value={{ color: "green"  }} >
-<BiEditAlt></BiEditAlt>
-
+            <IconContext.Provider value={{ color: "green"  }} >
+              <BiEditAlt></BiEditAlt>
             </IconContext.Provider>
            
+        </span>
  
 
 
