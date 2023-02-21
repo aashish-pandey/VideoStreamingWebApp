@@ -1,6 +1,7 @@
 import React from 'react'
 // import { Button } from 'react-bootstrap';
 import { BiEditAlt } from 'react-icons/bi';
+import {RiDeleteBin3Fill } from 'react-icons/ri';
 
 import { IconContext } from "react-icons";
 export default function AdminCard(props) {
@@ -13,17 +14,28 @@ export default function AdminCard(props) {
     <td>{props.admin.password}</td>
     <td>{props.admin.department}</td>
     <td>
-    {/* import { FaThumbsUp } from 'react-icons/fa'; */}
 
 
+
+<span onClick={()=>{console.log("Button clicked")}}>
 
 <IconContext.Provider value={{ color: "green"  }} >
-<BiEditAlt></BiEditAlt>
+  <BiEditAlt></BiEditAlt>
+</IconContext.Provider>
 
-            </IconContext.Provider>
-           
- 
 
+</span>
+
+&nbsp;
+&nbsp;
+&nbsp;
+&nbsp;
+
+<span onClick={()=>{console.log("Button clicked")}}>
+<IconContext.Provider value={{ color: "green"  }} >
+  <RiDeleteBin3Fill></RiDeleteBin3Fill>
+</IconContext.Provider>
+</span>
 
     </td>
 </tr>

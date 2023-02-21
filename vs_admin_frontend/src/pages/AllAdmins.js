@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import { Button } from 'react-bootstrap';
 import Table from 'react-bootstrap/Table';
 import AdminCard from '../components/AdminCard';
 import Nav1 from './Nav1';
@@ -38,6 +39,7 @@ export default function AllAdmins() {
             <th>Email</th>
             <th>Password</th>
             <th>Department</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
@@ -55,7 +57,9 @@ export default function AllAdmins() {
       </Table>
 
 
-    </div></>
+    </div>
+    <Button>ADD New</Button>
+    </>
     )
 
     }
