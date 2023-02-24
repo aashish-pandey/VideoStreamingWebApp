@@ -42,6 +42,7 @@ export default function AllMovies() {
             <th>Quality</th>
             <th>Release</th>
             <th>Casts</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>

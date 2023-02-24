@@ -41,6 +41,7 @@ export default function AllSubscriptionPlans() {
             <th>Quality</th>
             <th>Release Date</th>
             <th>Casts</th>
+            <th>Action</th>
           </tr>
         </thead>
         <tbody>
