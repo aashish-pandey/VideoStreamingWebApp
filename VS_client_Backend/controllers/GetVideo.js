@@ -3,6 +3,9 @@ const fs = require('fs')
 
 const getVideo = function (req, res) {
     const range = req.headers.range;
+    console.log(req.query.speed)
+
+
 
     if (!range) {
         res.status(400).send("Requires Range Header");
@@ -13,8 +16,20 @@ const getVideo = function (req, res) {
         else {
             const videoPath = __dirname + data[0].movieLocation
             const videoSize = fs.statSync(videoPath).size
-            
-            const CHUNK_SIZE = 10 ** 6
+
+
+            //calculating the size of chunk to send the data
+
+            let clientSpeed  = req.query.speed
+
+            const sz = clientSpeed/(8)
+            console.log(sz)
+            // const CHUNK_SIZE = Math.round(sz * 10 ** 6)
+           //1 MB =   1000000  //6 zeros
+
+            const CHUNK_SIZE = Math.round(sz * 1000000)    
+
+            console.log("size chunk: " + CHUNK_SIZE)
             const start = Number(range.replace(/\D/g, ""))
             const end = Math.min(start + CHUNK_SIZE, videoSize - 1)
             console.log("time: ", start)

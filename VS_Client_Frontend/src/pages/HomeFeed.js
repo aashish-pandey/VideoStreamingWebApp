@@ -12,9 +12,7 @@ import useCookies from 'react-cookie/cjs/useCookies';
 import { browserName, osName, deviceType} from 'react-device-detect'
 import GetMyIp from '../helperFunctions/GetMyIp'
 import Loader from './Loader'
-
-
-
+import CheckInternetSpeed from '../components/CheckInternetSpeed'
 
 
 export default function HomeFeed() {
@@ -22,9 +20,8 @@ export default function HomeFeed() {
     const [newMovie, SetNewMovie] = useState([])
     const [watchHistory, SetWatchHistory] = useState([])
 
-  const [cookies, setCookies] = useCookies(['user'])
+    const [cookies, setCookies] = useCookies(['user'])
     
-
 
     useEffect(()=>{
 
@@ -85,7 +82,7 @@ export default function HomeFeed() {
       console.log(newMovie)
     }, [])
 
-    
+
  
   if(!newMovie){
     return (
@@ -95,6 +92,9 @@ export default function HomeFeed() {
 else
   return (
     <div className='HomeFeedMain'>
+      
+      <CheckInternetSpeed/>
+     
       <Navigation/>
 
     <Banner/>

@@ -53,7 +53,7 @@
     top: 92vh;
     z-index: 2147483647;
     flex-wrap: wrap;    
-    visibility: collapse;
+    /* visibility: collapse; */
 }
 
 
@@ -100,12 +100,12 @@
 }
 
 
-video::-webkit-media-controls {
+/* video::-webkit-media-controls {
   display:none !important;
 }
 video::-webkit-media-controls-enclosure {
   display:none !important;
-}
+} */
 
 
 @media (max-width: 630px){

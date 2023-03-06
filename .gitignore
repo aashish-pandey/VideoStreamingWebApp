@@ -8,7 +8,7 @@
 /VS_Client_Frontend/node_modules
 /VS_client_Backend/node_modules
 /VS_client_Backend/uploads
-/electron/myapp/node_modules
+/electron/node_modules
 
 # # testing
 # /coverage

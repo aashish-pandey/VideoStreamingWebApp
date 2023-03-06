@@ -41,8 +41,6 @@ const saveGlobalChat = require('./controllers/SaveGlobalChat')
 const getGlobalChat = require('./controllers/GetGlobalChat')
 
 
-
-
 app = express()
 
 app.use(upload())

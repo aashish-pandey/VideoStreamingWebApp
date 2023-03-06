@@ -13,6 +13,7 @@ import Dashboard from "./pages/Dashboard";
 import VideoUpload from "./pages/UploadMovie";
 import { useEffect } from "react";
 import getCookies from "./cookieHandler/CookieHandler";
+import UploadSeries from "./pages/UploadSeries";
 
 
 //till here
@@ -40,7 +41,7 @@ function App() {
       <BrowserRouter>
         <Routes>
         <Route     //here
-          path="/"
+          path="/sd"
           element={
             <ProtectedRoute>
               <Dashboard/>
@@ -65,6 +66,11 @@ function App() {
           <Route
           path="/upload"
           element={<ProtectedRoute><VideoUpload/></ProtectedRoute>}
+          />
+
+          <Route
+          path="/"
+          element={<ProtectedRoute><UploadSeries/></ProtectedRoute>}
           />
 
           <Route
