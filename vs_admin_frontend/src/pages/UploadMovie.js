@@ -49,7 +49,6 @@ export default function VideoUpload() {
       <input className='inputup' type="text" name='genre' placeholder='Movie Genre'/><br/>
       <input className='inputup' type="text" name='casts' placeholder='Cast name'/><br/>
       <input className='inputup' type="text" name="description" placeholder="Description"/><br/>
-      
       <p class="breaker"></p>
       <input className='inputup'  type="file" name="movieThumbnail" />
       <input className='inputup'  type="file" name="movieFile" />
