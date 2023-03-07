@@ -42,6 +42,7 @@ const saveGlobalChat = require('./controllers/SaveGlobalChat')
 const getGlobalChat = require('./controllers/GetGlobalChat')
 const deleteAdmin = require('./controllers/AdminSideAdminFuncionalities/DeleteAdmin')
 const deleteMovie = require('./controllers/AdminSideAdminFuncionalities/DeleteMovie')
+const deleteUser = require('./controllers/AdminSideAdminFuncionalities/DeleteUSer')
 
 
 app = express()
@@ -101,6 +102,7 @@ app.post('/registerAdmin', registerAdmin)
 app.post('/loginAdmin', loginAdmin)
 app.post('/deleteAdmin',deleteAdmin)
 app.post('/deleteMovie', deleteMovie)
+app.post('/deleteUser', deleteUser)
 
 
 app.get('/getAllUsers', getAllUsers)
