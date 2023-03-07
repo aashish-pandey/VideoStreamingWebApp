@@ -3,6 +3,7 @@ import React, { useContext, useState } from 'react';
 import { useCookies } from 'react-cookie';
 import { useNavigate } from 'react-router-dom';
 import { LoginContext } from '../context/LoginContext';
+import Incorrect from './Incorrect';
 
 
 
@@ -33,6 +34,8 @@ export default function Login() {
               navigate('/')
             }else{
               setErr(res.msg)
+              navigate('/Incorrect')
+             
             }
           } catch (ex) {
             console.log(ex);
@@ -43,9 +46,12 @@ export default function Login() {
     <div>
       <h1>{err}</h1>
       <h1>hello + {process.env.REACT_APP_API_CALL_ADDRESS}</h1>
+      
     <div className="Auth-form-container">
+     
       <form className="Auth-form" onSubmit={handleLogin} method='POST' id="fm">
         <div className="Auth-form-content">
+
           <h3 className="Auth-form-title">Log In</h3>
           <div className="form-group mt-3">
             <label>Email address</label>

@@ -14,6 +14,7 @@ import VideoUpload from "./pages/UploadMovie";
 import { useEffect } from "react";
 import getCookies from "./cookieHandler/CookieHandler";
 import UploadSeries from "./pages/UploadSeries";
+import Incorrect from "./pages/Incorrect";
 
 
 //till here
@@ -59,6 +60,12 @@ function App() {
           </ProtectedRoute>}
           />
          
+         <Route
+          path= '/incorrect'  //here
+          element={<ProtectedRoute>
+            <Incorrect/>
+          </ProtectedRoute>}
+          />
           <Route
           path="/allUsers"
           element={<ProtectedRoute><Allusers/></ProtectedRoute>}
