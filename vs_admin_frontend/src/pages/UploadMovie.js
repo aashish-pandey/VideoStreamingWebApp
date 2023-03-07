@@ -53,7 +53,7 @@ export default function VideoUpload() {
       <input className='inputup'  type="file" name="movieThumbnail" />
       <input className='inputup'  type="file" name="movieFile" />
       <p class="breaker"></p>
-
+      
       <input  className='btnup' type="submit" value="Upload" />
     </form>
 
