@@ -3,6 +3,7 @@ import { useState } from 'react'
 import { useEffect } from 'react'
 import Navigation from '../components/navigation/Navigation'
 import MovieCard from '../components/moviedetails/MovieCard'
+import LoadMovie from '../components/loaders/LoadMovie'
 
 
 
@@ -42,6 +43,12 @@ export default function Trending() {
         getTrendingMovies()
 
     }, [])
+
+    if(trendingMovie.length <= 0){
+        return(
+            <LoadMovie/>
+        )
+    }
 
   return (
     <div>
