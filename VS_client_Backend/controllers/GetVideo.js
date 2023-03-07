@@ -25,7 +25,7 @@ const getVideo = function (req, res) {
             const sz = clientSpeed/(8)
             console.log(sz)
             // const CHUNK_SIZE = Math.round(sz * 10 ** 6)
-           //1 MB =   1000000  //6 zeros
+           //1 MB =   1000000 bits //6 zeros
 
             const CHUNK_SIZE = Math.round(sz * 1000000)    
 

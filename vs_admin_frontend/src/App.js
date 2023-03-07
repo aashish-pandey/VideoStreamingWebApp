@@ -41,7 +41,7 @@ function App() {
       <BrowserRouter>
         <Routes>
         <Route     //here
-          path="/sd"
+          path="/"
           element={
             <ProtectedRoute>
               <Dashboard/>
@@ -69,7 +69,7 @@ function App() {
           />
 
           <Route
-          path="/"
+          path="/sdfg"
           element={<ProtectedRoute><UploadSeries/></ProtectedRoute>}
           />
 

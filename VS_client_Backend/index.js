@@ -9,6 +9,7 @@ var cookieParser = require('cookie-parser')
 const upload = require('express-fileupload')
 
 
+
 const subscriptionStatus = require('./controllers/SubscriptionStatus')
 const planAvailable = require('./controllers/AvailablePlans')
 const activateSubscription = require('./controllers/ActivateSubscription')
@@ -39,6 +40,7 @@ const getSubscriptionPlanByName = require('./controllers/GetSubscriptionPlanByNa
 const getTrendingMovies = require('./controllers/GetTrendingMovies')
 const saveGlobalChat = require('./controllers/SaveGlobalChat')
 const getGlobalChat = require('./controllers/GetGlobalChat')
+const deleteAdmin = require('./controllers/AdminSideAdminFuncionalities/DeleteAdmin')
 
 
 app = express()
@@ -96,10 +98,15 @@ app.post('/setHomeAddress', SetHomeAddress)
 //admin requests
 app.post('/registerAdmin', registerAdmin)
 app.post('/loginAdmin', loginAdmin)
+app.post('/deleteAdmin',deleteAdmin)
+
+
 app.get('/getAllUsers', getAllUsers)
 app.get('/getAllAdmins', getAllAdmins)
 app.get('/getAllMovies', getMovies)
 app.get('/getAllSubscriptionPlans', planAvailable)
+
+
 
 
 
