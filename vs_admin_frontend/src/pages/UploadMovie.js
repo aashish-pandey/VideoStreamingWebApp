@@ -43,15 +43,19 @@ export default function VideoUpload() {
     <Nav1 />
     <div id='con'>
 
-      <form onSubmit={uploadFile} id="fm">
-      <input type="text" name="movieName" placeholder='movie Name'/><br/>
-      <input type="text" name='releaseDate' placeholder='release Date'/><br/>
-      <input type="text" name='genre' placeholder='Movie Genre'/><br/>
-      <input type="text" name='casts' placeholder='Cast name'/><br/>
-      <input type="text" name="description" placeholder="Description"/><br/>
-      <input type="file" name="movieThumbnail" />
-      <input type="file" name="movieFile" />
-      <input type="submit" value="Upload" />
+      <form onSubmit={uploadFile} id="fm" >
+      <input className='inputup' type="text" name="movieName" placeholder='movie Name'/><br/>
+      <input className='inputup' type="text" name='releaseDate' placeholder='release Date format(2000/01/25)'/><br/>
+      <input className='inputup' type="text" name='genre' placeholder='Movie Genre'/><br/>
+      <input className='inputup' type="text" name='casts' placeholder='Cast name'/><br/>
+      <input className='inputup' type="text" name="description" placeholder="Description"/><br/>
+      
+      <p class="breaker"></p>
+      <input className='inputup'  type="file" name="movieThumbnail" />
+      <input className='inputup'  type="file" name="movieFile" />
+      <p class="breaker"></p>
+
+      <input  className='btnup' type="submit" value="Upload" />
     </form>
 
 
@@ -108,3 +112,4 @@ Enter text here...</textarea>
     </>
   )
 }
+

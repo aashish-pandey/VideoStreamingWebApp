@@ -3,7 +3,7 @@ tasks to complete:
 //New systems to be developed that we have no idea
 1. Integrate actual payment system --BIKASH
 2. Complete Login authentication system --AASHISH			--Done
-3. Implement adaptive video sending by calculating 	network speed --sANDESH
+3. Implement adaptive video sending by calculating 	network speed --sANDESH--done
 4. Implement movie recommendation system --AASHISH
 5. Implement new process for uploading series --BIKASH
 6. Implement login status of client and save status  	in database --AASHISH --Done
@@ -11,7 +11,7 @@ tasks to complete:
 
 //Improvements in admin section
 1. Add something in dashboard page
-2. Add options to change password or delete any admin
+2. Add options to change password or delete any admin ----on going
 3. Add options to introduce new or delete existing 	subscription plans
 4. Complete the movie upload form working
 5. Add options to edit or delete existing movie list
