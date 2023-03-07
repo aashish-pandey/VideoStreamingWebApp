@@ -1,9 +1,41 @@
 import React from 'react'
 import { BiEditAlt } from 'react-icons/bi';
 import {RiDeleteBin3Fill } from 'react-icons/ri';
+import axios from 'axios';
+
 
 import { IconContext } from "react-icons";
 export default function AllMoviesCard(props) {
+
+  const handleDeleteMovies = async ()=>{
+
+    const formData = {
+      _id: props.movie._id
+    }
+
+    try{
+      const res = await axios.post(
+        "http://" + process.env.REACT_APP_API_CALL_ADDRESS + ":3560/deleteMovie",
+          formData
+      )
+      .then(res=>{ 
+        window.location.reload();
+        return res.data
+      })
+      
+      // console.log(res)
+  }catch (ex) {
+      console.log(ex);
+  }
+
+
+
+    console.log("Deleting movie with id " + props.movie._id)
+  }
+
+  const handleEditMovies = ()=>{
+    console.log("Editing movie with id "  + props.movie._id)
+  }
   return (
    
 <tr>
@@ -14,7 +46,7 @@ export default function AllMoviesCard(props) {
 <td>{props.movie.releaseYear}</td>
 <td>{props.movie.casts}</td>
 <td>
-<span onClick={()=>{console.log("Button clicked")}}>
+<span onClick={handleEditMovies}>
 
 <IconContext.Provider value={{ color: "green"  }} >
   <BiEditAlt></BiEditAlt>
@@ -28,7 +60,7 @@ export default function AllMoviesCard(props) {
 &nbsp;
 &nbsp;
 
-<span onClick={()=>{console.log("Button clicked")}}>
+<span onClick={handleDeleteMovies}>
 <IconContext.Provider value={{ color: "green"  }} >
   <RiDeleteBin3Fill></RiDeleteBin3Fill>
 </IconContext.Provider>
