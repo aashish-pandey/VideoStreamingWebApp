@@ -3,7 +3,8 @@
     flex-wrap: wrap;
     margin: 0px;
     padding: 3rem;
-    height: 100vh;
+    min-height: 100vh;
+    height: 100%;
     justify-content: space-around;
     align-items: center;
     background-color: black;

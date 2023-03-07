@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import LoadMovie from '../components/loaders/LoadMovie'
 
 import MovieCard from '../components/moviedetails/MovieCard'
 import Navigation from '../components/navigation/Navigation'
@@ -20,23 +21,35 @@ export default function Movies() {
               })
             return data['msg']
           }
+        
         getNewMovie()    
     }, [])
 
-  return (
-    <>
+    if(newMovie.length == 0){
+      return(
+        <LoadMovie/>
+      )
+    }
+    else{
+      return (
+        <>
         <Navigation/>
 
         <div className='MoviePageMovieCard'>
+        {newMovie.map(movie=>{
+        return(<>
+        <MovieCard key={movie['_id']} info = {movie}/>
+        <br/>
+        <br/> <br/> <br/> <br/>
+        </>
 
-{newMovie.map(movie=>{
-        return(
-          <MovieCard key={movie['_id']} info = {movie}/>
         )
-      })}
+        })}
 
 
-    </div>
-    </>
-  )
+        </div>
+        </>
+        )
+    }
+    
 }
