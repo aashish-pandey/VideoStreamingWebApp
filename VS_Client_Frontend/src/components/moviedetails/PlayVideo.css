@@ -1,5 +1,5 @@
 #videoplayerQ{
-  background-color: #050505c0;
+  background-color: #050505;
   color: white;
   height: 100vh;
   display: flex;
@@ -11,7 +11,7 @@
 #seekSlider{
   border-radius: 8px;
   height: 4px;
-  width: 1000px;
+  width: 97vw;
   outline: none;
   -webkit-appearance: none;
   cursor: pointer;
@@ -28,8 +28,15 @@
 
   #volumeSlider{
     height: 3.5px;
+    /* border: 2px solid white; */
   -webkit-appearance: none;
 
+  }
+
+  #sound{
+    /* border: 2px solid white; */
+    display: flex;
+    align-items: center;
   }
 
 #volumeSlider::-webkit-slider-thumb{
@@ -42,18 +49,42 @@
 
 }
 #video-controls{
-    background-color: rgba(0, 0, 0, 0.41);
+    background-color: rgb(16, 16, 16);
     padding: 0.5rem;
+    padding-bottom: 0;
+    margin-bottom: 0;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
     align-items: center;
     text-align: center;
     width: 99vw;
     position:absolute;
-    top: 92vh;
+    top: 89vh;
     z-index: 2147483647;
     flex-wrap: wrap;    
-    /* visibility: collapse; */
+    visibility: collapse;
+    bottom: 0;
+}
+
+#video-controls-lower{
+  display: flex;
+  flex-direction: row;
+  width: 96vw;
+  padding: 5px;
+  padding-bottom: 0;
+  margin-bottom: 0;
+  align-items: center;
+  justify-content: space-between;
+}
+
+#video-controls-lower-left{
+  /* border: 2px solid white; */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 20vw;
 }
 
 
@@ -68,12 +99,32 @@
 }
 
 #video-controls button:hover{
-  border: 1px solid white;
+  /* border: 1px solid white; */
 }
 
 #video-controls button:active{
-  border: 1px solid white;
+  /* border: 1px solid white; */
 
+}
+
+
+#big-play-button{
+  transform: scale(4);
+  position: absolute;
+  margin: -5px;
+  padding: -5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: none;
+  /* border: 2px solid white; */
+}
+
+
+#big-play-button:hover{
+  transform: scale(4.5);
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
 }
 
 

@@ -65,9 +65,11 @@ export default function PlayVideo({ route, navigation }) {
       console.log(vid)
       if(video.paused){
         video.play()
+        document.getElementById('big-play-button').style.display =  'none'
         setPlaybtn(<div className="css-9a5dmo"><svg viewBox="0 0 24 24" width="24" height="24" stroke="#fff" strokeWidth="2" fill="white" strokeLinecap="round" strokeLinejoin="round" className="css-i6dzq1"><rect x="6" y="4" width="4" height="16"></rect><rect x="14" y="4" width="4" height="16"></rect></svg></div>)
       }else{
         video.pause()
+        document.getElementById('big-play-button').style.display =  'block'
         setPlaybtn(<div className="css-9a5dmo"><svg viewBox="0 0 24 24" width="24" height="24" stroke="#fff" strokeWidth="2" fill="white" strokeLinecap="round" strokeLinejoin="round" className="css-i6dzq1"><polygon points="5 3 19 12 5 21 5 3"></polygon></svg></div>)
       }
     }
@@ -126,7 +128,7 @@ export default function PlayVideo({ route, navigation }) {
       seekSlider.style.background = `linear-gradient(to right, #f00 0%, #f00 ${nt}%, #777 ${nt}%,  #777 ${buffTime}%, #fff ${buffTime}%, white 100%)`
       setSeekPlayerValue(nt)
 
-      var remT =  video.currentTime
+      var remT =   video.duration - video.currentTime
 
       var hr = Math.floor(remT/3600)
       var min = Math.floor((remT-hr*3600)/60)
@@ -175,6 +177,9 @@ export default function PlayVideo({ route, navigation }) {
         video.requestFullscreen()
       }
     }
+
+    
+
     function handleKeyDown(event){
       var video = document.getElementById('video-id')
       
@@ -235,17 +240,34 @@ export default function PlayVideo({ route, navigation }) {
         <source src={"http://" + process.env.REACT_APP_API_CALL_ADDRESS + ":3560/getVideo/" + id + '?speed=' + getCookies('internetSpeed')}  type='video/mp4' />
        
         </video>
+        <div id="big-play-button" onClick={()=>playPausebtn('playpausebtn', 'video-id')}>
+          {playbtn}
+        </div>
       <div id='video-controls'>
 
-        <button id='playpausebtn' onClick={()=>playPausebtn('playpausebtn', 'video-id')}>
-          {playbtn}
-        </button>
-        
+        <div id="video-controls-upper">
         <input id='seekSlider' onChange={()=>vidSeek()} onInput={()=>vidSeek()} type='range' min='0' max='100' value={seekPlayerValue} step='0.001' className='progress buffered-amount'/>
-        <span id='remaningTime'>-00:00:00</span>
-        <button id='mutebtn' onClick={()=>vidMute()}>{soundbtn}</button>
-        <input id='volumeSlider' onChange={()=>volumeSeek()} onInput={()=>volumeSeek()} type='range' min='0' max='100' value={volumeSliderValue} step='1'/>
-        <button id='fullScreenbtn' onClick={()=>toggleFullScreen()}>{maximizebtn}</button>
+        </div>
+
+        <div id="video-controls-lower">
+
+          <div id="video-controls-lower-left">
+            <button id='playpausebtn' onClick={()=>playPausebtn('playpausebtn', 'video-id')}>
+              {playbtn}
+            </button>
+            
+            <div id="sound">
+            <button id='mutebtn' onClick={()=>vidMute()}>{soundbtn}</button>
+            <input id='volumeSlider' onChange={()=>volumeSeek()} onInput={()=>volumeSeek()} type='range' min='0' max='100' value={volumeSliderValue} step='1'/>
+            </div>
+            <span id='remaningTime'>-00:00:00</span>
+          </div>
+
+          <div id="video-controls-lower-right">
+            <button id='fullScreenbtn' onClick={()=>toggleFullScreen()}>{maximizebtn}</button>
+          </div>
+        </div>
+
 
       </div>
       
