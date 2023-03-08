@@ -13,20 +13,20 @@ tasks to complete:
 1. Add something in dashboard page
 2. Add options to change password or delete any admin ----on going
 3. Add options to introduce new or delete existing 	subscription plans
-4. Complete the movie upload form working
-5. Add options to edit or delete existing movie list
-6. Add options to block or delete users 
+4. Complete the movie upload form working    --done
+5. Add options to edit or delete existing movie list  --deletion completed
+6. Add options to block or delete users --done
 7. Add admin profile option with all the activities 	that the admin have performed till now.
 8. Add new page that can add new movie in the banner 	section of client 
 
 
 //Improvements in Client Side
-1. Add Movies Page
+1. Add Movies Page			--done
 2. Add web Series Page
 3. Improve the css of video player to accomodate 	different screen sizes
 4. Implement the search menu to search different 	movies and web series
-5. Add trending page 
-6. Change the way history is shown. Latest watched 	movie showld be shown at first
+5. Add trending page 			--done
+6. Change the way history is shown. Latest watched 	movie showld be shown at first		--done
 7. Add option to change password
 8. Add user profile page which contains user 	activity, user subscription plan, etc -DONE(CSS remaining)
 9. Develop a setting page in which the user can 	control how the account is to be used

@@ -62,9 +62,8 @@ function App() {
          
          <Route
           path= '/incorrect'  //here
-          element={<ProtectedRoute>
-            <Incorrect/>
-          </ProtectedRoute>}
+          element={
+            <Incorrect/>}
           />
           <Route
           path="/allUsers"
