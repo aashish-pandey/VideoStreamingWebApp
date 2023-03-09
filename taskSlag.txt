@@ -11,13 +11,13 @@ tasks to complete:
 
 //Improvements in admin section
 1. Add something in dashboard page
-2. Add options to change password or delete any admin ----on going
-3. Add options to introduce new or delete existing 	subscription plans
+2. Add options to change password or delete any admin ----done
+3. Add options to introduce new or delete existing 	subscription plans --check this maybe its done cause delete subs is there
 4. Complete the movie upload form working    --done
 5. Add options to edit or delete existing movie list  --deletion completed
 6. Add options to block or delete users --done
-7. Add admin profile option with all the activities 	that the admin have performed till now.
-8. Add new page that can add new movie in the banner 	section of client 
+7. Add admin profile option with all the activities that the admin have performed till now.
+8. Add new page that can add new movie in the banner section of client 
 
 
 //Improvements in Client Side
