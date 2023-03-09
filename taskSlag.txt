@@ -12,7 +12,7 @@ tasks to complete:
 //Improvements in admin section
 1. Add something in dashboard page
 2. Add options to change password or delete any admin ----done
-3. Add options to introduce new or delete existing 	subscription plans --check this maybe its done cause delete subs is there
+3. Add options to introduce new or delete existing 	subscription plans --check this maybe its done cause delete subs is there(Design on how to add new type of subscription plans is remaining)
 4. Complete the movie upload form working    --done
 5. Add options to edit or delete existing movie list  --deletion completed
 6. Add options to block or delete users --done
