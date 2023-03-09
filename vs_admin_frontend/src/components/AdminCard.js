@@ -30,9 +30,6 @@ export default function AdminCard(props) {
   }catch (ex) {
       console.log(ex);
   }
-
-
-
     console.log("Deleting admin with id " + props.admin._id)
   }
 

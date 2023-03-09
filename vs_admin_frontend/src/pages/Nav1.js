@@ -46,6 +46,8 @@ export default function Nav1() {
          
         </Navbar.Collapse>
       </Container>
+      <Nav.Link id="navLinks" href="/EditAdmins">EditAdmins</Nav.Link>
+
     </Navbar>
   )
 }
