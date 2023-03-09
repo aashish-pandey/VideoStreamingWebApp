@@ -1,7 +1,4 @@
 
-
-
-// import AllAdmins from './AllAdmins';
 import Nav1 from './Nav1';
 
 

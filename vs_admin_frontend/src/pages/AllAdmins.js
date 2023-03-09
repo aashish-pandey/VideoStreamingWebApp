@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react'
+import {Link, Route, Routes} from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 import Table from 'react-bootstrap/Table';
 import AdminCard from '../components/AdminCard';
@@ -58,7 +59,13 @@ export default function AllAdmins() {
 
 
     </div>
-    <Button>ADD New</Button>
+    {/* <a href='/Register'>
+    <Button >ADD New</Button>
+    </a> */}
+
+    <Link to="/reg">
+    <Button >ADD New</Button>
+      </Link>
     </>
     )
 

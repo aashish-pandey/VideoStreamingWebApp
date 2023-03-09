@@ -14,7 +14,9 @@ import VideoUpload from "./pages/UploadMovie";
 import { useEffect } from "react";
 import getCookies from "./cookieHandler/CookieHandler";
 import UploadSeries from "./pages/UploadSeries";
-import Incorrect from "./pages/Incorrect";
+import EditAdmins from "./pages/EditAdmins";
+import EditMovies from "./pages/EditMovies";
+// import Incorrect from "./pages/Incorrect";
 
 
 //till here
@@ -60,11 +62,7 @@ function App() {
           </ProtectedRoute>}
           />
          
-         <Route
-          path= '/incorrect'  //here
-          element={
-            <Incorrect/>}
-          />
+   
           <Route
           path="/allUsers"
           element={<ProtectedRoute><Allusers/></ProtectedRoute>}
@@ -89,6 +87,15 @@ function App() {
           element={<ProtectedRoute><AllMovies/></ProtectedRoute>}
           />
 
+<Route
+          path="/EditAdmins"
+          element={<ProtectedRoute><EditAdmins></EditAdmins></ProtectedRoute>}
+          />
+
+<Route
+          path="/EditMovies"
+          element={<ProtectedRoute><EditMovies></EditMovies></ProtectedRoute>}
+          />
           <Route
           path="/subs"
           element={<ProtectedRoute><AllSubscriptionPlans/></ProtectedRoute>}
