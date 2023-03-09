@@ -15,6 +15,7 @@ import { useEffect } from "react";
 import getCookies from "./cookieHandler/CookieHandler";
 import UploadSeries from "./pages/UploadSeries";
 import EditAdmins from "./pages/EditAdmins";
+import EditMovies from "./pages/EditMovies";
 // import Incorrect from "./pages/Incorrect";
 
 
@@ -89,6 +90,11 @@ function App() {
 <Route
           path="/EditAdmins"
           element={<ProtectedRoute><EditAdmins></EditAdmins></ProtectedRoute>}
+          />
+
+<Route
+          path="/EditMovies"
+          element={<ProtectedRoute><EditMovies></EditMovies></ProtectedRoute>}
           />
           <Route
           path="/subs"
