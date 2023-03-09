@@ -44,7 +44,7 @@
   
   .Navbar .left_Navbar .links {
     display: flex;
-    width: 400px;
+    /* width: 500px; */
     align-items: center;
     justify-content: space-evenly;
     cursor: pointer;

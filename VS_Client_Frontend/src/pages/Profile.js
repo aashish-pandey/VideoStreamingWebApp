@@ -3,6 +3,7 @@ import { useEffect } from 'react'
 import Navigation from '../components/navigation/Navigation'
 import getCookies from './CookieHandler'
 import GetMyIp from '../helperFunctions/GetMyIp'
+import './styleSheet/profileStylesheet.css'
 
 
 export default function Profile() {
@@ -98,10 +99,10 @@ const SetCurrentNetworkAsMyHomeNetwork = async function(){
 
 
   return (
-    <>
+    <div className='profileMainPage'>
     <Navigation/>
 
-    <div style={{margin: "2rem"}}>
+    <div className='profileMain'>
     <h3>Personal Details</h3>
     <hr />
 
@@ -146,6 +147,6 @@ const SetCurrentNetworkAsMyHomeNetwork = async function(){
     </div>
 
     </div>
-    </>
+    </div>
   )
 }
