@@ -5,7 +5,10 @@ import axios from 'axios';
 
 
 import { IconContext } from "react-icons";
+import { useNavigate } from 'react-router-dom';
 export default function AllMoviesCard(props) {
+
+  const navigate = useNavigate()
 
   const handleDeleteMovies = async ()=>{
 
@@ -34,6 +37,7 @@ export default function AllMoviesCard(props) {
   }
 
   const handleEditMovies = ()=>{
+    navigate('/Editmovies')
     console.log("Editing movie with id "  + props.movie._id)
   }
   return (

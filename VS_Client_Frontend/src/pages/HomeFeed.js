@@ -21,6 +21,8 @@ export default function HomeFeed() {
     const [watchHistory, SetWatchHistory] = useState([])
 
     const [cookies, setCookies] = useCookies(['user'])
+
+    const [query, setQuery]  = useState("")
     
 
     useEffect(()=>{
@@ -65,7 +67,6 @@ export default function HomeFeed() {
         SetWatchHistory(data)
       }
 
-
       async function getNewMovie(){
         const data = await fetch("http://" + process.env.REACT_APP_API_CALL_ADDRESS + ":3560/getMovies")
         .then(res=>res.json())
@@ -82,12 +83,37 @@ export default function HomeFeed() {
       console.log(newMovie)
     }, [])
 
-
+    console.log(newMovie.filter(movie=>movie.name.toLowerCase().includes(query.toLowerCase())))
  
   if(!newMovie){
     return (
       <Loader/>
     )
+  }
+  else if(query != ""){
+    return(<>
+      <div className='HomeFeedMain'>
+      
+      <CheckInternetSpeed/>
+     
+      <Navigation/>
+
+      <input type="text" onChange={e=>{setQuery(e.target.value)}} />
+
+   
+    <h2>Based on your Searches</h2>
+    <div className='MovieListDisplayCard'>
+
+        {newMovie.filter(movie=>movie.name.toLowerCase().includes(query.toLowerCase())).map(movie=>{
+                return(
+                  <MovieCard key={movie['_id']} info = {movie}/>
+                )
+              })}
+
+
+      </div>
+      </div>
+    </>)
   }
 else
   return (
@@ -96,6 +122,8 @@ else
       <CheckInternetSpeed/>
      
       <Navigation/>
+
+      <input type="text" onChange={e=>{setQuery(e.target.value)}} />
 
     <Banner/>
     <h2>Latest Releases</h2>

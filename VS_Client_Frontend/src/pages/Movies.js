@@ -10,6 +10,7 @@ export default function Movies() {
     const [newMovie, SetNewMovie] = useState([])
 
 
+
     useEffect(()=>{
         async function getNewMovie(){
             const data = await fetch("http://" + process.env.REACT_APP_API_CALL_ADDRESS + ":3560/getMovies")

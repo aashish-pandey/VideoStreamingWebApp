@@ -25,12 +25,12 @@ export default function Nav1() {
             <Nav.Link id="navLinks" href="/reg">Register</Nav.Link>
 
             <Nav.Link id="navLinks" href="/admins">Admins</Nav.Link>
-      <Nav.Link id="navLinks" href="/EditMovies">EditMovies</Nav.Link>
+      {/* <Nav.Link id="navLinks" href="/EditMovies">EditMovies</Nav.Link> */}
 
             <Nav.Link id="navLinks" href="/subs">Subscriptions</Nav.Link>
             {/* <Nav.Link id="navLinks" href="/allMovies" > Movies</Nav.Link> */}
 
-      <Nav.Link id="navLinks" href="/EditAdmins">EditAdmins</Nav.Link>
+      {/* <Nav.Link id="navLinks" href="/EditAdmins">EditAdmins</Nav.Link> */}
 
             <NavDropdown id="navLinks"   title="Movies" >
 

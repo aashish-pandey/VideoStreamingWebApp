@@ -9,6 +9,8 @@ import { IconContext } from "react-icons";
 import { useNavigate } from 'react-router-dom';
 export default function AdminCard(props) {
 
+  const navigate = useNavigate()
+
 
   const handleDeleteAdmin = async ()=>{
 
@@ -34,7 +36,9 @@ export default function AdminCard(props) {
   }
 
   const handleEditAdmin = ()=>{
+    navigate('/EditAdmins')
     console.log("Editing admin with id "  + props.admin._id)
+
   }
 
 
