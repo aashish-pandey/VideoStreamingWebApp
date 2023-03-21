@@ -47,7 +47,7 @@ export default function UserCard(props) {
     <span onClick={()=>{console.log("Button clicked")}}>
 
 <IconContext.Provider value={{ color: "green"  }} >
-  <BiEditAlt></BiEditAlt>
+  {/* <BiEditAlt></BiEditAlt> */}
 </IconContext.Provider>
 
 

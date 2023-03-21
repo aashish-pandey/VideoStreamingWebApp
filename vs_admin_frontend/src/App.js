@@ -74,7 +74,7 @@ function App() {
           element={<ProtectedRoute><VideoUpload/></ProtectedRoute>}
           />
           
-<Route path="/ban"
+<Route path="/banner"
 element={<ProtectedRoute><Banner/></ProtectedRoute>}
 ></Route>
           <Route
