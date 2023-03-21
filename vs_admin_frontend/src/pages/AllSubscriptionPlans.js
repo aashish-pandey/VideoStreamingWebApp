@@ -39,8 +39,7 @@ export default function AllSubscriptionPlans() {
             <th>Plan Name</th>
             <th>Monthly Price</th>
             <th>No of Device</th>
-            <th>Release Year</th>
-            <th>Casts</th>
+            
             
           </tr>
         </thead>

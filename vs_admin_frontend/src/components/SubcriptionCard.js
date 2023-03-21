@@ -11,8 +11,6 @@ export default function SubscriptionCard(props) {
 <td>{props.plan.planName}</td>
 <td>{props.plan.monthlyPrice}</td>
 <td>{props.plan.noOfDevice}</td>
-<td>{props.plan.releaseYear}</td>
-<td>{props.plan.casts}</td>
 
   
 
