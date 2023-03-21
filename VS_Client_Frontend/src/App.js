@@ -20,6 +20,7 @@ import Profile from './pages/Profile';
 import Movies from './pages/Movies';
 import Trending from './pages/Trending';
 import GroupChat from './pages/chat/GroupChat';
+import ForgetPassword from './pages/ForgetPassword';
 
 function App() {
 
@@ -56,6 +57,11 @@ function App() {
           <Route
           path='/landing'
           element={<Landing/>}
+          />
+
+<Route
+          path='/forgetPassword'
+          element={<ForgetPassword/>}
           />
   
         <Route

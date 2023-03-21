@@ -82,6 +82,10 @@ export default function Login() {
         </form>
 
         <div>
+            <button onClick={()=>{navigate('/forgetPassword')}}>forget Password</button>
+        </div>
+
+        <div>
             <span>New to JaalChitra? <button className='UseAnotherEmail' onClick={handleRedirectSignup}>Sign up Now</button></span>
         </div>
         </div>

@@ -45,6 +45,8 @@ const deleteMovie = require('./controllers/AdminSideAdminFuncionalities/DeleteMo
 const deleteUser = require('./controllers/AdminSideAdminFuncionalities/DeleteUSer')
 const editAdmin = require('./controllers/AdminSideAdminFuncionalities/EditAdmin')
 const changeAdminDepartment = require('./controllers/AdminSideAdminFuncionalities/ChangeAdminDepartment')
+const { sendMail } = require('./MailHandler/SendMail')
+const HandleMailSend = require('./MailHandler/HandleMailSend')
 
 
 app = express()
@@ -76,6 +78,9 @@ app.get('/getMySubscription/:email', getMySubscription)
 app.get('/getSubscriptionPlanByName/:name', getSubscriptionPlanByName)
 app.get('/getTrendingMovies', getTrendingMovies)
 app.get('/getGlobalChat', getGlobalChat)
+
+
+app.post('/sendMail', HandleMailSend)
 
 
 
