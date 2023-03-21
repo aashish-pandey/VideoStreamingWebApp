@@ -16,6 +16,8 @@ import getCookies from "./cookieHandler/CookieHandler";
 import UploadSeries from "./pages/UploadSeries";
 import EditAdmins from "./pages/EditAdmins";
 import EditMovies from "./pages/EditMovies";
+import Banner from "./pages/Banner";
+
 // import Incorrect from "./pages/Incorrect";
 
 
@@ -71,7 +73,10 @@ function App() {
           path="/upload"
           element={<ProtectedRoute><VideoUpload/></ProtectedRoute>}
           />
-
+          
+<Route path="/ban"
+element={<ProtectedRoute><Banner/></ProtectedRoute>}
+></Route>
           <Route
           path="/sdfg"
           element={<ProtectedRoute><UploadSeries/></ProtectedRoute>}
