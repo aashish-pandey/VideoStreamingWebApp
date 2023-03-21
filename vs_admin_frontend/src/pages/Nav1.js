@@ -23,7 +23,7 @@ export default function Nav1() {
           >
             <Nav.Link id="navLinks" href="/">Dashboard</Nav.Link>
             <Nav.Link id="navLinks" href="/reg">Register</Nav.Link>
-
+<Nav.Link id='navLinks' href='/banner'>Banner</Nav.Link>
             <Nav.Link id="navLinks" href="/admins">Admins</Nav.Link>
       {/* <Nav.Link id="navLinks" href="/EditMovies">EditMovies</Nav.Link> */}
 

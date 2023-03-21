@@ -13,28 +13,26 @@ export default function SubscriptionCard(props) {
 <td>{props.plan.noOfDevice}</td>
 <td>{props.plan.releaseYear}</td>
 <td>{props.plan.casts}</td>
-<td>
+
   
-<span onClick={()=>{console.log("Button clicked")}}>
+
+  
+{/* <span onClick={()=>{console.log("Button clicked")}}>
 
 <IconContext.Provider value={{ color: "green"  }} >
   <BiEditAlt></BiEditAlt>
 </IconContext.Provider>
 
 
-</span>
+</span> */}
 
-&nbsp;
-&nbsp;
-&nbsp;
-&nbsp;
 
-<span onClick={()=>{console.log("Button clicked")}}>
-<IconContext.Provider value={{ color: "green"  }} >
-  <RiDeleteBin3Fill></RiDeleteBin3Fill>
-</IconContext.Provider>
-</span>
-</td>
+{/* <span onClick={()=>{console.log("Button clicked")}}> */}
+{/* <IconContext.Provider value={{ color: "green"  }} > */}
+  {/* <RiDeleteBin3Fill></RiDeleteBin3Fill> */}
+{/* </IconContext.Provider> */}
+{/* </span> */}
+
 
 </tr>
 // quality

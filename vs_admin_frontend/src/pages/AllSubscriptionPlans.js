@@ -36,12 +36,12 @@ export default function AllSubscriptionPlans() {
         <thead>
           <tr>
             <th>ID</th>
-            <th>Movie Name</th>
-            <th>Genre</th>
-            <th>Quality</th>
-            <th>Release Date</th>
+            <th>Plan Name</th>
+            <th>Monthly Price</th>
+            <th>No of Device</th>
+            <th>Release Year</th>
             <th>Casts</th>
-            <th>Action</th>
+            
           </tr>
         </thead>
         <tbody>
