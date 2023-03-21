@@ -43,7 +43,6 @@ export default function UserCard(props) {
     
     <td>{props.user.uemail}</td>
     <td>{props.user.upassword}</td>
-    <td>{props.user.uplan}</td>
     <td>
     <span onClick={()=>{console.log("Button clicked")}}>
 

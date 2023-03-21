@@ -41,7 +41,6 @@ export default function Allusers() {
            
             <th>Email</th>
             <th>Password</th>
-            <th>Subcription Plan</th>
             <th>Action</th>
           </tr>
         </thead>

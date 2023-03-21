@@ -143,11 +143,11 @@ export default function Navigation() {
                 {/* <b style={{ color: "white" }} id="uname"></b> */}
                 {/*yesma user ko name rakhne ho*/}
                 <svg
-                  viewBox="0 0 24 24"
+                  viewBox="0 0 20 20"
                   width="20"
                   height="20"
                   stroke="currentColor"
-                  stroke-width="2"
+                  stroke-width="3"
                   fill="none"
                   stroke-linecap="round"
                   stroke-linejoin="round"
