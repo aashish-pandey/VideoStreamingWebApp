@@ -1,10 +1,10 @@
 var express = require('express')
+const mongoose = require('mongoose')
+var bodyParser = require('body-parser')
 const path = require('path')
 const cors = require('cors')
-const mongoose = require('mongoose')
 const register = require('./controllers/Register')
 const login = require('./controllers/Login')
-var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser')
 const upload = require('express-fileupload')
 
@@ -43,6 +43,8 @@ const getGlobalChat = require('./controllers/GetGlobalChat')
 const deleteAdmin = require('./controllers/AdminSideAdminFuncionalities/DeleteAdmin')
 const deleteMovie = require('./controllers/AdminSideAdminFuncionalities/DeleteMovie')
 const deleteUser = require('./controllers/AdminSideAdminFuncionalities/DeleteUSer')
+const editAdmin = require('./controllers/AdminSideAdminFuncionalities/EditAdmin')
+const changeAdminDepartment = require('./controllers/AdminSideAdminFuncionalities/ChangeAdminDepartment')
 
 
 app = express()
@@ -103,6 +105,8 @@ app.post('/loginAdmin', loginAdmin)
 app.post('/deleteAdmin',deleteAdmin)
 app.post('/deleteMovie', deleteMovie)
 app.post('/deleteUser', deleteUser)
+app.post('/editAdmin', editAdmin)
+app.post('/changeAdminDepartment', changeAdminDepartment)
 
 
 app.get('/getAllUsers', getAllUsers)

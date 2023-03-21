@@ -38,7 +38,7 @@ export default function PlayVideo({ route, navigation }) {
           await setISpeed(getCookies('internetSpeed'))
         }
         set()
-        console.log("Hero calling" + iSpeed)
+        // console.log("Hero calling" + iSpeed)
     }
 
       //request the server to store the video in user history

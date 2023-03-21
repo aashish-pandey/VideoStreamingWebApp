@@ -1,159 +1,215 @@
 .Navbar {
-    background-color: rgb(42, 18, 18);
-    position: sticky;
-    height: 10vh;
-    width: 97%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding-right: 5rem;
-    padding-left: 2rem;
-    margin-right: 1rem;
-    padding-bottom: 0;
-    margin-bottom: 0;
-  
-    z-index: 2;
-    /* border-bottom: 3px solid rgb(12, 12, 12); */
-  }
-  
-  .Title {
-    font-size: 2rem;
-    font-weight: 500;
-    cursor: pointer;
-    color: red;
-    font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
-      "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
-  }
-  
-  .SignIn {
-    background-color: red;
-    color: white;
-    font-size: 1rem;
-    padding: 0.7rem 1rem;
-    border-color: white;
-    border-radius: 10px;
-    cursor: pointer;
-  }
-  
-  .Navbar .left_Navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
-    color: white;
-  }
-  
+  background-color: rgb(42, 18, 18);
+  position: sticky;
+  height: 10vh;
+  width: 96%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-right: 5rem;
+  padding-left: 2rem;
+  margin-right: 1rem;
+  padding-bottom: 0;
+  margin-bottom: 0;
+
+  z-index: 2;
+  /* border-bottom: 3px solid rgb(12, 12, 12); */
+}
+
+.Title {
+  font-size: 2rem;
+  font-weight: 500;
+  cursor: pointer;
+  color: red;
+  font-family: "Lucida Sans", "Lucida Sans Regular", "Lucida Grande",
+    "Lucida Sans Unicode", Geneva, Verdana, sans-serif;
+}
+
+.Navbar .left_Navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  color: white;
+}
+
+.Navbar button {
+  display: inline-block;
+  text-decoration: none;
+  text-align: center;
+  cursor: pointer;
+  padding: 13px 15px 13px 10px;
+  background-color: red;
+  color: white;
+  border-radius: 12px;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  border: none;
+  margin-right: 1rem;
+  transition: 0.4s;
+}
+
+.Navbar button:hover {
+  transform: scale(1.1, 1.1);
+}
+
+.Navbar .left_Navbar .links {
+  display: flex;
+  width: 500px;
+  align-items: center;
+  justify-content: space-evenly;
+  color: white;
+}
+
+.Navbar .left_Navbar .links botton {
+  display: inline-block;
+  text-decoration: none;
+  cursor: pointer;
+  padding: 13px 10px 13px 10px;
+}
+
+.Navbar .left_Navbar .links botton:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.Navbar .right_Navbar {
+  margin-right: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.Navbar .right_Navbar .Profile {
+  cursor: pointer;
+}
+
+.Navbar .right_Navbar .Profile .ProfileCircle {
+  height: 35px;
+  width: 35px;
+  background-color: rgb(171, 158, 158);
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.Navbar .right_Navbar .Profile .ProfileCircle .ProfileName {
+  text-align: center;
+  margin-top: 4px;
+  color: black;
+  text-transform: uppercase;
+  font-size: 20px;
+}
+
+/* .Navbar .right_Navbar .Profile img {
+  height: 40px;
+  width: 40px;
+  border-radius: 50%;
+  overflow: hidden;
+} */
+
+.Navbar2 {
+  background-color: rgb(42, 18, 18);
+  position: sticky;
+  width: 100%;
+  display: none;
+  align-items: center;
+  justify-content: space-evenly;
+  padding: 0 2%;
+  margin-top: 0;
+  margin-bottom: 0;
+
+  z-index: 2;
+}
+
+.Navbar2 .links {
+  display: flex;
+  width: 600px;
+  align-items: center;
+  justify-content: space-evenly;
+  cursor: pointer;
+  color: white;
+}
+
+.Navbar2 .links botton {
+  display: inline-block;
+  text-decoration: none;
+  padding: 13px 10px 13px 10px;
+}
+
+.Navbar2 .links botton:hover {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+@media (max-width: 860px) {
   .Navbar .left_Navbar .links {
-    display: flex;
-    /* width: 500px; */
-    align-items: center;
-    justify-content: space-evenly;
-    cursor: pointer;
-    color: white;
+    display: none;
   }
-  
-  .Navbar .left_Navbar .links botton {
-    display: inline-block;
-    text-decoration: none;
-    padding: 13px 10px 13px 10px;
-  }
-  
-  .Navbar .left_Navbar .links botton:hover {
-    background-color: rgba(0, 0, 0, 0.2);
-  }
-  
-  .Navbar .right_Navbar {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-  }
-  .Navbar .right_Navbar input {
-    padding: 7px;
-    width: 250px;
-    margin-right: 16px;
-    font-size: 17px;
-    border-radius: 0.7em;
-  }
-  
+
   .Navbar2 {
-    background-color: rgb(42, 18, 18);
-    position: sticky;
-    height: 3vh;
-    width: 100%;
-    display: none;
-    align-items: center;
-    justify-content: space-evenly;
-    padding: 0 2%;
-    margin-top: 0;
-    margin-bottom: 0;
-  
-    z-index: 2;
-  }
-  
-  .Navbar2 .links {
     display: flex;
-    width: 400px;
-    align-items: center;
-    justify-content: space-evenly;
-    cursor: pointer;
   }
-  
-  .Navbar2 .links botton {
-    display: inline-block;
-    text-decoration: none;
-    padding: 13px 10px 13px 10px;
-  }
-  
-  .Navbar2 .links botton:hover {
-    background-color: rgba(0, 0, 0, 0.2);
-  }
-  
-  .Navbar3 {
-    background-color: rgb(42, 18, 18);
-    position: sticky;
-    height: 6vh;
-    width: 100%;
-    display: none;
-    align-items: center;
-    justify-content: space-evenly;
-    padding: 0 2%;
-  
-    z-index: 2;
-  }
-  
-  .Navbar3 input {
-    padding: 7px;
-    width: 100%;
-    margin-right: 16px;
-    font-size: 17px;
-    border-radius: 0.7em;
-  }
-  
-  @media (max-width: 1025px) {
-    .Navbar .left_Navbar .links {
-      display: none;
-    }
-  
-    .Navbar2 {
-      display: flex;
-    }
-  }
-  
-  @media (max-width: 630px) {
-    .Navbar .right_Navbar input {
-      display: none;
-    }
-  
-    .Navbar3 {
-      display: flex;
-    }
-  }
+}
 
-
-
-  #falseNav{
-    background-color: rgb(254, 252, 252);
-    border-bottom: 3px solid rgba(0, 0, 0, 0.462);
+@media (max-width: 1100px) {
+  .Navbar .right_Navbar .Profile {
+    padding-right: 20px;
   }
+}
 
+#falseNav {
+  background-color: rgb(254, 252, 252);
+  border-bottom: 3px solid rgba(0, 0, 0, 0.462);
+}
 
+.dropDownProfile {
+  position: absolute;
+  z-index: 3;
+  top: 4rem;
+  right: 0.6rem;
+  width: 120px;
+  border-radius: 15px;
+  color: white;
+  background-color: rgb(171, 158, 158);
+}
 
+/* .dropDownProfile::before {
+  content: "";
+  position: absolute;
+  top: -5px;
+  right: 36px;
+  width: 8px;
+  height: 8px;
+  transform: rotate(45deg);
+  background-color: white;
+  border-top: 1px solid grey;
+  border-left: 1px solid grey;
+} */
+
+.dropDownProfile ul {
+  padding-left: 17px;
+}
+
+.dropDownProfile h3 {
+  width: 100%;
+  text-align: center;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 1.2rem;
+}
+
+.dropDownProfile ul li {
+  list-style: none;
+  padding: 7px 20px;
+}
+
+.dropDownProfile ul li botton {
+  cursor: pointer;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+}
+
+.dropDownProfile ul li botton:hover {
+  transform: scale(1.1, 1.1);
+}
