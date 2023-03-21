@@ -211,6 +211,15 @@ till here */
     width: 100%;
     height: 0;
   }
+
+  .breaker2 {
+    display: none;
+  }
+  .breaker2:nth-child(n) {
+    display: block;
+    width: 100%;
+    height: 0;
+  }
 .inputup {
       flex: 1 1 10ch;
       margin: .5rem;
@@ -220,12 +229,6 @@ till here */
     border-radius: .25rem;
     padding: .75rem 1rem;
     box-shadow: 0 .75rem .5rem -.5rem hsl(0 50% 80%);
-    /* background: hotpink; */
-    /* color: white; */
-
-    /* &[type="submit"] {
-  
-    } */
   }
   
 /* till here */
