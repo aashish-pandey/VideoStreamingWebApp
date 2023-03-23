@@ -39,13 +39,9 @@ export default function HomeFeed() {
       )
         .then((res) => res.json())
         .then(async (dt) => {
-          // console.log(dt)
-          // console.log(dt.length)
           var movieInfoData = [];
           for (var i = 0; i < dt.length; i++) {
-            // console.log(dt[i])
             var id = dt[i]["movieId"];
-            // console.log(id)
             var movieinf = await fetch(
               "http://" +
                 process.env.REACT_APP_API_CALL_ADDRESS +

@@ -21,6 +21,7 @@ import Movies from './pages/Movies';
 import Trending from './pages/Trending';
 import GroupChat from './pages/chat/GroupChat';
 import ForgetPassword from './pages/ForgetPassword';
+import PlayBannerVideo from './components/moviedetails/PlayBannerVideo';
 
 function App() {
 
@@ -112,6 +113,17 @@ function App() {
           path='/permissionDenied'
           element={
             <PermissionDenied/>
+            }
+          />
+
+<Route
+          path='/watchBanner/:id'
+          element={
+          <ProtectedRoute>
+            <PermissionRoute>
+            <PlayBannerVideo/>
+            </PermissionRoute>
+          </ProtectedRoute>
             }
           />
 

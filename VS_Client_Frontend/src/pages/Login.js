@@ -82,7 +82,7 @@ export default function Login() {
         </form>
 
         <div>
-            <button onClick={()=>{navigate('/forgetPassword')}}>forget Password</button>
+            <button className='forgetPassBtn' onClick={()=>{navigate('/forgetPassword')}}>forget Password</button>
         </div>
 
         <div>

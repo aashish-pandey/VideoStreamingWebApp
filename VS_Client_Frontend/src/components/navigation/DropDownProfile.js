@@ -94,16 +94,6 @@ function DropDownProfile() {
             </botton>
           </li>
           <li>
-            <botton
-              className="Setting"
-              onClick={() => {
-                navigate("/setting");
-              }}
-            >
-              Setting
-            </botton>
-          </li>
-          <li>
             <botton className="SignIn" onClick={handleLogout}>
               Logout
             </botton>

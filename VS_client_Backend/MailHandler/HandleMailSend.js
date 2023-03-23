@@ -2,7 +2,6 @@ const transporter = require('./SendMail')
 
 const HandleMailSend = function(req, res){
 
-    console.log('aashish is here')
 
     var mailOptions = {
         from: 'pandeyaashish100@gmail.com',

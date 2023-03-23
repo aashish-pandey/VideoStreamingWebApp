@@ -47,6 +47,10 @@ const editAdmin = require('./controllers/AdminSideAdminFuncionalities/EditAdmin'
 const changeAdminDepartment = require('./controllers/AdminSideAdminFuncionalities/ChangeAdminDepartment')
 const { sendMail } = require('./MailHandler/SendMail')
 const HandleMailSend = require('./MailHandler/HandleMailSend')
+const bannerUpload = require('./controllers/AdminSideAdminFuncionalities/AddBanner')
+const getBanner = require('./controllers/GetBanner')
+const getBannerThumbnail = require('./controllers/GetBannerThumbnail')
+const getBannerMovie = require('./controllers/GetBannerMovie')
 
 
 app = express()
@@ -70,9 +74,14 @@ mongoose.connect(dbURI)
 
 
 app.get('/getMovies', getMovies)
+app.get('/getBanner', getBanner)
 app.get('/getVideo/:id', getVideo)
 app.get('/getThumbnail/:id', getThumbnail)
+app.get('/getBannerThumbnail/:id', getBannerThumbnail)
+
 app.get('/getMoviesByID/:id', getMoviesById)
+app.get('/getBannerMovie/:id', getBannerMovie)
+
 app.get('/getMyProfile/:email', getMyProfile)
 app.get('/getMySubscription/:email', getMySubscription)
 app.get('/getSubscriptionPlanByName/:name', getSubscriptionPlanByName)
@@ -93,6 +102,7 @@ app.post('/activatesubscription', activateSubscription)
 app.post('/accountLoginHistorySave', accountLoginHistorySave)
 app.post('/uploadvideo', uploadVideo)
 app.post('/uploadMovie', uploadMovie)
+app.post('/bannerUpload', bannerUpload)
 app.post('/saveWatchHistory', saveWatchHistory)
 app.post('/getWatchHistory', getWatchHistory)
 app.post('/saveGlobalChat', saveGlobalChat)

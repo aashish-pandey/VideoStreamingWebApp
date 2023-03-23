@@ -114,14 +114,6 @@ export default function Navigation() {
                   Movies
                 </botton>
                 <botton
-                  className="Web_Series"
-                  onClick={() => {
-                    navigate("/webSeries");
-                  }}
-                >
-                  Web Series
-                </botton>
-                <botton
                   className="Movies"
                   onClick={() => {
                     navigate("/chatPage");
@@ -178,7 +170,6 @@ export default function Navigation() {
               >
                 Movies
               </botton>
-              <botton className="Web_Series">Web Series</botton>
               <botton
                 className="Movies"
                 onClick={() => {

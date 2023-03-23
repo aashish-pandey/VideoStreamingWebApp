@@ -1,102 +1,104 @@
-.chatMain{
-    background-color: black;
-    color: white;
-    min-height: 100vh;
-    width: 100vw;
-
-    
+.chatMain {
+  background-color: rgb(178, 165, 165);
+  color: white;
+  min-height: 100vh;
+  width: 100vw;
 }
 
-.chatMainItems{
-    display: flex;
-    align-items: center;
-    justify-content: center;
+.chatMainItems {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-
-.chatBox{
-    height: 85vh;
-    width: 90vw;
-    margin: 1rem;
-    background-color: white;
-    color: black;
-
-    display: flex;
-    flex-direction: column;
-    justify-content: left;
-    /* align-items:first baseline; */
+.chatBox {
+  height: 85vh;
+  width: 90vw;
+  margin: 1rem;
+  background-color: rgb(0, 0, 0);
+  border-radius: 0.6rem;
+  color: rgb(255, 255, 255);
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  /* align-items:first baseline; */
 }
 
-.chatHeading{
-    border: 2px solid red;
-    padding: 1rem;
-    height: 3vh;
+.chatHeading {
+  border-bottom: 1px solid rgb(0, 0, 0);
+  background-color: #4d270e;
+  color: white;
+  border-radius: 0.6rem;
+  padding: 1rem;
+  height: 3vh;
 }
 
-.chatMsgBox{
-    min-height: 65vh;
-    max-height: 65vh;
-    overflow-y: scroll;
-    /* border: 2px solid blue; */
+.chatMsgBox {
+  min-height: 70vh;
+  max-height: 70vh;
+  overflow-y: scroll;
+  /* border: 2px solid blue; */
 }
 
-.chatInput{
-    border: 2px solid green;
-    padding: 1rem;
-    height: 7vh;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
+.chatInput {
+  border: 1px solid rgb(0, 0, 0);
+  background-color: #000000;
+  border-radius: 0.6rem;
+  padding: 0.1rem;
+  display: flex;
+  justify-content: space-between;
 }
 
-.chatInputBox{
-    width: 78vw;
-    font-size: 1.2rem;
-    padding: 0.5rem;
+.chatInputBox {
+  width: 80%;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border-radius: 0.5rem;
 }
 
-.chatInputSendBtn{
-    padding: 0.5rem;
-    font-size: 1.2rem;
-    background-color: blue;
-    color: white;
-    border: none;
-    cursor: pointer;
-    border-radius: 0.8rem;
+.chatInputSendBtn {
+  width: 20%;
+  font-size: 1.2rem;
+  background-color: rgb(7, 147, 239);
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 0.8rem;
+  transition: 0.5s;
 }
 
-.chatInputSendBtn:hover{
-    transform: scale(1.01);
+.chatInputSendBtn:hover {
+  transform: scale(1.06);
 }
 
-.showChatMsgMain{
-    /* border: 2px solid red; */
+.showChatMsgMain {
+  /* border: 2px solid red; */
 }
 
-.showChatMsgMine{
-    /* border: 2px solid blue; */
-    display: flex;
-    justify-content: start;
-    margin: 1rem;
+.showChatMsgMine {
+  /* border: 2px solid blue; */
+  display: flex;
+  justify-content: start;
+  margin: 1rem;
 }
 
-.showChatMsgOthers{
-    /* border: 2px solid blue; */
-    display: flex;
-    justify-content: end;
-    margin: 1rem;
+.showChatMsgOthers {
+  /* border: 2px solid blue; */
+  display: flex;
+  justify-content: end;
+  margin: 1rem;
 }
 
-.showChatMsgMineText{
-    background-color: blue;
-    color: white;
-    padding: 0.5rem;
-    border-radius: 20px;
+.showChatMsgMineText {
+  background-color: blue;
+  color: white;
+  padding: 0.5rem;
+  border-radius: 20px;
 }
 
-.showChatMsgOthersText{
-    background-color: rgb(85, 84, 84);
-    color: white;
-    padding: 0.5rem;
-    border-radius: 20px;
+.showChatMsgOthersText {
+  background-color: rgb(85, 84, 84);
+  color: white;
+  padding: 0.5rem;
+  border-radius: 20px;
 }

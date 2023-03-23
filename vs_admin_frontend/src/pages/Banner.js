@@ -3,18 +3,12 @@ import axios from 'axios';
 import Nav1 from './Nav1';
 import "react-datepicker/dist/react-datepicker.css";
 
-<<<<<<< HEAD
-export default function Banner() {
-    
-    console.log("From banner")
-=======
 export default function Banner() { 
   
 
 
 
 
->>>>>>> 2be5f82b4205dda44896c810c15c00c19f67e509
     const uploadFile = async (e) => {
       e.preventDefault();
       console.log("aas")
@@ -24,7 +18,7 @@ export default function Banner() {
         try {
           
             const res = await axios.post(
-              "http://" + process.env.REACT_APP_API_CALL_ADDRESS + ":3560/uploadMovie",
+              "http://" + process.env.REACT_APP_API_CALL_ADDRESS + ":3560/bannerUpload",
               formData
             );
             console.log("no error")
@@ -46,10 +40,6 @@ export default function Banner() {
       <input className='inputup' type="text" name="movieName" placeholder='movie Name'/><br/>
       <input className='inputup' type="text" name='UploadDate' placeholder='Upload Date format(2000/01/25)'/><br/>
       <input className='inputup' type="text" name="description" placeholder="Description"/><br/>
-<<<<<<< HEAD
-      <p class="breaker"></p>  
-      <input  className='btnup' type="submit" value="Upload" />
-=======
       <p class="breaker"></p>
       {/* <p class="breaker"></p> */}
 
@@ -65,7 +55,6 @@ export default function Banner() {
 
       <input  className='btnup' type="submit" value="Upload" />
       
->>>>>>> 2be5f82b4205dda44896c810c15c00c19f67e509
     </form>
     </div>
     </>

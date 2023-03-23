@@ -80,7 +80,7 @@ const accountLoginHistory = function(req, res){
                                                 if(err){
                                                     res.status(500).json({err:true, msg: "account login history find failed", errMsg: err})
                                                 }else{
-                                                    console.log(dt[0].uemail)
+                                                    // console.log(dt[0].uemail)
                                                     // if(typeof(data[0].HomeIpAddress) == 'undefined'){
                                                         var onlyOneDevice = false
                                                         console.log("Bro")
