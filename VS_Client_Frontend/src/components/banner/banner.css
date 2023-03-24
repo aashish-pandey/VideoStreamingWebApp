@@ -1,57 +1,53 @@
-.banner12 {
+.banner {
   color: white;
-  height: 620px;
   overflow: hidden;
+  width: 100%;
+  height: 620px;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 
+/* .imgBanner {
+  width: 100vw;
+  height: 100vh;
+  object-fit: contain;
+  z-index: -1;
+} */
 
-.imgBanner12{
-  position: absolute;
+.bannerImg {
   width: 100%;
-  height: 90%;
-  /* border: 2px solid red; */
-
-}
-.bannerImg12{
-  width: 100%;
-  height: 90%;
+  height: 98%;
   object-fit: cover;
-  
+  background-size: cover;
 }
 
-@media (max-width: 630px){
-  .banner12{
-    height: 320px;
-  }
-}
-
-.banner__contents12 {
+.banner__contents {
   margin-left: 30px;
   padding-top: 140px;
   height: 250px;
-  border: 2px solid red;
-  display: inline-block;
-  z-index: 20;
 }
 
-.banner__title12 {
+.banner__title {
+  top: 30vh;
   /* color: rgb(126, 27, 27); */
-  font-size: 3rem;
+  font-size: 5rem;
   font-weight: 800;
   padding-bottom: 0.3rem;
   position: absolute;
 }
 
-.banner__description12 {
+.banner__description {
   width: 45rem;
   line-height: 1.3;
   padding-top: 1rem;
   font-size: 0.8rem;
   max-width: 360px;
   height: 80px;
+  position: absolute;
 }
 
-.banner__button12 {
+.banner__button {
+  top: 55vh;
   cursor: pointer;
   color: #fff;
   outline: none;
@@ -68,15 +64,14 @@
   position: absolute;
 }
 
-.banner__button12:hover {
+.banner__button:hover {
   color: #000;
   background-color: #e6e6e6;
   transition: all 0.2s;
   z-index: 20;
 }
 
-.banner__fadeBottom12 {
-  position: absolute;
+.banner__fadeBottom {
   height: 15rem;
   background-image: linear-gradient(
     180deg,
@@ -84,4 +79,21 @@
     rgba(0, 0, 0, 0.662),
     rgb(0, 0, 0)
   );
+  position: absolute;
+}
+
+@media (max-width: 630px) {
+  .banner {
+    height: 300px;
+  }
+  .bannerImg {
+    height: 290px;
+  }
+  .banner__title {
+    font-size: 3rem;
+  }
+
+  .banner__button {
+    top: 45vh;
+  }
 }

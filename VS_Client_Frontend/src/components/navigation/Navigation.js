@@ -5,6 +5,7 @@ import useCookies from "react-cookie/cjs/useCookies";
 import "./navigationStylesheet.css";
 import SessionTracker from "../sessionManagement/SessionTracker";
 import DropDownProfile from "./DropDownProfile";
+import LogoutNavigation from "./LogoutNavigation";
 export default function Navigation() {
   const navigate = useNavigate();
   const catMenu = useRef(null);
@@ -13,7 +14,7 @@ export default function Navigation() {
   const [email, setEmailStatus] = useState("false");
   const [openProfile, setOpenProfile] = useState(false);
 
-  const [firstName, setFirstName] = useState('U')
+  const [firstName, setFirstName] = useState("U");
 
   const [cookies, setCookies] = useCookies(["user"]);
   const [query, setQuery] = useState("");
@@ -24,7 +25,7 @@ export default function Navigation() {
 
     var email = getCookies("uemail");
     var firstLetter = email.charAt(0).toUpperCase();
-    setFirstName(firstLetter)
+    setFirstName(firstLetter);
     // console.log(firstLetter);
   }, []);
 
@@ -130,7 +131,9 @@ export default function Navigation() {
                 onClick={() => setOpenProfile((prev) => !prev)}
               >
                 <span className="ProfileCircle">
-                  <p className="ProfileName" id="Uname">{firstName}</p>
+                  <p className="ProfileName" id="Uname">
+                    {firstName}
+                  </p>
                 </span>
                 {/* <b style={{ color: "white" }} id="uname"></b> */}
                 {/*yesma user ko name rakhne ho*/}
@@ -184,15 +187,6 @@ export default function Navigation() {
       </>
     );
   } else {
-    return (
-      <>
-        <div className="Navbar" id="falseNav">
-          <span className="Title">JAALCHITRA</span>
-          <button className="SignIn" onClick={redirectLogin}>
-            Sign In
-          </button>
-        </div>
-      </>
-    );
+    return <LogoutNavigation />;
   }
 }

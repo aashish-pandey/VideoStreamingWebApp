@@ -1,5 +1,5 @@
-.MovieCard{
-    /* display: flex;
+.MovieCard {
+  /* display: flex;
     flex-direction: column;
     background-color: black;
     color: white;
@@ -12,28 +12,22 @@
   transition: transform 500ms;
 }
 
+.MovieCard:hover {
+  transform: scale(0.9);
+}
 
+#video-id {
+  width: 100vw;
+  height: 99.45vh;
+  overflow: hidden;
+}
 
-
-  .MovieCard:hover {
-    transform: scale(1.08);
+@media (max-width: 630px) {
+  #video-id {
+    overflow: hidden !important;
   }
+}
 
-  #video-id{
-    width: 100vw;
-    height: 99.45vh;
-    overflow: hidden;
-  }
-
-  @media (max-width: 630px){
-    #video-id{
-      overflow: hidden !important;
-    }
-  }
-
- 
-
-  
 /* .MovieCard:hover{
     transform: scale(0.9);
     background-color: rgb(47, 46, 46);

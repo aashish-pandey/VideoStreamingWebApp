@@ -1,124 +1,124 @@
-
-.Landing{
-    /* background-color: black; */
-    min-height: 100vh;
+.Landing {
+  /* background-color: black; */
+  width: 100vw;
+  max-height: 100vh;
+  align-items: center;
+  justify-content: center;
+  padding-top: 1px;
 }
 
-.HeroSection{
-    margin: 15vh 0 0 0;
+.HeroSection {
+  margin: 15vh 0 0 0;
 }
 
-.HeroMsg{
-    font-size: 3.5rem;
-    font-weight: 800;
-    color: white;
-    font-family:  monospace;
-    padding: 8vh 10vw;
-    color: black;
-    
-    /* border: 2px solid black; */
+.HeroMsg {
+  font-size: 3.5rem;
+  font-weight: 800;
+  color: white;
+  font-family: monospace;
+  padding: 1vh 10vw;
+  color: black;
+
+  /* border: 2px solid black; */
 }
 
-.SupportMsg{
-    font-size: 1.5rem;
-    font-weight: 200;
-    color: white;
-    font-family: monospace;
-    padding: 5vh, 10vw; 
-    margin: 0 10vw;
-    color: black;
-    /* border: 2px solid black; */
-
+.SupportMsg {
+  font-size: 1.5rem;
+  font-weight: 200;
+  color: white;
+  font-family: monospace;
+  padding: 5vh, 10vw;
+  margin: 0 10vw;
+  color: black;
+  align-items: center;
+  /* border: 2px solid black; */
 }
 
-.EmailForm{
-    display: flex;
-    justify-content: center;
-    margin: 5vh 0;
-    /* border: 2px solid black; */
+.EmailForm {
+  display: flex;
+  justify-content: center;
+  margin: 5vh 0;
+  /* border: 2px solid black; */
 }
 
-.EmailForm .Email{
-    font-size: 1rem;
-    width: 35rem;
-    height: 3rem;
+.EmailForm .Email {
+  font-size: 1rem;
+  width: 35rem;
+  height: 3rem;
 }
 
-
-.EmailForm .Submit{
-    width: 9rem;
-    background-color: red;
-    color: white;
-    font-size: 1.5rem;
-    padding: 0.5rem;
-    border: 1px solid red;
+.EmailForm .Submit {
+  width: 9rem;
+  background-color: red;
+  color: white;
+  font-size: 1.5rem;
+  padding: 0.5rem;
+  border: 1px solid red;
 }
 
-
-.Landing2{
-    height: 80vh;
-    display: flex;
-    /* flex-direction: column; */
-    justify-content: center;
-    align-self: center;
-    /* border: 2px solid black; */
-
-} 
-
-.LandingItems{
-    /* border: 2px solid black; */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 50vw;
+.Landing2 {
+  height: 80vh;
+  display: flex;
+  /* flex-direction: column; */
+  justify-content: center;
+  align-self: center;
+  /* border: 2px solid black; */
 }
 
-.UseAnotherEmail{
-    margin-top: 2vh;
-    font-size: 1rem;
-    background-color: transparent;
-    cursor: pointer;
-    border: none;
+.LandingItems {
+  /* border: 2px solid black; */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 90vw;
 }
 
-.UseAnotherEmail:hover{
-    color: rgb(94, 93, 93);
+.UseAnotherEmail {
+  margin-top: 2vh;
+  font-size: 1rem;
+  background-color: transparent;
+  cursor: pointer;
+  border: none;
 }
 
-.NextButton{
-    margin-top: 2vh;
-    width: 10vw;
-    height: 40px;
-    background-color: red;
-    color: white;
-    border: none;
-    font-size: 1rem;
+.UseAnotherEmail:hover {
+  color: rgb(0, 81, 255);
 }
 
-.NextButton:hover{
-    background-color: rgb(253, 70, 70);
-    font-size: 1.1rem;
+.NextButton {
+  margin-top: 2vh;
+  width: 14vw;
+  height: 40px;
+  background-color: red;
+  color: white;
+  border: none;
+  font-size: 1rem;
 }
 
-.showEmail{
-    color: red;
-    font-weight: 500;
+.NextButton:hover {
+  background-color: rgb(253, 70, 70);
+  font-size: 1.1rem;
 }
 
-.FinishMsg{
-    font-size: 2rem;
-    font-weight: 500;
+.showEmail {
+  color: red;
+  font-weight: 500;
 }
 
-.forgetPassBtn{
-    border: none;
-    background-color: transparent;
-    font-size: 0.9rem;
-    cursor: pointer;
-    text-decoration: underline;
+.FinishMsg {
+  font-size: 2rem;
+  font-weight: 500;
 }
 
-.forgetPassBtn:hover{
-    color: rgb(57, 57, 57);
+.forgetPassBtn {
+  border: none;
+  background-color: transparent;
+  font-size: 0.9rem;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+.forgetPassBtn:hover {
+  color: rgb(253, 70, 70);
 }

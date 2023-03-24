@@ -316,6 +316,7 @@
   align-items: center;
   padding: 0.2rem;
   height: 6vh;
+  min-height: 2.5rem;
   background-color: rgb(42, 18, 18);
   position: sticky;
   z-index: 2;
