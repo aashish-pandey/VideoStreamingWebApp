@@ -133,17 +133,23 @@
   background-color: transparent;
   position:absolute;
   z-index: 5;
-  transform: scale(2);
-  top: 3vh;
-  left: 5vw;
+  /* transform: scale(2); */
+  top: 4vh;
+  left: 3vw;
   cursor: pointer;
-  /* padding: 2rem; */
+  /* padding: 10px 12px; */
   border: none;
+
+  border-radius: 200px;
   visibility: collapse;
 }
 
 #backbtn:hover{
-  border: 1px solid white;
+  /* border: 1px solid rgb(243, 0, 0); */
+}
+
+.backBtnSvg:hover{
+  stroke: #f50202;
 }
 
 #videoplayerQ:hover #backbtn{

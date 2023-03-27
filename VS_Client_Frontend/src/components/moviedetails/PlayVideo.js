@@ -230,6 +230,7 @@ export default function PlayVideo({ route, navigation }) {
 
   return (
     <>
+    
     <CheckInternetSpeed/>
     <SessionTracker/>
     
