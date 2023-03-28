@@ -51,6 +51,8 @@ const bannerUpload = require('./controllers/AdminSideAdminFuncionalities/AddBann
 const getBanner = require('./controllers/GetBanner')
 const getBannerThumbnail = require('./controllers/GetBannerThumbnail')
 const getBannerMovie = require('./controllers/GetBannerMovie')
+const forgetPasswordBegin = require('./controllers/ForgetPassword')
+const forgetPasswordComplete = require('./controllers/ForgetPasswordComplete')
 
 
 app = express()
@@ -60,6 +62,8 @@ app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser())
 app.use(cors())
 app.use(bodyParser.json())
+
+app.set('view engine', 'ejs')
 
 
 const dbURI = 'mongodb+srv://aashish:aashish@cluster0.ue3jr5n.mongodb.net/Users?retryWrites=true&w=majority';
@@ -73,6 +77,8 @@ mongoose.connect(dbURI)
     .catch((err)=>console.log(err))
 
 
+
+    
 app.get('/getMovies', getMovies)
 app.get('/getBanner', getBanner)
 app.get('/getVideo/:id', getVideo)
@@ -82,11 +88,15 @@ app.get('/getBannerThumbnail/:id', getBannerThumbnail)
 app.get('/getMoviesByID/:id', getMoviesById)
 app.get('/getBannerMovie/:id', getBannerMovie)
 
+app.post('/forgetPasswordBegin/', forgetPasswordBegin)
+app.post('/forgetPasswordComplete', forgetPasswordComplete)
+
 app.get('/getMyProfile/:email', getMyProfile)
 app.get('/getMySubscription/:email', getMySubscription)
 app.get('/getSubscriptionPlanByName/:name', getSubscriptionPlanByName)
 app.get('/getTrendingMovies', getTrendingMovies)
 app.get('/getGlobalChat', getGlobalChat)
+
 
 
 app.post('/sendMail', HandleMailSend)

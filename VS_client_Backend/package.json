@@ -12,6 +12,7 @@
     "body-parser": "^1.20.1",
     "cookie-parser": "^1.4.6",
     "cors": "^2.8.5",
+    "ejs": "^3.1.9",
     "express": "^4.18.2",
     "express-fileupload": "^1.4.0",
     "fs": "^0.0.1-security",
@@ -19,6 +20,7 @@
     "mongoose": "^6.8.3",
     "nodemailer": "^6.9.1",
     "path": "^0.12.7",
-    "request-ip": "^3.3.0"
+    "request-ip": "^3.3.0",
+    "view-engine": "^1.1.1"
   }
 }

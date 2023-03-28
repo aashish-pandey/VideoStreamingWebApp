@@ -439,6 +439,7 @@ export default function PlayVideo({ route, navigation }) {
 
   return (
     <>
+<<<<<<< HEAD
       <CheckInternetSpeed />
       <SessionTracker />
 
@@ -468,6 +469,18 @@ export default function PlayVideo({ route, navigation }) {
             }
             type="video/mp4"
           />
+=======
+    
+    <CheckInternetSpeed/>
+    <SessionTracker/>
+    
+  <div  id="videoplayerQ" onKeyDown={(event)=>handleKeyDown(event)} tabIndex="0" onDoubleClick={()=>toggleFullScreen()}> 
+  {/* {//tabIndex property is used here so as to make div to be active} */}
+    <button id="backbtn" onClick={() => navigate(-1)}>{backbtn}</button>
+      <video id='video-id'  autoPlay onTimeUpdate={()=>seekTimeUpdate()} onClick={()=>playPausebtn('playpausebtn', 'video-id')}>
+        <source src={"http://" + process.env.REACT_APP_API_CALL_ADDRESS + ":3560/getVideo/" + id + '?speed=' + getCookies('internetSpeed')}  type='video/mp4' />
+       
+>>>>>>> 558a2925f535ef30f6e64a2cdf8bf2e6f9a4b49e
         </video>
         <div
           id="big-play-button"
