@@ -21,7 +21,7 @@ function DropDownProfile() {
     console.log(accountLoginStatus);
 
     var error_status = await fetch(
-      "http://" + process.env.REACT_APP_API_CALL_ADDRESS + ":3560/logout",
+      process.env.REACT_APP_API_CALL_ADDRESS + "/logout",
       {
         method: "POST",
         headers: { "Content-type": "application/json" },
@@ -60,10 +60,7 @@ function DropDownProfile() {
     if (typeof email == "undefined") email = "";
     async function getProfile() {
       var profile = await fetch(
-        "http://" +
-          process.env.REACT_APP_API_CALL_ADDRESS +
-          ":3560/getMyProfile/" +
-          email
+        process.env.REACT_APP_API_CALL_ADDRESS + "/getMyProfile/" + email
       )
         .then((res) => res.json())
         .then((dt) => {

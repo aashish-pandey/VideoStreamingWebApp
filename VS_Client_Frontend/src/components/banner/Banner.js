@@ -10,7 +10,7 @@ function Banner() {
   useEffect(() => {
     async function fetchData() {
       const data = await fetch(
-        "http://" + process.env.REACT_APP_API_CALL_ADDRESS + ":3560/getBanner"
+        process.env.REACT_APP_API_CALL_ADDRESS + "/getBanner"
       )
         .then((res) => res.json())
         .then((dt) => {
@@ -37,9 +37,8 @@ function Banner() {
       <img
         className="bannerImg"
         src={
-          "http://" +
           process.env.REACT_APP_API_CALL_ADDRESS +
-          ":3560/getBannerThumbnail/" +
+          "/getBannerThumbnail/" +
           banner._id
         }
         alt=""

@@ -9,9 +9,7 @@ export default function AvailablePlans() {
     const formInfo = {};
     async function handlefetch() {
       const dt = await fetch(
-        "http://" +
-          process.env.REACT_APP_API_CALL_ADDRESS +
-          ":3560/availablePlan",
+        process.env.REACT_APP_API_CALL_ADDRESS + "/availablePlan",
         {
           method: "POST",
           headers: { "Content-type": "application/json" },
