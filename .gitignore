@@ -7,7 +7,7 @@
 /vs_admin_frontend/node_modules
 /VS_Client_Frontend/node_modules
 /VS_client_Backend/node_modules
-/VS_client_Backend/uploads
+/VS_client_Backend/uploads/videos
 /electron/node_modules
 
 # # testing

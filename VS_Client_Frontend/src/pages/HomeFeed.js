@@ -13,6 +13,7 @@ import { browserName, osName, deviceType } from "react-device-detect";
 import GetMyIp from "../helperFunctions/GetMyIp";
 import Loader from "./Loader";
 import CheckInternetSpeed from "../components/CheckInternetSpeed";
+import HomefeedNavigation from "../components/navigation/HomefeedNavigation";
 
 export default function HomeFeed() {
   const [newMovie, SetNewMovie] = useState([]);
@@ -129,7 +130,7 @@ export default function HomeFeed() {
       <div className="HomeFeedMain">
         <CheckInternetSpeed />
 
-        <Navigation />
+        <HomefeedNavigation/>
 
         <div className="searchMovieBox">
           <input
@@ -143,13 +144,15 @@ export default function HomeFeed() {
         </div>
 
         <Banner />
-        <h2>Latest Releases</h2>
-        <div className="MovieListDisplayCard">
+        <div className="firstDisplayRow">
+        <h2 className="firstDisplayRowItems">Latest Releases</h2>
+        <div className="MovieListDisplayCard firstDisplayRowItems">
           {newMovie.map((movie) => {
             return <MovieCard key={movie["_id"]} info={movie} />;
           })}
         </div>
-
+        </div>
+          <div className="secondDisplayRow"></div>
         <h2>Continue your watching</h2>
         <div className="MovieListDisplayCard">
           {
