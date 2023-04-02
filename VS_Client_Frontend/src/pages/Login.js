@@ -28,7 +28,7 @@ export default function Login() {
     };
 
     var error_status = await fetch(
-      "http://" + process.env.REACT_APP_API_CALL_ADDRESS + ":3560/login",
+      process.env.REACT_APP_API_CALL_ADDRESS + "/login",
       {
         method: "POST",
         headers: { "Content-type": "application/json" },

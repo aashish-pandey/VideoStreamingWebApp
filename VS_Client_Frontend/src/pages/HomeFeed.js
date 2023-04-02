@@ -29,9 +29,7 @@ export default function HomeFeed() {
       };
 
       const data = await fetch(
-        "http://" +
-          process.env.REACT_APP_API_CALL_ADDRESS +
-          ":3560/getWatchHistory",
+        process.env.REACT_APP_API_CALL_ADDRESS + "/getWatchHistory",
         {
           method: "post",
           headers: { "Content-type": "application/json" },
@@ -44,10 +42,7 @@ export default function HomeFeed() {
           for (var i = 0; i < dt.length; i++) {
             var id = dt[i]["movieId"];
             var movieinf = await fetch(
-              "http://" +
-                process.env.REACT_APP_API_CALL_ADDRESS +
-                ":3560/getMoviesByID/" +
-                id
+              process.env.REACT_APP_API_CALL_ADDRESS + "/getMoviesByID/" + id
             )
               .then((res) => res.json())
               .then((dt) => {
@@ -69,7 +64,7 @@ export default function HomeFeed() {
 
     async function getNewMovie() {
       const data = await fetch(
-        "http://" + process.env.REACT_APP_API_CALL_ADDRESS + ":3560/getMovies"
+        process.env.REACT_APP_API_CALL_ADDRESS + "/getMovies"
       )
         .then((res) => res.json())
         .then((dt) => {

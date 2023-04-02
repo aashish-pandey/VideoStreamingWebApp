@@ -50,7 +50,7 @@ export default function Navigation() {
     console.log(accountLoginStatus);
 
     var error_status = await fetch(
-      "http://" + process.env.REACT_APP_API_CALL_ADDRESS + ":3560/logout",
+      process.env.REACT_APP_API_CALL_ADDRESS + "/logout",
       {
         method: "POST",
         headers: { "Content-type": "application/json" },

@@ -31,7 +31,7 @@ export default function SetPassword() {
     };
 
     var error_status = await fetch(
-      "http://" + process.env.REACT_APP_API_CALL_ADDRESS + ":3560/register",
+      process.env.REACT_APP_API_CALL_ADDRESS + "/register",
       {
         method: "POST",
         headers: { "Content-type": "application/json" },
@@ -52,7 +52,7 @@ export default function SetPassword() {
     setErrMsg();
     if (error_status.toString() == "false") {
       var error_status = await fetch(
-        "http://" + process.env.REACT_APP_API_CALL_ADDRESS + ":3560/login",
+        process.env.REACT_APP_API_CALL_ADDRESS + "/login",
         {
           method: "POST",
           headers: { "Content-type": "application/json" },

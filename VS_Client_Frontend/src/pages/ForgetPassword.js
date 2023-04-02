@@ -16,10 +16,7 @@ export default function ForgetPassword() {
 
     try {
       const res = await axios
-        .post(
-          "http://" + process.env.REACT_APP_API_CALL_ADDRESS + ":3560/sendMail",
-          formData
-        )
+        .post(process.env.REACT_APP_API_CALL_ADDRESS + "/sendMail", formData)
         .then((res) => {
           return res.data;
         });

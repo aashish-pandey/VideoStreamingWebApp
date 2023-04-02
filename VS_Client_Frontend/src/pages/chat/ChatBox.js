@@ -16,9 +16,7 @@ export default function ChatBox() {
   }
 
   const getGlobalMsg = async function () {
-    await fetch(
-      "http://" + process.env.REACT_APP_API_CALL_ADDRESS + ":3560/getGlobalChat"
-    )
+    await fetch(process.env.REACT_APP_API_CALL_ADDRESS + "/getGlobalChat")
       .then((res) => res.json())
       .then((dt) => {
         console.log(dt.msg);
@@ -49,16 +47,11 @@ export default function ChatBox() {
       msg: e.target[0].value,
     };
 
-    await fetch(
-      "http://" +
-        process.env.REACT_APP_API_CALL_ADDRESS +
-        ":3560/saveGlobalChat",
-      {
-        method: "post",
-        headers: { "content-type": "application/json" },
-        body: JSON.stringify(msgInfo),
-      }
-    )
+    await fetch(process.env.REACT_APP_API_CALL_ADDRESS + "/saveGlobalChat", {
+      method: "post",
+      headers: { "content-type": "application/json" },
+      body: JSON.stringify(msgInfo),
+    })
       .then((res) => res.json())
       .then((dt) => {
         console.log(dt);
