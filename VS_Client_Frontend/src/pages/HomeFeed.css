@@ -9,10 +9,12 @@
   overflow-y: hidden;
   overflow-x: scroll;
   width: 90vw;
+  min-height: 40vh;
   margin-left: 3vw;
   padding: 25px;
   text-align: center;
-  background-color: rgba(248, 245, 245, 0.078);
+  background: transparent;
+  /* background-color: rgba(248, 245, 245, 0.078); */
   /* border: 2px solid red; */
 }
 
@@ -33,7 +35,7 @@
 }
 
 .HomeFeedMain h2 {
-  margin-left: 20px;
+  margin-left: 5vw;
 }
 
 .loader {
@@ -317,7 +319,8 @@
   padding: 0.2rem;
   height: 6vh;
   min-height: 2.5rem;
-  background-color: rgb(42, 18, 18);
+  /* background-color: rgb(42, 18, 18); */
+  background: transparent;
   position: sticky;
   z-index: 2;
 }
@@ -328,6 +331,33 @@
   font-size: 19px;
   border-radius: 0.7em;
 }
+
+.firstDisplayRow{
+  min-height: 45vh;
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  z-index: 50;
+  top: 80vh;
+}
+
+.firstDisplayRowItems{
+  position: inherit;
+  min-width: 85vw;
+}
+.firstDisplayRowItems:nth-child(2){
+  position: inherit;
+  margin-top: 8vh;
+}
+
+
+.secondDisplayRow{
+  margin-top: 45vh;
+}
+
+
+
+
 
 @media (max-width: 720px) {
   .searchMovieBox .searchMovieBar {
