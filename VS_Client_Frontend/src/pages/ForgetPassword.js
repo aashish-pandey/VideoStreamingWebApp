@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import axios from "axios";
 
 import LogoutNavigation from "../components/navigation/LogoutNavigation";
@@ -7,6 +7,19 @@ import "./ForgetPassword.css";
 
 export default function ForgetPassword() {
   const [msg, setmsg] = useState("");
+
+
+  setInterval(()=>{
+    // console.log("Aashish is god");
+
+    const ele = document.getElementById('msgBox')
+
+    if(ele.style.color != 'white'){
+      ele.style.color = 'white'
+    }else{
+      ele.style.color = 'black'
+    }
+  }, 5000)
 
   const handleFormSubmit = async (e) => {
     e.preventDefault();
@@ -33,6 +46,7 @@ export default function ForgetPassword() {
       <LogoutNavigation />
 
       <div className="New_Pass">
+        <h1 id="msgBox">{msg}</h1>
         <div className="recover_image">
           <img src={require("./recoverAcc.png")} alt="device image" />
         </div>
