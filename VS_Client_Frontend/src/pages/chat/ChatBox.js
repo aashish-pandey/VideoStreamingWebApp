@@ -27,6 +27,8 @@ export default function ChatBox() {
       });
   };
 
+
+
   useEffect(() => {
     async function handle() {
       await getGlobalMsg();

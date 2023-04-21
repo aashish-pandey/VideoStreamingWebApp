@@ -2,20 +2,11 @@ const mongoose = require('mongoose')
 
 const Schema = mongoose.Schema
 
-const UserPlanSchema = new Schema({
-
-    
+const UserPlanSchema = new Schema({ 
     userEmail:{
         type: String,
         required: true,
     },
-
-    // userAccountID:{
-    //     type: String, 
-    //     unique: true,
-    //     required: true
-    // },
-
     activePlan:{
         type: String,
         required: true
